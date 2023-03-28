@@ -152,7 +152,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("SPOT").artLayers.getByName("SPOTWhite");
                 app.doAction("selectArea", "autoUv");
                 app.activeDocument.activeChannels = [app.activeDocument.channels.getByName("1")];
-                app.doAction("fillChannelsLED0", "autoUv");
+                app.doAction("fillChannelsLED20", "autoUv");
                 app.activeDocument.saveAs(Folder(folderTool + "/in sau 15 trang.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 
 

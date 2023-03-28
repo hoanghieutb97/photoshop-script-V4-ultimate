@@ -28,17 +28,17 @@ for (var i = stt; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], "back");
     #include "cropAndResize-autoFill.jsx";
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-    #include "caculatorPosition.jsx";
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     { // translate layer đến vị trí cần in
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
+        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "autoUv");
         app.activeDocument.activeLayer.translate(xPosition, (yPosition + hphone + 40) * (-1));
     }
+    
     if (i == arr.length - 1) {
-        #include "save1Mat.jsx";
+        #include "save2Mat.jsx";
         $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }

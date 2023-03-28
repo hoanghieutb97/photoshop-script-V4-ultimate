@@ -29,7 +29,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     {// tao khung su
         app.open(File("//192.168.1.99/ps script data/khung mica tim 2cm.png"));
         app.doAction("canvasHoriz", "go");
-        app.activeDocument.activeLayer.name = arr[i][j].stt;
+        app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "translateKHUNG.jsx";

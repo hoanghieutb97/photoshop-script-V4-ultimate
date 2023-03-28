@@ -6,7 +6,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], type);
     app.doAction("strokeRed1px", "autoUv");
     #include "cropAndResize-autoFill.jsx";
-    // if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
     if ((yPosition + boxH + hLast > hAll) && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
@@ -16,7 +15,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
         openFile(FileDesign, arr[i], type);
         app.doAction("strokeRed1px", "autoUv");
         #include "cropAndResize-autoFill.jsx";
-        // if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
         stt = i;
 
     }
@@ -27,11 +25,10 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
     {// tao khung 
         app.open(File("//192.168.1.99/back up in/ps script data/khung Wood Candle.png"));
-        app.activeDocument.activeLayer.name = arr[i][j].stt;
+        app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "translateKHUNG.jsx";
-
     }
 
     if (i == arr.length - 1) {

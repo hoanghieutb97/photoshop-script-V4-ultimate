@@ -17,6 +17,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         stt = i;
 
     }
+    #include "boxWFlexible.jsx";
     #include "caculatorPosition.jsx";
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);
@@ -28,4 +29,3 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 }
 
- 

@@ -7,7 +7,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "cropAndResize-autoFill.jsx";
     app.doAction("flag cmyk", "autoUv");
     if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
-    app.activeDocument.saveAs(Folder(folderContainer + "/" + arr[i][j].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderContainer + "/" + arr[i].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
 
     if (i == arr.length - 1) {
         $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
