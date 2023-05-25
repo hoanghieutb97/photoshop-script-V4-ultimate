@@ -30,24 +30,24 @@ for (var i = 0; i < arr.length; i++) {
 
 
     if (arr[i].nameId.slice(0, 6) == "note10" || arr[i].nameId.slice(0, 6) == "22plus")
-        app.doAction("createRectangle20", "autoUv");
+        app.doAction("createRectangle20", "tool");
 
     else if (arr[i].nameId.slice(0, 8) == "s22ultra")
-        app.doAction("createRectangle10", "autoUv");
+        app.doAction("createRectangle10", "tool");
     else if (arr[i].nameId.slice(0, 1) == "i")
-        app.doAction("createRectangle120", "autoUv");
+        app.doAction("createRectangle120", "tool");
     else
-        app.doAction("createRectangle80", "autoUv");
+        app.doAction("createRectangle80", "tool");
     var boundKhung = app.activeDocument.activeLayer.bounds;
     app.activeDocument.activeLayer.resize(wphone * 100 / (boundKhung[2] - boundKhung[0]), 100 * hphone / (boundKhung[3] - boundKhung[1]), AnchorPosition.MIDDLECENTER);
-    app.doAction("selectAreaLayer", "autoUv");
+    app.doAction("selectAreaLayer", "tool");
     app.activeDocument.activeLayer.remove();
-    app.doAction("duplicateSelection", "autoUv"); // tạo layer mới từ vùng chọn
+    app.doAction("duplicateSelection", "tool"); // tạo layer mới từ vùng chọn
     app.activeDocument.activeLayer.name = arr[i].stt; // đặt tên cho layer voi stt
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in\
 
     {// tao khung
-        app.doAction("createRectangle10", "autoUv");
+        app.doAction("createRectangle10", "tool");
 
 
         app.activeDocument.activeLayer.resize(Fwphone * 100 / 1113, 100 * Fhphone / 1438, AnchorPosition.MIDDLECENTER);
@@ -59,15 +59,15 @@ for (var i = 0; i < arr.length; i++) {
     }
 
 
-    #include "saveDesign.jsx";
-    saveImageTool(arr[i], "a", "noneCrop");
+    // #include "saveDesign.jsx";
+    // saveImageTool(arr[i], "a", "noneCrop");
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-    app.doAction("moveZero", "autoUv");
+    app.doAction("moveZero", "tool");
     app.activeDocument.activeLayer.translate(xPosition + Math.round(paddingPrintLR / 2), ((yPosition + Math.round(paddingPrintTB / 2))) * (-1));
 
     app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
-    app.doAction("moveZero", "autoUv");
+    app.doAction("moveZero", "tool");
     app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
 
     if (i == arr.length - 1) {
@@ -76,7 +76,7 @@ for (var i = 0; i < arr.length; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         var stt = 0;
-        $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

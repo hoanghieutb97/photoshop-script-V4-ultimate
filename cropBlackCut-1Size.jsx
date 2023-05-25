@@ -1,13 +1,13 @@
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
 app.activeDocument.selection.select([[0, 0], [0, layerHeight / 2], [layerWidth, layerHeight / 2], [layerWidth, 0]]);
-app.doAction("dup selection file black", "fx");
+app.doAction("dup selection file black", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
 activeDocument.activeLayer.resize(-100, undefined); //will flip layer horizontally
 app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
 app.activeDocument.activeLayer.remove();
 app.activeDocument.selection.select([[0, layerHeight / 2], [0, layerHeight], [layerWidth, layerHeight], [layerWidth, layerHeight / 2]])
-app.doAction("dup selection file black", "fx");
+app.doAction("dup selection file black", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
 activeDocument.activeLayer.resize(-100, undefined); //will flip layer horizontally
 app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -15,8 +15,8 @@ app.activeDocument.activeLayer.remove();
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
-app.doAction("moveZero", "autoUv");
-app.doAction("xoa stroke layer", "fx");
+app.doAction("moveZero", "tool");
+app.doAction("xoa stroke layer", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
 var bounds1 = app.activeDocument.activeLayer.bounds;
 var widthden = bounds1[2] - bounds1[0];
@@ -30,8 +30,8 @@ else if (arr[i].direction == "1") {
 
 var bounds1 = app.activeDocument.activeLayer.bounds;
 app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-app.doAction("moveZero", "autoUv");
-app.doAction("xoa stroke layer", "fx");
+app.doAction("moveZero", "tool");
+app.doAction("xoa stroke layer", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
 if (arr[i].direction == "2")
     app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);

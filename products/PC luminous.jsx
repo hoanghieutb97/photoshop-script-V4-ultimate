@@ -11,9 +11,9 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName("SPOTKhung");
             var PSpotKhung = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-            app.doAction("selectArea", "autoUv");
-            app.doAction("Area expan 1", "autoUv");
-            app.doAction("createSPOTWithArea", "autoUv");
+            app.doAction("selectArea", "tool");
+            app.doAction("Area expan 1", "tool");
+            app.doAction("createSPOTWithArea", "tool");
         }
         { // lưu file khung
             app.activeDocument.layerSets.getByName("SPOT").visible = false;
@@ -29,16 +29,16 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
         }
         {// file trang
             app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("CMYK");
-            app.doAction("createSmarkOBJ", "autoUv");
-            app.doAction("selectArea", "autoUv");
-            app.doAction("createSPOTWithArea", "autoUv");
+            app.doAction("createSmarkOBJ", "tool");
+            app.doAction("selectArea", "tool");
+            app.doAction("createSPOTWithArea", "tool");
             app.activeDocument.artLayers.getByName("CMYK").visible = false;
             if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
             app.activeDocument.saveAs(Folder(folderTool + "/white 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
        var  stt = 0;
-        $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 
 }

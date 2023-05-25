@@ -3,10 +3,10 @@
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openCropFile(arr[i], FileDesign, "front");
-    if ((yPosition + boxH + hLast > hAll) && (xPosition + boxW + wLast) > wAll) {
+    if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, "front");
@@ -19,7 +19,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
 
     openCropFile(arr[i], FileDesign, "back");
-    app.doAction("canvasHoriz", "go");
+    app.doAction("canvasHoriz", "tool");
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -36,26 +36,26 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = LaytenKhung(item);
-    app.open(File("//192.168.1.99/ps script data/mica dzt/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.89/ps script data/mica dzt/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
-    app.doAction("canvasHoriz", "go");
-    app.doAction("strokeRed1px", "autoUv");
+    app.doAction("canvasHoriz", "tool");
+    app.doAction("strokeRed1px", "tool");
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";
     app.activeDocument.activeLayer.duplicate(app.documents[tenKhung + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-    app.doAction("moveCenter", "autoUv");
-    app.doAction("crop mica dzt", "autoUv");
+    app.doAction("moveCenter", "tool");
+    app.doAction("crop mica dzt", "tool");
 }
 function layKhung(item) {
     var tenKhung = LaytenKhung(item);
-    app.open(File("//192.168.1.99/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.89/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
 
 }
 function LaytenKhung(item) {

@@ -9,14 +9,14 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
     stt = arr[i].stt;
     openFile(FileDesign, arr[i], type);
     #include "cropAndResize-autoFill.jsx";
-    app.doAction("canvasHoriz", "go");
+    app.doAction("canvasHoriz", "tool");
 
     { // xử lý file in và duplicate sang bàn GLLM
         app.activeDocument.activeLayer.name = arr[i].stt; // đặt tên cho layer voi stt
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
         app.activeDocument.artLayers.add();
         app.activeDocument.artLayers.getByName(arr[i].stt).remove();
-        app.doAction("strokeRed1px", "autoUv");
+        app.doAction("strokeRed1px", "tool");
 
         app.activeDocument.artLayers.add();
         app.activeDocument.activeLayer.kind = LayerKind.TEXT;
@@ -28,7 +28,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
         textColor.rgb.blue = 0;
         app.activeDocument.activeLayer.textItem.color = textColor;
         app.activeDocument.activeLayer.name = "1 copy";
-        app.doAction("moveCenter", "autoUv");
+        app.doAction("moveCenter", "tool");
         app.activeDocument.activeLayer.name = "1 copy 2";
 
 
@@ -39,7 +39,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             app.activeDocument.activeLayer.textItem.size = 40;
             app.activeDocument.activeLayer.textItem.color = textColor;
             app.activeDocument.activeLayer.name = "1 copy";
-            app.doAction("moveCenter", "autoUv");
+            app.doAction("moveCenter", "tool");
             app.activeDocument.activeLayer.translate(0, 300);
             lastName = arr[i].nameId;
         }
@@ -53,10 +53,10 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
 
     { // translate layer đến vị trí cần in
         app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "autoUv");
+        app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(xPosition, yPosition * (-1));
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "autoUv");
+        app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(xPosition, yPosition * (-1));
         if (i > 0) app.activeDocument.activeLayer.merge();
         app.activeDocument.activeLayer.name = "SPOTKhung";
@@ -68,10 +68,10 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
     // lam SPOT2
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + "flash.png"));
-        app.doAction("canvasHoriz", "go");
+        app.doAction("canvasHoriz", "tool");
     } catch (error) { alert("thieu file: skuflash.png") }
 
-    app.doAction("strokeWhite1px", "autoUv");
+    app.doAction("strokeWhite1px", "tool");
 
     #include "cropAndResize-autoFill.jsx";
 
@@ -80,7 +80,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
-    app.doAction("moveZero", "autoUv");
+    app.doAction("moveZero", "tool");
     app.activeDocument.activeLayer.translate(xPosition, yPosition * (-1));
     if (i > 0) app.activeDocument.activeLayer.merge();
     app.activeDocument.activeLayer.name = "SPOTWhite";
@@ -92,9 +92,9 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName("SPOTKhung");
                 var PSpotKhung = app.activeDocument.activeLayer.bounds;
                 app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-                app.doAction("selectArea", "autoUv");
-                app.doAction("Area expan 1", "autoUv");
-                app.doAction("createSPOTWithArea", "autoUv");
+                app.doAction("selectArea", "tool");
+                app.doAction("Area expan 1", "tool");
+                app.doAction("createSPOTWithArea", "tool");
             }
             { // lưu file khung
                 app.activeDocument.layerSets.getByName("KHUNG").visible = false;
@@ -107,14 +107,14 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 app.activeDocument.channels.getByName("1").remove();
                 app.activeDocument.layerSets.getByName("CMYK").visible = true;
                 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("CMYK");
-                app.doAction("createSmarkOBJ", "autoUv");
-                app.doAction("selectArea", "autoUv");
-                app.doAction("createSPOTWithArea", "autoUv");
+                app.doAction("createSmarkOBJ", "tool");
+                app.doAction("selectArea", "tool");
+                app.doAction("createSPOTWithArea", "tool");
                 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("SPOT").artLayers.getByName("SPOTWhite");
-                app.doAction("selectArea", "autoUv");
+                app.doAction("selectArea", "tool");
 
                 app.activeDocument.activeChannels = [app.activeDocument.channels.getByName("1")];
-                app.doAction("fillChannelsLED0", "autoUv");
+                app.doAction("fillChannelsLED0", "tool");
                 showRGBChannel();
 
                 app.activeDocument.channels.getByName("1").visible = true;
@@ -125,7 +125,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             { // lưu file in 2
                 app.activeDocument.channels.getByName("1").remove();
                 app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("CMYK");
-                app.doAction("selectArea", "autoUv");
+                app.doAction("selectArea", "tool");
                 {
                     var bColor = new SolidColor;
                     bColor.cmyk.cyan = 75;
@@ -144,15 +144,15 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 app.activeDocument.artLayers.getByName("CMYK").visible = false;
 
                 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("SPOT").artLayers.getByName("SPOTWhite");
-                app.doAction("selectArea", "autoUv");
+                app.doAction("selectArea", "tool");
                 app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("black");
                 app.activeDocument.selection.fill(wColor);
                 app.activeDocument.selection.deselect();
-                app.doAction("createSPOTWithArea", "autoUv");
+                app.doAction("createSPOTWithArea", "tool");
                 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("SPOT").artLayers.getByName("SPOTWhite");
-                app.doAction("selectArea", "autoUv");
+                app.doAction("selectArea", "tool");
                 app.activeDocument.activeChannels = [app.activeDocument.channels.getByName("1")];
-                app.doAction("fillChannelsLED20", "autoUv");
+                app.doAction("fillChannelsLED20", "tool");
                 app.activeDocument.saveAs(Folder(folderTool + "/in sau 15 trang.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 
 
@@ -161,7 +161,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
         stt = 0;
-        $.evalFile(File("//192.168.1.99/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
 
     }
 }

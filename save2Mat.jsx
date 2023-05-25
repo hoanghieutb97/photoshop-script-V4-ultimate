@@ -1,4 +1,4 @@
-app.doAction("crop document 2 mat", "go");
+app.doAction("crop document key chain", "tool");
 var selectionBounds = app.activeDocument.selection.bounds;;
 var padding = 30;
 var newBounds = [

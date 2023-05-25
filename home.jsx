@@ -256,11 +256,13 @@ button2.onClick = function () {
             try {
                 #include "before.jsx";
 
-                var geo_dynamic = File("//192.168.1.99/photoshop script V4-ultimate/products/" + type + ".jsx");
+                var geo_dynamic = File("//192.168.1.89/photoshop script V4-ultimate/products/" + type + ".jsx");
                 if (fileHong == 0)
                     $.evalFile(geo_dynamic);
                 else alert(fileHong + " : file bi hong !")
-                #include "openFile.jsx";
+                // #include "openFile.jsx";
+                #include "after.jsx";
+
             } catch (error) {
                 alert("home: " + error)
             }
@@ -275,9 +277,9 @@ button2.onClick = function () {
 button3.onClick = function () {
     dialog.hide();
     if (inputBarcode.text != "") {
-        app.open(File("//192.168.1.99/ps script data/tem.tif"));
+        app.open(File("//192.168.1.89/ps script data/tem.tif"));
 
-        var pathObj = File("//192.168.1.99/photoshop script V4-ultimate/label/objBarcode.jsx");
+        var pathObj = File("//192.168.1.89/photoshop script V4-ultimate/label/objBarcode.jsx");
         $.evalFile(pathObj);
         var nameItem = inputBarcode.text.split("");
         // alert(nameItem)`

@@ -1,4 +1,3 @@
-
 if (xPosition + wLast + boxW <= wAll) {
     xPosition = xPosition + wLast;
     wLast = boxW;
@@ -6,7 +5,7 @@ if (xPosition + wLast + boxW <= wAll) {
         hLast = boxH;
 }
 else {
-    xPosition = 0;
+    xPosition = 30;
     yPosition = yPosition + hLast;
     wLast = boxW;
     hLast = boxH;

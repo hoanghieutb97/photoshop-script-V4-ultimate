@@ -6,7 +6,7 @@ app.activeDocument.flipCanvas(Direction.HORIZONTAL);
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
         app.activeDocument.artLayers.add();
         app.activeDocument.artLayers.getByName(arr[i].stt).remove();
-        app.doAction("strokeRed1px", "autoUv");
+        app.doAction("strokeRed1px", "tool");
         app.activeDocument.artLayers.add();
         app.activeDocument.activeLayer.kind = LayerKind.TEXT;
         app.activeDocument.activeLayer.textItem.contents = arr[i].stt;
@@ -17,7 +17,7 @@ app.activeDocument.flipCanvas(Direction.HORIZONTAL);
         textColor.rgb.blue = 0;
         app.activeDocument.activeLayer.textItem.color = textColor;
         app.activeDocument.activeLayer.name = "1 copy";
-        app.doAction("moveCenter", "autoUv");
+        app.doAction("moveCenter", "tool");
         app.activeDocument.activeLayer.name = "1 copy 2";
         if (arr[i].nameId != lastName) {
             app.activeDocument.artLayers.add();
@@ -26,7 +26,7 @@ app.activeDocument.flipCanvas(Direction.HORIZONTAL);
             app.activeDocument.activeLayer.textItem.size = 40;
             app.activeDocument.activeLayer.textItem.color = textColor;
             app.activeDocument.activeLayer.name = "1 copy";
-            app.doAction("moveCenter", "autoUv");
+            app.doAction("moveCenter", "tool");
             app.activeDocument.activeLayer.translate(0, 300);
             lastName = arr[i].nameId;
         }
@@ -38,10 +38,10 @@ app.activeDocument.flipCanvas(Direction.HORIZONTAL);
 
     { // translate layer đến vị trí cần in
         app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "autoUv");
+        app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(xPosition, yPosition * (-1));
         app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "autoUv");
+        app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(xPosition, yPosition * (-1));
         if (i> 0) app.activeDocument.activeLayer.merge();
         app.activeDocument.activeLayer.name = "SPOTKhung";

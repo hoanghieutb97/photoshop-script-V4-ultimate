@@ -1,5 +1,5 @@
 
-app.doAction("crop document normal", "go");
+app.doAction("crop document normal", "tool");
 app.activeDocument.activeLayer = app.activeDocument.artLayers["CMYK copy"];
 var selectionBounds = app.activeDocument.activeLayer.bounds;
 var padding = 30;
