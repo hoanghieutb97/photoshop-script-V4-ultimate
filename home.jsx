@@ -10,8 +10,8 @@ var selectFileJson;
 {
     var dialog = new Window("dialog");
     dialog.text = "photoshop script V4-ultimate..............................................................";
-    dialog.preferredSize.width = 800;
-    dialog.preferredSize.height = 400;
+    dialog.preferredSize.width = 600;
+    dialog.preferredSize.height = 250;
     dialog.orientation = "row";
     dialog.alignChildren = ["left", "top"];
     dialog.spacing = 10;
@@ -19,7 +19,7 @@ var selectFileJson;
 
     #include "image.jsx";
 
-    // GROUP1
+    // group2
     // ======
     var group1 = dialog.add("group", undefined, { name: "group1" });
     group1.preferredSize.width = 250;
@@ -28,11 +28,31 @@ var selectFileJson;
     group1.spacing = 10;
     group1.margins = 0;
 
+
+    $.evalFile(linkFIle = File("//192.168.1.89/photoshop script V4-ultimate/image/utimate.jsx"));
+    var image3 = group1.add("image", undefined, File.decode(image3_imgString), { name: "image3" });
+
+
+    var group2 = dialog.add("group", undefined, { name: "group2" });
+    group2.preferredSize.width = 250;
+    group2.orientation = "column";
+    group2.alignChildren = ["fill", "top"];
+    group2.spacing = 10;
+    group2.margins = 0;
+
+
+
+
+
+
+
+
+
     // PANEL1
     // ======
-    var panel1 = group1.add("panel", undefined, undefined, { name: "panel1" });
+    var panel1 = group2.add("panel", undefined, undefined, { name: "panel1" });
     panel1.text = "Json";
-    panel1.preferredSize.height = 205;
+    panel1.preferredSize.height = 140;
     panel1.orientation = "column";
     panel1.alignChildren = ["left", "top"];
     panel1.spacing = 10;
@@ -72,18 +92,18 @@ var selectFileJson;
 
     // GROUP2
     // ======
-    var group2 = dialog.add("group", undefined, { name: "group2" });
-    group2.preferredSize.width = 200;
-    group2.orientation = "column";
-    group2.alignChildren = ["fill", "top"];
-    group2.spacing = 10;
-    group2.margins = 0;
+    // var group2 = dialog.add("group", undefined, { name: "group2" });
+    // group2.preferredSize.width = 200;
+    // group2.orientation = "column";
+    // group2.alignChildren = ["fill", "top"];
+    // group2.spacing = 10;
+    // group2.margins = 0;
 
     // PANEL3
     // ======
     var panel3 = group2.add("panel", undefined, undefined, { name: "panel3" });
     panel3.text = "Tính năng";
-    panel3.preferredSize.height = 205;
+    panel3.preferredSize.height = 140;
     panel3.orientation = "column";
     panel3.alignChildren = ["left", "top"];
     panel3.spacing = 10;
@@ -126,24 +146,24 @@ var selectFileJson;
 
     // PANEL3
     // ======
-    var divider1 = panel3.add("panel", undefined, undefined, { name: "divider1" });
-    divider1.enabled = false;
-    divider1.alignment = "fill";
+    // var divider1 = panel3.add("panel", undefined, undefined, { name: "divider1" });
+    // divider1.enabled = false;
+    // divider1.alignment = "fill";
 
     // GROUP3
     // ======
-    var group3 = dialog.add("group", undefined, { name: "group3" });
-    group3.preferredSize.width = 200;
-    group3.orientation = "column";
-    group3.alignChildren = ["fill", "top"];
-    group3.spacing = 10;
-    group3.margins = 0;
+    // var group3 = dialog.add("group", undefined, { name: "group3" });
+    // group3.preferredSize.width = 200;
+    // group3.orientation = "column";
+    // group3.alignChildren = ["fill", "top"];
+    // group3.spacing = 10;
+    // group3.margins = 0;
 
     // PANEL6
     // ======
-    var panel6 = group3.add("panel", undefined, undefined, { name: "panel6" });
+    var panel6 = group2.add("panel", undefined, undefined, { name: "panel6" });
     panel6.text = "Tách FIle";
-    panel6.preferredSize.height = 205;
+    panel6.preferredSize.height = 140;
     panel6.orientation = "column";
     panel6.alignChildren = ["left", "top"];
     panel6.spacing = 10;
@@ -200,29 +220,32 @@ var selectFileJson;
 
     // PANEL6
     // ======
-    var divider2 = panel6.add("panel", undefined, undefined, { name: "divider2" });
-    divider2.enabled = false;
-    divider2.alignment = "fill";
+    // var divider2 = panel6.add("panel", undefined, undefined, { name: "divider2" });
+    // divider2.enabled = false;
+    // divider2.alignment = "fill";
 
+    // {// them anh
     // GROUP6
     // ======
-    var group6 = dialog.add("group", undefined, { name: "group6" });
-    group6.preferredSize.width = 200;
-    group6.orientation = "column";
-    group6.alignChildren = ["fill", "top"];
-    group6.spacing = 10;
-    group6.margins = 0;
+    // var group6 = dialog.add("group", undefined, { name: "group6" });
+    // group6.preferredSize.width = 200;
+    // group6.orientation = "column";
+    // group6.alignChildren = ["fill", "top"];
+    // group6.spacing = 10;
+    // group6.margins = 0;
 
     // PANEL8
     // ======
-    var panel8 = group6.add("panel", undefined, undefined, { name: "panel8" });
-    panel8.preferredSize.height = 205;
-    panel8.orientation = "column";
-    panel8.alignChildren = ["left", "top"];
-    panel8.spacing = 10;
-    panel8.margins = 10;
+    // var panel8 = group6.add("panel", undefined, undefined, { name: "panel8" });
+    // panel8.preferredSize.height = 205;
+    // panel8.orientation = "column";
+    // panel8.alignChildren = ["left", "top"];
+    // panel8.spacing = 10;
+    // panel8.margins = 10;
 
-    var image2 = panel8.add("image", undefined, File.decode(image2_imgString), { name: "image2" });
+    // var image2 = panel8.add("image", undefined, File.decode(image2_imgString), { name: "image2" });
+    // }
+
 
 }
 
@@ -360,8 +383,8 @@ button5.onClick = function () {
 
                 app.open(File(customerChildren[i]));
                 if (app.activeDocument.width > app.activeDocument.height) {
-                    var PSpotKhung = app.activeDocument.activeLayer.bounds;
-                    app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
+                    // var PSpotKhung = app.activeDocument.activeLayer.bounds;
+                    // app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
                     var wd = app.activeDocument.width;
                     app.activeDocument.activeLayer.name = "1";
                     app.activeDocument.resizeCanvas(wd / 2, app.activeDocument.height, AnchorPosition.BOTTOMLEFT);
@@ -380,8 +403,8 @@ button5.onClick = function () {
                 }
                 else {
                     // alert(name2)
-                    var PSpotKhung = app.activeDocument.activeLayer.bounds;
-                    app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
+                    // var PSpotKhung = app.activeDocument.activeLayer.bounds;
+                    // app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
                     var wd = app.activeDocument.height;
                     app.activeDocument.activeLayer.name = "1";
                     app.activeDocument.resizeCanvas(app.activeDocument.width, wd / 2, AnchorPosition.TOPLEFT);

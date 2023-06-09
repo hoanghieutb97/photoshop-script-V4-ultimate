@@ -5,7 +5,7 @@
 for (var i = stt; i <= arr.length - 1; i++) {
     var marginItem = 30;
     #include "convertPixel.jsx";
-    openFile(FileDesign, arr[i], "front");
+    openFile(FileDesign, arr[i], "0front");
     #include "cropBlackCut-2Size.jsx";
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
@@ -16,7 +16,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
-        openFile(FileDesign, arr[i], "front");
+        openFile(FileDesign, arr[i], "0front");
         #include "cropBlackCut-2Size.jsx";
         stt = i;
     }
