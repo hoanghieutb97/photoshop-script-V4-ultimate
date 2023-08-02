@@ -7,7 +7,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, type)
@@ -18,6 +18,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "translateCMYK.jsx";
+    if ((i > 0) && (app.activeDocument.layerSets["CMYK"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
+
     openKhung(arr[i]);
     // #include "translateKHUNG.jsx";
     { // translate layer đến vị trí cần in
@@ -27,17 +29,19 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.activeLayer.translate((xPosition + 9), (yPosition + 9) * (-1));
         else
             app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));
+        if ((i > 0) && (app.activeDocument.layerSets["CMYK"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
+
 
     }
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openKhung(item) {
     var tenKhung = checkTenKhung(item);
-    app.open(File("//192.168.1.89/ps script data/oal su/khung " + tenKhung + ".png"));
+    app.open(File("//192.168.1.95/ps script data/oal su/khung " + tenKhung + ".png"));
     app.activeDocument.activeLayer.name = item.stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -53,7 +57,7 @@ function checkTenKhung(item) {
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = checkTenKhung(item);
-    app.open(File("//192.168.1.89/ps script data/oal su/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.95/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";

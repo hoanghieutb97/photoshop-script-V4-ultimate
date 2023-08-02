@@ -29,9 +29,11 @@ var selectFileJson;
     group1.margins = 0;
 
 
-    $.evalFile(linkFIle = File("//192.168.1.89/photoshop script V4-ultimate/image/utimate.jsx"));
+    $.evalFile(linkFIle = File("//192.168.1.95/photoshop script V4-ultimate/image/utimate.jsx"));
     var image3 = group1.add("image", undefined, File.decode(image3_imgString), { name: "image3" });
 
+    var radiobutton1 = group1.add("radiobutton", undefined, undefined, { name: "radiobutton1" });
+    radiobutton1.text = "Không chạy ảnh";
 
     var group2 = dialog.add("group", undefined, { name: "group2" });
     group2.preferredSize.width = 250;
@@ -277,9 +279,10 @@ button2.onClick = function () {
             var fileHong = 0;
 
             try {
-                #include "before.jsx";
+              
+                    #include "before.jsx";
 
-                var geo_dynamic = File("//192.168.1.89/photoshop script V4-ultimate/products/" + type + ".jsx");
+                var geo_dynamic = File("//192.168.1.95/photoshop script V4-ultimate/products/" + type + ".jsx");
                 if (fileHong == 0)
                     $.evalFile(geo_dynamic);
                 else alert(fileHong + " : file bi hong !")
@@ -300,9 +303,9 @@ button2.onClick = function () {
 button3.onClick = function () {
     dialog.hide();
     if (inputBarcode.text != "") {
-        app.open(File("//192.168.1.89/ps script data/tem.tif"));
+        app.open(File("//192.168.1.95/ps script data/tem.tif"));
 
-        var pathObj = File("//192.168.1.89/photoshop script V4-ultimate/label/objBarcode.jsx");
+        var pathObj = File("//192.168.1.95/photoshop script V4-ultimate/label/objBarcode.jsx");
         $.evalFile(pathObj);
         var nameItem = inputBarcode.text.split("");
         // alert(nameItem)`
@@ -395,8 +398,8 @@ button5.onClick = function () {
 
                     name2 = name2.split("%20");
                     name2.pop();
-                    name2.push(" back");
-                    name2 = name2.join("")
+                    name2.push("back");
+                    name2 = name2.join(" ")
 
                     app.activeDocument.saveAs(Folder(Folder_output + "/" + name2 + ".png"), PNGSaveOptions);
 
@@ -414,8 +417,8 @@ button5.onClick = function () {
                     var name2 = tenFile;
                     name2 = name2.split("%20");
                     name2.pop();
-                    name2.push(" back");
-                    name2 = name2.join("")
+                    name2.push("back");
+                    name2 = name2.join(" ")
 
                     app.activeDocument.saveAs(Folder(Folder_output + "/" + name2 + ".png"), PNGSaveOptions);
                 }

@@ -1,9 +1,10 @@
 
 
 function openFile(FileDesign, item, type) {
+   
     if (type == "front") {
         try {
-           
+
             app.open(File(FileDesign + "/" + item.sku + " front.png"));
         } catch (error) {
 
@@ -47,6 +48,7 @@ function openFile(FileDesign, item, type) {
         }
     }
     else {
+        
         try {
             app.open(File(FileDesign + "/" + item.sku + ".png"));
         } catch (error) {

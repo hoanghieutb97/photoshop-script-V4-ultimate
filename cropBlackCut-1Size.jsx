@@ -1,15 +1,18 @@
+if (xoay == undefined) var xoay = 1;
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
 app.activeDocument.selection.select([[0, 0], [0, layerHeight / 2], [layerWidth, layerHeight / 2], [layerWidth, 0]]);
 app.doAction("dup selection file black", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
-activeDocument.activeLayer.resize(-100, undefined); //will flip layer horizontally
+if (xoay != 0)
+    activeDocument.activeLayer.resize(-100, undefined); //will flip layer horizontally
 app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
 app.activeDocument.activeLayer.remove();
 app.activeDocument.selection.select([[0, layerHeight / 2], [0, layerHeight], [layerWidth, layerHeight], [layerWidth, layerHeight / 2]])
 app.doAction("dup selection file black", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
-activeDocument.activeLayer.resize(-100, undefined); //will flip layer horizontally
+if (xoay != 0)
+    activeDocument.activeLayer.resize(-100, undefined); //will flip layer horizontally
 app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
 app.activeDocument.activeLayer.remove();
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

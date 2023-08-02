@@ -1,8 +1,8 @@
 
-app.open(File("//192.168.1.89/ps script data/tem.tif"));
+app.open(File("//192.168.1.95/ps script data/tem.tif"));
 if (i < arr.length - 1)
     for (var j = stt; j < i; j++) {
-        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/moveTem.jsx"));
+        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/moveTem.jsx"));
         moveTem(arr[j], type);
         folderBan = Folder(folderTem + "/b-" + (ban + 1));
         if (!folderBan.exists) { folderBan.create(); }
@@ -10,7 +10,7 @@ if (i < arr.length - 1)
     }
 else if (i == arr.length - 1)
     for (var j = stt; j <= i; j++) {
-        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/moveTem.jsx"));
+        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/moveTem.jsx"));
         moveTem(arr[j], type);
         folderBan = Folder(folderTem + "/b-" + (ban + 1));
         if (!folderBan.exists) { folderBan.create(); }

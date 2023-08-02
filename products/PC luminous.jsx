@@ -38,7 +38,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
        var  stt = 0;
-        $.evalFile(File("//192.168.1.89/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 
 }

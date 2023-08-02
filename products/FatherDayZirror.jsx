@@ -39,7 +39,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
         { /// lam tem
-            app.open(File("//192.168.1.89/ps script data/tem.tif"));
+            app.open(File("//192.168.1.95/ps script data/tem.tif"));
             if (i < arr.length - 1)
                 for (var j = stt; j < i; j++) {
 
@@ -125,7 +125,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
         { /// lam tem
-            app.open(File("//192.168.1.89/ps script data/tem.tif"));
+            app.open(File("//192.168.1.95/ps script data/tem.tif"));
             if (i < arr.length - 1)
                 for (var j = stt; j < i; j++) {
 
@@ -161,7 +161,7 @@ function moveTem(item, type) {
 
     app.activeDocument.artLayers[0].textItem.contents = item.orderId; // thong tin order
 
-    var pathObj = File("//192.168.1.89/photoshop script V4-ultimate/label/objBarcode.jsx");
+    var pathObj = File("//192.168.1.95/photoshop script V4-ultimate/label/objBarcode.jsx");
     $.evalFile(pathObj);
 
     var nameItem = item.barcode.split("");

@@ -1,7 +1,7 @@
 
 function saveImageTool(item, value, crop) {
 
-    var linkServerCheckFile = "//192.168.1.89/img barcode/";
+    var linkServerCheckFile = "//192.168.1.95/img barcode/";
 
     var sfwOptions = new ExportOptionsSaveForWeb();
     sfwOptions.format = SaveDocumentType.JPEG;
