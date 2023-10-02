@@ -8,7 +8,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
@@ -26,10 +26,10 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
     {// tao khung su
         if (arr[i].nameId == "dia nhua to" || arr[i].nameId == "stand-dia nhua to") { // tuy chinh product type
-            app.open(File("//192.168.1.95/ps script data/dia nhua/dia nhua to.png"));
+            app.open(File("//192.168.1.194/ps script data/dia nhua/dia nhua to.png"));
         }
         else if (arr[i].nameId == "dia nhua nho" || arr[i].nameId == "stand-dia nhua nho") {
-            app.open(File("//192.168.1.95/ps script data/dia nhua/dia nhua nho.png"));
+            app.open(File("//192.168.1.194/ps script data/dia nhua/dia nhua nho.png"));
         }
 
         app.activeDocument.activeLayer.name = arr[i].stt;
@@ -40,7 +40,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

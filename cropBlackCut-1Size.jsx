@@ -1,4 +1,5 @@
 if (xoay == undefined) var xoay = 1;
+if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
 app.activeDocument.selection.select([[0, 0], [0, layerHeight / 2], [layerWidth, layerHeight / 2], [layerWidth, 0]]);
@@ -20,6 +21,7 @@ app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
 app.doAction("moveZero", "tool");
 app.doAction("xoa stroke layer", "tool");
+
 app.activeDocument.activeLayer.name = arr[i].stt;
 var bounds1 = app.activeDocument.activeLayer.bounds;
 var widthden = bounds1[2] - bounds1[0];

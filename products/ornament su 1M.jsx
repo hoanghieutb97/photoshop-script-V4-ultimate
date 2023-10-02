@@ -7,7 +7,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, type)
@@ -35,13 +35,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openKhung(item) {
     var tenKhung = checkTenKhung(item);
-    app.open(File("//192.168.1.95/ps script data/oal su/khung " + tenKhung + ".png"));
+    app.open(File("//192.168.1.194/ps script data/oal su/khung " + tenKhung + ".png"));
     app.activeDocument.activeLayer.name = item.stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -52,12 +52,13 @@ function checkTenKhung(item) {
     else if (arr[i].nameId == "O.Ceramic-tron") tenKhung = "tron";
     else if (arr[i].nameId == "O.Ceramic-sao") tenKhung = "sao";
     else if (arr[i].nameId == "O.Ceramic-oval") tenKhung = "oval";
+    else if (arr[i].nameId == "O.Ceramic-meda") tenKhung = "meda";
     return tenKhung
 }
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = checkTenKhung(item);
-    app.open(File("//192.168.1.95/ps script data/oal su/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.194/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";

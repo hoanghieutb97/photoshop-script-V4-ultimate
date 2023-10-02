@@ -32,7 +32,7 @@ for (var i = 0; i < arr.length; i++) {
     if (arr[i].nameId.slice(0, 6) == "note10" || arr[i].nameId.slice(0, 6) == "22plus")
         app.doAction("createRectangle20", "tool");
 
-    else if (arr[i].nameId.slice(0, 8) == "s22ultra")
+    else if (arr[i].nameId.slice(0, 8) == "s22ultra" || arr[i].nameId.slice(0, 8) == "s23ultra")
         app.doAction("createRectangle10", "tool");
     else if (arr[i].nameId.slice(0, 1) == "i")
         app.doAction("createRectangle120", "tool");
@@ -76,7 +76,7 @@ for (var i = 0; i < arr.length; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         var stt = 0;
-        $.evalFile(File("//192.168.1.95/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

@@ -1,4 +1,5 @@
 
+// if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
