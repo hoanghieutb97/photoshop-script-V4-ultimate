@@ -56,6 +56,7 @@ else if (arr[i].direction == "1") {
     if (widthden > heightden) app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / widthden, AnchorPosition.MIDDLECENTER);
     else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 }
+var bounds3 = app.activeDocument.activeLayer.bounds;
 
 app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
 app.doAction("moveZero", "tool");

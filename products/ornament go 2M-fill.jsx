@@ -3,17 +3,21 @@
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], "front");
-    #include "cropAndResize-autoFill.jsx";
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+
+    #include "cropAndResize-autoFill.jsx";
+    #include "boxWFlexible.jsx";
+
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        #include "save1Mat.jsx";
+        #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
-        openFile(FileDesign, arr[i], type);
-        #include "cropAndResize-autoFill.jsx";
+        openFile(FileDesign, arr[i], "front");
         if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+        #include "cropAndResize-autoFill.jsx";
+        #include "boxWFlexible.jsx";
         stt = i;
 
     }
@@ -24,15 +28,16 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
 
     openFile(FileDesign, arr[i], "back");
-    #include "cropAndResize-autoFill.jsx";
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-    #include "caculatorPosition.jsx";
+    #include "cropAndResize-autoFill.jsx";
+
+    app.doAction("canvasHoriz", "tool");
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "translateKHUNG.jsx";
     if (i == arr.length - 1) {
-        #include "save1Mat.jsx";
+        #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }

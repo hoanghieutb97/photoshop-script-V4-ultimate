@@ -5,7 +5,7 @@ var wLast = 0;
 var ban = 0;
 var stt = 0;
 
-var folderContainer = Folder("//192.168.1.199/in/" + type + "-" + FileName);
+var folderContainer = Folder("//192.168.1.240/in/" + type + "-" + FileName);
 if (!folderContainer.exists) { folderContainer.create(); }
 
 var folderTool = Folder(folderContainer + "/file tool");
@@ -13,8 +13,9 @@ if (!folderTool.exists) { folderTool.create(); }
 
 var folderTem = Folder(folderContainer + "/tem");
 if (!folderTem.exists) { folderTem.create(); }
+if (type == "tem normal") radiobutton1.value = true;
+if (radiobutton1.value == true) {
 
-if (radiobutton1.value != true)
     if (type != "PC led")
         for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
 
@@ -71,6 +72,7 @@ if (radiobutton1.value != true)
 
 
         }
+}
 
 
 

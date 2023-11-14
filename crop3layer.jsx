@@ -1,6 +1,8 @@
 
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
+app.activeDocument.resizeImage(UnitValue(layerWidth, "px"), UnitValue(layerHeight, "px"), 300, ResampleMethod.BICUBIC);
+
 if (lop == 0) {
     app.activeDocument.selection.select([[0, 0], [0, layerHeight / 3], [layerWidth, layerHeight / 3], [layerWidth, 0]]);
     app.doAction("duplicateSelection", "tool");

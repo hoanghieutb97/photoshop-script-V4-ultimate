@@ -24,7 +24,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // translate layer đến vị trí cần in
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + 13), (yPosition + 13) * (-1));
+        app.activeDocument.activeLayer.translate((xPosition ), (yPosition ) * (-1));
     }
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";

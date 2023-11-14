@@ -10,7 +10,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.resizeCanvas(1890, 4252, AnchorPosition.TOPCENTER);
 
-    } else if (arr[i].nameId == "20x215") {
+    } else if (arr[i].nameId == "RGB-led-WB-7,87in") {
         app.activeDocument.resizeCanvas(2480, 5315, AnchorPosition.TOPCENTER);
     }
 
@@ -34,7 +34,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
             app.activeDocument.resizeCanvas(1890, 4252, AnchorPosition.TOPCENTER);
 
-        } else if (arr[i].nameId == "20x215") {
+        } else if (arr[i].nameId == "RGB-led-WB-7,87in") {
             app.activeDocument.resizeCanvas(2480, 5315, AnchorPosition.TOPCENTER);
         }
 
@@ -77,7 +77,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.BOTTOMCENTER);
 
-    } else if (arr[i].nameId == "20x215") {
+    } else if (arr[i].nameId == "RGB-led-WB-7,87in") {
         app.activeDocument.resizeCanvas(2480, 484, AnchorPosition.BOTTOMCENTER);
     } else if (arr[i].nameId == "Y-led-WB-5,9in") {
         app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.TOPCENTER);
@@ -104,7 +104,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
             app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.BOTTOMCENTER);
 
-        } else if (arr[i].nameId == "20x215") {
+        } else if (arr[i].nameId == "RGB-led-WB-7,87in") {
             app.activeDocument.resizeCanvas(2480, 484, AnchorPosition.BOTTOMCENTER);
         } else if (arr[i].nameId == "Y-led-WB-5,9in") {
             app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.TOPCENTER);

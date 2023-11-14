@@ -26,7 +26,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if (arr[i].nameId == "lotCoc-tron") { // tuy chinh product type
             app.open(File("//192.168.1.194/ps script data/khung drink coaster/tron.png"));
         }
-        else if (arr[i].nameId == "lotCoc-Vuong") {
+        else if (arr[i].nameId == "lotCoc-Vuong" ||arr[i].nameId == "Ceramic plaque-Vuong") {
             app.open(File("//192.168.1.194/ps script data/khung drink coaster/vuong.png"));
         }
         app.activeDocument.activeLayer.name = arr[i].stt;

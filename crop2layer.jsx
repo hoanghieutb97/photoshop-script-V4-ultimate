@@ -3,6 +3,8 @@ if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rot
 
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
+app.activeDocument.resizeImage(UnitValue(layerWidth, "px"), UnitValue(layerHeight, "px"), 300, ResampleMethod.BICUBIC);
+
 if (lop == 0) {
     app.activeDocument.selection.select([[0, 0], [0, layerHeight / 2], [layerWidth, layerHeight / 2], [layerWidth, 0]]);
     app.doAction("duplicateSelection", "tool");

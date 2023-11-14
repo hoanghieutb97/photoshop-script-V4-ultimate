@@ -1,7 +1,7 @@
 
 
 function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
-    var folder1 = Folder("//192.168.1.199/in/" + type + "-" + FileName + "/con vat");
+    var folder1 = Folder("//192.168.1.240/in/" + type + "-" + FileName + "/con vat");
     if (!folder1.exists) { folder1.create(); }
 
     var yPosition, xPosition, hLast, wLast;
@@ -28,7 +28,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
     var ban = 0;
     var stt = 0;
     var khoangcach = 30;
-    var folderall = Folder("//192.168.1.199/in/" + type + "-" + FileName);
+    var folderall = Folder("//192.168.1.240/in/" + type + "-" + FileName);
     if (!folderall.exists) { folderall.create(); }
     for (var i = 0; i < arr.length; i++) { // tao arr cut
         for (var j = 0; j <= arr[i].length - 1; j++) {
@@ -138,7 +138,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
 
         for (var j = 0; j < arrcut.length; j++) {
             moveTem(arrcut[j], type);
-            var folder2 = Folder("//192.168.1.199/in/" + type + "-" + FileName + "/tem");
+            var folder2 = Folder("//192.168.1.240/in/" + type + "-" + FileName + "/tem");
             if (!folder2.exists) { folder2.create(); }
             app.activeDocument.saveAs(Folder(folder2 + "/" + arrcut[j].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
         }
@@ -206,7 +206,7 @@ function sttkinlytoy(yPosition, xPosition, hLast, wLast, ban, khoangcach, arrcut
         if (start != true) {
 
             if (k == app.documents[arrcut[i].sku + ".psd"].layers.length) {
-                var folder1 = Folder("//192.168.1.199/in/" + type + "-" + FileName + "/con vat");
+                var folder1 = Folder("//192.168.1.240/in/" + type + "-" + FileName + "/con vat");
                 cropin();
 
                 app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);

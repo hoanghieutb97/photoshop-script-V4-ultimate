@@ -47,7 +47,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     else app.doAction("createRectanglePlaque4.5x6in", "tool");
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.doAction("moveZero", "tool");
-    app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
+    app.activeDocument.activeLayer.translate(xPosition + 6, (yPosition + 6) * (-1));
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
 

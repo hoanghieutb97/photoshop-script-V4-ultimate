@@ -48,6 +48,7 @@ function openCropFile(item, FileDesign, type) {
     else if (item.nameId == "Mica-Medalion-to-2M") tenKhung = "medalion to";
     else if (item.nameId == "Mica-Medalion-nho-2M") tenKhung = "medalion nho";
     else if (item.nameId == "MicaDZT-tron-2M") tenKhung = "tron 3in";
+    else if (item.nameId == "mica-Scalop-2M") tenKhung = "scalop";
 
     app.open(File("//192.168.1.194/ps script data/mica dzt/" + tenKhung + ".png"));
 
@@ -71,6 +72,7 @@ function layKhung(item) {
     else if (item.nameId == "Mica-Medalion-to-2M") tenKhung = "medalion to";
     else if (item.nameId == "Mica-Medalion-nho-2M") tenKhung = "medalion nho";
     else if (item.nameId == "MicaDZT-tron-2M") tenKhung = "tron 3in";
+    else if (item.nameId == "mica-Scalop-2M") tenKhung = "scalop";
     app.open(File("//192.168.1.194/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
 
 }

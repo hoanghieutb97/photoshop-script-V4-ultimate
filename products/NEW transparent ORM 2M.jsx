@@ -12,7 +12,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt).remove();
 
-        #include "save1Mat.jsx";
+        #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
@@ -25,18 +25,18 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // translate khung
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        app.activeDocument.activeLayer.translate((xPosition + bounds3[0] - bounds1[0]), (yPosition + bounds1[3] - bounds3[3]) * (-1));
     }
     { // translate khung
         app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
     }
-    #include "xoaExpand1px.jsx";
+    // #include "xoaExpand1px.jsx";
 
     if (i == arr.length - 1) {
 
-        #include "save1Mat.jsx";
+        #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }

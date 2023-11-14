@@ -282,6 +282,7 @@ button2.onClick = function () {
               
                     #include "before.jsx";
 
+                    // alert("1vvv11")
                 var geo_dynamic = File("//192.168.1.194/photoshop script V4-ultimate/products/" + type + ".jsx");
                 if (fileHong == 0)
                     $.evalFile(geo_dynamic);

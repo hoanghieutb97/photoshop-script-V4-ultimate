@@ -1,5 +1,6 @@
 #include "createDocument.jsx";
-for (var i = stt; i <= arr.length - 1; i++) {
+ban =9;
+for (var i = 960; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
     openFile(FileDesign, arr[i], type);

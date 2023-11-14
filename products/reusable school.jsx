@@ -428,7 +428,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         alert("ko mo duoc file stt; " + arr[i].stt)
     }
 
-    app.activeDocument.saveAs(Folder("//192.168.1.199/inVN/psd/" + arr[i].barcode + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder("//192.168.1.240/inVN/psd/" + arr[i].barcode + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }

@@ -27,8 +27,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("moveZero", "tool");
         if (arr[i].nameId == "O.Ceramic-tron")
             app.activeDocument.activeLayer.translate((xPosition + 9), (yPosition + 9) * (-1));
-        else
-            app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));
+        else if (arr[i].nameId == "O.Ceramic-ao")
+            app.activeDocument.activeLayer.translate((xPosition + 18), (yPosition + 18) * (-1));
+        else app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));
         if ((i > 0) && (app.activeDocument.layerSets["CMYK"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
 
 
@@ -53,6 +54,7 @@ function checkTenKhung(item) {
     else if (arr[i].nameId == "O.Ceramic-sao") tenKhung = "sao";
     else if (arr[i].nameId == "O.Ceramic-oval") tenKhung = "oval";
     else if (arr[i].nameId == "O.Ceramic-meda") tenKhung = "meda";
+    else if (arr[i].nameId == "O.Ceramic-ao") tenKhung = "ao";
     return tenKhung
 }
 
@@ -60,6 +62,8 @@ function openCropFile(item, FileDesign, type) {
     var tenKhung = checkTenKhung(item);
     app.open(File("//192.168.1.194/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
+    app.doAction("LayerToBackgroundWhite", "tool");
+
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";
     app.activeDocument.activeLayer.duplicate(app.documents[tenKhung + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
