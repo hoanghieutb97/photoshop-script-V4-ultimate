@@ -23,6 +23,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.activeLayer.merge();
     
     if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+    app.doAction("Jpan coarted color", "tool");
+
+    
     app.activeDocument.saveAs(Folder(folderContainer + "/" + arr[i].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     if (i == arr.length - 1) {

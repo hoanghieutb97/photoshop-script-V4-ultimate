@@ -26,6 +26,12 @@ app.activeDocument.activeLayer.name = arr[i].stt;
 var bounds1 = app.activeDocument.activeLayer.bounds;
 var widthden = bounds1[2] - bounds1[0];
 var heightden = bounds1[3] - bounds1[1];
+// if (widthden > heightden) {
+//     app.activeDocument.activeLayer.rotate(90);
+//     heightden = bounds1[2] - bounds1[0];
+//     widthden = bounds1[3] - bounds1[1];
+// }
+
 if (arr[i].direction == "2")
     app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 else if (arr[i].direction == "1") {
@@ -46,4 +52,4 @@ else if (arr[i].direction == "1") {
 }
 var bounds2 = app.activeDocument.activeLayer.bounds;
 var boxW = bounds1[2] - bounds1[0] + 30;
-var boxH = bounds1[3] - bounds1[1] + 30;
+var boxH = bounds1[3] - bounds1[1] + 30; 

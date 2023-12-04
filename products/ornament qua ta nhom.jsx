@@ -24,11 +24,20 @@ for (var i = stt; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], "back");
     app.doAction("crop ta dzt", "tool");
     #include "cropAndResize-autoFill.jsx";
-    
+
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "translateKHUNG.jsx";
+
+
+
+    app.open(File("//192.168.1.194/ps script data/phoi dls/khung nhom/ta.png"));
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    #include "translateSPOT.jsx";
+
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));

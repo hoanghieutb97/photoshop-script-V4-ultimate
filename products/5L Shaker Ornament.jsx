@@ -61,11 +61,16 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
         var bounds2 = app.activeDocument.activeLayer.bounds;
-        app.activeDocument.activeLayer.name = arr[i].stt;
 
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+
+        if ((bounds2[2] - bounds2[0]) != 0) {
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        }
+        else app.activeDocument.activeLayer.remove();
+
 
     }
 
@@ -130,11 +135,14 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
         var bounds2 = app.activeDocument.activeLayer.bounds;
+        if ((bounds2[2] - bounds2[0]) != 0) {
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        }
+        else app.activeDocument.activeLayer.remove();
 
-        app.activeDocument.activeLayer.name = arr[i].stt;
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
 
     }
 
@@ -309,6 +317,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
+        app.activeDocument.activeLayer.name = arr[i].stt;
+
         var bounds1 = app.activeDocument.activeLayer.bounds;
         var boxW = bounds1[2] - bounds1[0] + 30;
         var boxH = bounds1[3] - bounds1[1] + 30;
@@ -356,12 +366,18 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
-        var bounds2 = app.activeDocument.activeLayer.bounds;
         app.activeDocument.activeLayer.name = arr[i].stt;
 
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        var bounds2 = app.activeDocument.activeLayer.bounds;
+
+
+        if ((bounds2[2] - bounds2[0]) != 0) {
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        }
+        else app.activeDocument.activeLayer.remove();
 
     }
 
@@ -378,12 +394,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
-        var bounds2 = app.activeDocument.activeLayer.bounds;
-        app.activeDocument.activeLayer.name = arr[i].stt;
 
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        var bounds2 = app.activeDocument.activeLayer.bounds;
+        if ((bounds2[2] - bounds2[0]) != 0) {
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt);
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        }
+        else app.activeDocument.activeLayer.remove();
 
     }
 
@@ -468,10 +487,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 }
 
 
-for (var i = stt; i <= arr.length - 1; i++) {
 
-
-}
 function cropBoxIn8(box, widthF, heightF) {
     if (box == 1) app.activeDocument.selection.select([[0, 0], [0, heightF / 2], [widthF / 6, heightF / 2], [widthF / 6, 0]]);
     if (box == 2) app.activeDocument.selection.select([[widthF / 6, 0], [widthF / 6, heightF / 2], [2 * widthF / 6, heightF / 2], [2 * widthF / 6, 0]]);

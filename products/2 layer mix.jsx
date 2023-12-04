@@ -1,5 +1,5 @@
-wAll=14173;
-hAll=9449;
+wAll = 14173;
+hAll = 9449;
 app.documents.add(wAll, hAll, 300, "GLLM");
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "CMYK";
@@ -14,9 +14,39 @@ wLast = 0;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
+    var widthden = 0;
+    var heightden = 0;
+    openFile(FileDesign, arr[i], type);
+    cropBoxIn8(3, app.activeDocument.width, app.activeDocument.height);
+
+    app.doAction("xoa stroke layer", "tool");
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    var bounds3 = app.activeDocument.activeLayer.bounds;
+    var widthden3 = bounds3[2] - bounds3[0];
+    var heightden3 = bounds3[3] - bounds3[1];
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+    openFile(FileDesign, arr[i], type);
+    cropBoxIn8(1, app.activeDocument.width, app.activeDocument.height);
+
+    app.doAction("xoa stroke layer", "tool");
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    var bounds1c = app.activeDocument.activeLayer.bounds;
+    var widthden1 = bounds1c[2] - bounds1c[0];
+    var heightden1 = bounds1c[3] - bounds1c[1];
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    if ((widthden1 > widthden3) || heightden1 > heightden3) {
+        widthden = widthden1;
+        heightden = heightden1;
+    }
+    else {
+        widthden = widthden3;
+        heightden = heightden3;
+    }
 
 
-    { // lop 1
+
+    { // lop 3
         var lop = 3;
         openFile(FileDesign, arr[i], type);
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
@@ -28,9 +58,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("xoa stroke layer", "tool");
         app.activeDocument.activeLayer.name = arr[i].stt;
 
-        var bounds1 = app.activeDocument.activeLayer.bounds;
-        var widthden = bounds1[2] - bounds1[0];
-        var heightden = bounds1[3] - bounds1[1];
         if (arr[i].direction == "2")
             app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
         else if (arr[i].direction == "1") {
@@ -46,7 +73,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
             #include "cropDocumentAll.jsx";
             app.activeDocument.saveAs(Folder(folderTool + "/lop duoi- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES); 
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocument.jsx";
             ban = ban + 1;
@@ -85,7 +112,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     }
 
-    {// lop 5
+    {// lop 4
         var lop = 4;
         openFile(FileDesign, arr[i], type);
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
@@ -108,10 +135,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         var bounds2 = app.activeDocument.activeLayer.bounds;
 
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "tool");
-
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        if ((bounds2[2] - bounds2[0]) != 0) {
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        }
+        else app.activeDocument.activeLayer.remove();
 
 
 
@@ -132,8 +162,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 var stt = 0;
 ban = 0;
-wAll=10748;
-hAll=10748;
+wAll = 10748;
+hAll = 10748;
 app.documents.add(wAll, hAll, 300, "GLLM");
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "CMYK";
@@ -148,22 +178,41 @@ wLast = 0;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
+
+    var widthden = 0;
+    var heightden = 0;
     openFile(FileDesign, arr[i], type);
     cropBoxIn8(3, app.activeDocument.width, app.activeDocument.height);
 
     app.doAction("xoa stroke layer", "tool");
-    app.activeDocument.activeLayer.name=arr[i].stt;
-    var bounds1111 = app.activeDocument.activeLayer.bounds;
-    var widthden = bounds1111[2] - bounds1111[0];
-    var heightden = bounds1111[3] - bounds1111[1];
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    var bounds3 = app.activeDocument.activeLayer.bounds;
+    var widthden3 = bounds3[2] - bounds3[0];
+    var heightden3 = bounds3[3] - bounds3[1];
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
+    openFile(FileDesign, arr[i], type);
+    cropBoxIn8(1, app.activeDocument.width, app.activeDocument.height);
+
+    app.doAction("xoa stroke layer", "tool");
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    var bounds1c = app.activeDocument.activeLayer.bounds;
+    var widthden1 = bounds1c[2] - bounds1c[0];
+    var heightden1 = bounds1c[3] - bounds1c[1];
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    if ((widthden1 > widthden3) || heightden1 > heightden3) {
+        widthden = widthden1;
+        heightden = heightden1;
+    }
+    else {
+        widthden = widthden3;
+        heightden = heightden3;
+    }
 
 
 
 
-
-    { // lop 3
+    { // lop 1
         var lop = 1;
         openFile(FileDesign, arr[i], type);
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
@@ -221,7 +270,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 
 
-    { // lop 6
+    { // lop 2
         var lop = 2;
         openFile(FileDesign, arr[i], type);
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
@@ -240,10 +289,14 @@ for (var i = stt; i <= arr.length - 1; i++) {
             else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
         }
         var bounds2 = app.activeDocument.activeLayer.bounds;
+        if ((bounds2[2] - bounds2[0]) != 0) {
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+        }
+        else app.activeDocument.activeLayer.remove();
 
-        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-        app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
 
     }
 
@@ -251,7 +304,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
 
- 
+
 
     if ((i == arr.length - 1) & (lop == 2)) {
         #include "cropDocumentAll.jsx";
