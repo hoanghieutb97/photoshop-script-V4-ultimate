@@ -12,6 +12,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
     if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+    app.doAction("Jpan coarted color", "tool");
+
     app.activeDocument.saveAs(Folder(folderContainer + "/" + arr[i].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 

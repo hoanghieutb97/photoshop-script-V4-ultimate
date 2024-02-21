@@ -2,12 +2,29 @@
 #include "createDocument.jsx";
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
-// alert("2", boxW)
+    // alert("2", boxW)
 
     openCropFile(arr[i], FileDesign, type);
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        #include "save1Mat.jsx";
+        {
+            app.doAction("crop document all", "tool");
+
+            var selectionBounds = app.activeDocument.activeLayer.bounds;
+            var padding = 0;
+            var newBounds = [
+                selectionBounds[0] - padding,
+                selectionBounds[1] - padding,
+                selectionBounds[2] + padding,
+                selectionBounds[3] + padding
+            ];
+            app.activeDocument.crop(newBounds);
+            app.activeDocument.activeLayer.remove();
+            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+
+            app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        }
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
@@ -28,7 +45,24 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "translateKHUNG.jsx";
     if (i == arr.length - 1) {
-        #include "save1Mat.jsx";
+        {
+            app.doAction("crop document all", "tool");
+
+            var selectionBounds = app.activeDocument.activeLayer.bounds;
+            var padding = 0;
+            var newBounds = [
+                selectionBounds[0] - padding,
+                selectionBounds[1] - padding,
+                selectionBounds[2] + padding,
+                selectionBounds[3] + padding
+            ];
+            app.activeDocument.crop(newBounds);
+            app.activeDocument.activeLayer.remove();
+            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+
+            app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        }
         $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
     }
 }

@@ -3,7 +3,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
     openFile(FileDesign, arr[i], type);
-
+    if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90)
     app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
 
     ///////////////////////////////////////
@@ -37,22 +37,20 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var heightden1new = bounds1new[3] - bounds1new[1];
 
         var bounds1b = app.activeDocument.layers[1 + "b"].bounds;
-        var widthdenb = bounds1b[2] - bounds1b[0];
-        var heightdenb = bounds1b[3] - bounds1b[1];
-        app.activeDocument.layers[1 + "b"].resize(widthden1new * 100 / widthdenb, heightden1new * 100 / heightdenb, AnchorPosition.MIDDLECENTER);
-
+        if (widthdena > heightdena) app.activeDocument.layers[1 + "b"].resize(wphone * 100 / widthdena, hphone * 100 / widthdena, AnchorPosition.MIDDLECENTER);
+        else app.activeDocument.layers[1 + "b"].resize(wphone * 100 / heightdena, hphone * 100 / heightdena, AnchorPosition.MIDDLECENTER);
 
         app.activeDocument.activeLayer = app.activeDocument.layers["1a"]
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
-        app.activeDocument.activeLayer.duplicate();
-        app.activeDocument.activeLayer = app.activeDocument.layers["1b copy"];
-        app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.move(app.activeDocument, ElementPlacement.PLACEATBEGINNING);
-        app.doAction("xoa constract 3px", "tool")
-        app.activeDocument.activeLayer.merge();
-        app.activeDocument.activeLayer.name = "1a";
-        app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
+        // app.activeDocument.activeLayer.duplicate();
+        // app.activeDocument.activeLayer = app.activeDocument.layers["1b copy"];
+        // app.doAction("moveZero", "tool");
+        // app.activeDocument.activeLayer.move(app.activeDocument, ElementPlacement.PLACEATBEGINNING);
+        // app.doAction("xoa constract 3px", "tool")
+        // app.activeDocument.activeLayer.merge();
+        // app.activeDocument.activeLayer.name = "1a";
+        // app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
         app.doAction("moveZero", "tool");
 
 
@@ -118,6 +116,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "createDocument.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
+        if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90)
         app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
         stt = i;
 

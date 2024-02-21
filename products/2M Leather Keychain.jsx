@@ -5,7 +5,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     openFile(FileDesign, arr[i], type);
     app.activeDocument.activeLayer.name="1";
-    cropBoxIn(2, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
+    cropBoxIn(3, 1, 3, 1, app.activeDocument.width, app.activeDocument.height);
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
     #include "cropAndResize-boxW.jsx";
 
@@ -19,7 +19,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
         app.activeDocument.activeLayer.name="1";
-        cropBoxIn(2, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
+        cropBoxIn(3, 1, 3, 1, app.activeDocument.width, app.activeDocument.height);
         if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
         #include "cropAndResize-boxW.jsx";
 
@@ -39,10 +39,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 }
 
 
-
 var folderKhac = Folder(folderContainer + "/khac");
 if (!folderKhac.exists) { folderKhac.create(); }
-
 for (var i = stt; i <= arr.length - 1; i++) {
     var nameXX = arr[i].nameId;
     nameXX = nameXX.split("-")[0]
@@ -51,48 +49,62 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     openFile(FileDesign, arr[i], type);
     app.activeDocument.activeLayer.name="1";
-    cropBoxKhac(1, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
+    cropBoxKhac(1, 1, 3, 1, app.activeDocument.width, app.activeDocument.height);
     var PSpotKhung = app.activeDocument.activeLayer.bounds;
     app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-
-    {
-        var activeDocument = app.activeDocument;
-        var aspectRatio = activeDocument.width / activeDocument.height;
-        var newWidth, newHeight;
-        var minWidth = 236;
-        var minHeight = 354
-
-        if (app.activeDocument.width < minWidth && app.activeDocument.height < minHeight) {
-
-            if (aspectRatio > 1) {
-                newWidth = minWidth;
-                newHeight = minWidth / aspectRatio;
-            } else {
-                newWidth = minHeight * aspectRatio;
-                newHeight = minHeight;
-            }
-
-            activeDocument.resizeImage(newWidth, newHeight);
-        }
-
-
-
-    }
-
+    cropkhacda();
     app.doAction("overlayblack", "tool");
+
     app.doAction("khac moca khoa da", "tool");
     app.activeDocument.rotateCanvas(180);
-    // alert(folderKhac + "/" + arr[i].stt + "-ngoai-" + nameXX + ".jpg")
     app.activeDocument.saveAs(Folder(folderKhac + "/" + arr[i].stt + "-ngoai-" + nameXX + ".png"), PNGSaveOptions);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
+    openFile(FileDesign, arr[i], type);
+    app.activeDocument.activeLayer.name="1";
+    cropBoxKhac(2, 1, 3, 1, app.activeDocument.width, app.activeDocument.height);
+    var PSpotKhung = app.activeDocument.activeLayer.bounds;
+    app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
+    cropkhacda();
+    app.doAction("overlayblack", "tool");
 
+    app.doAction("khac moca khoa da", "tool");
+
+    app.activeDocument.saveAs(Folder(folderKhac + "/" + arr[i].stt + "-trong-" + nameXX + ".png"), PNGSaveOptions);
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 
 }
 
 
+function cropkhacda() {
+    var activeDocument = app.activeDocument;
+    var aspectRatio = activeDocument.width / activeDocument.height;
+    var newWidth, newHeight;
+    var minWidth = 236;
+    var minHeight = 354
 
+    if (app.activeDocument.width < minWidth && app.activeDocument.height < minHeight) {
+        // alert(true);
+        if (aspectRatio > 1) {
+            newWidth = minWidth;
+            newHeight = minWidth / aspectRatio;
+        } else if (app.activeDocument.height < 295) {
+            newWidth = 295 * aspectRatio;
+            newHeight = 295;
+        }
+        else {
+            newWidth = app.activeDocument.width;
+            newHeight = app.activeDocument.height;
+
+        }
+
+        activeDocument.resizeImage(newWidth, newHeight);
+    }
+
+
+
+}
 
 function cropBoxIn(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
@@ -115,15 +127,26 @@ function cropBoxIn(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
 
 function cropBoxKhac(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
-    // alert((boxX) * (widthF / boxSumX), (boxX) * (widthF / boxSumX) - 12)
-    app.activeDocument.selection.select([
-        [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
-        [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
-        [(boxX) * (widthF / boxSumX) - 9, (boxY) * (heightF / boxSumY)],
-        [(boxX) * (widthF / boxSumX) - 9, (boxY - 1) * (heightF / boxSumY)],
 
-    ]);
+    if (boxX == 2) {
+        // alert((boxX) * (widthF / boxSumX), (boxX) * (widthF / boxSumX) - 12)
 
+        app.activeDocument.selection.select([
+            [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+            [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+            [(boxX) * (widthF / boxSumX) - 9, (boxY) * (heightF / boxSumY)],
+            [(boxX) * (widthF / boxSumX) - 9, (boxY - 1) * (heightF / boxSumY)],
+
+        ]);
+    }
+    else
+        app.activeDocument.selection.select([
+            [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+            [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+            [(boxX) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+            [(boxX) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+
+        ]);
 
 
 

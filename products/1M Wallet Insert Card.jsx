@@ -35,10 +35,10 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.artLayers.add();
         app.activeDocument.activeLayer.move(app.activeDocument.layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);
         app.activeDocument.activeLayer.kind = LayerKind.TEXT;
-        var loai = arr[i].variant;
-        loai = loai.split("/")
-        app.activeDocument.activeLayer.textItem.contents = loai[loai.length - 1];
-        app.activeDocument.activeLayer.textItem.size = 40;
+        var loai = arr[i].nameId;
+        loai = loai.split("-")
+        app.activeDocument.activeLayer.textItem.contents = loai[0];
+        app.activeDocument.activeLayer.textItem.size = 25;
         app.activeDocument.activeLayer.textItem.color = textColor;
 
 
