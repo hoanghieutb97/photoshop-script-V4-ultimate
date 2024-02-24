@@ -41,7 +41,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        //$.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -108,7 +108,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
         #include "save1Mat.jsx";
-        //$.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -174,7 +174,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + "go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        //$.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -261,7 +261,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         // #include "xoaExpand12px.jsx";
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + "go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        //$.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -325,7 +325,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + "mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -413,7 +413,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         // #include "xoaExpand12px.jsx";
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + "mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

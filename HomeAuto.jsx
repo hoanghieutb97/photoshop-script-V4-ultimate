@@ -56,7 +56,7 @@ try {
         #include "saveDesign.jsx";
 
     }
-    var geo_dynamic = File("//192.168.1.194/photoshop script V4-ultimate/products/" + type + ".jsx");
+    var geo_dynamic = File("//192.168.1.194/photoshop-script-V4-ultimate/products/" + type + ".jsx");
     if (fileHong == 0)
         $.evalFile(geo_dynamic);
 

@@ -23,7 +23,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 #include "cropDocumentAll.jsx";
                 app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-                $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocument.jsx";
                 ban = ban + 1;
                 var lop = 1;
@@ -100,7 +100,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-                $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocument.jsx";
                 ban = ban + 1;
                 var lop = 4;
@@ -155,7 +155,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-            $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+            $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
         }
     }
     else if (arr[i].nameId = "5L-CM-ornament") {
@@ -181,7 +181,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 #include "cropDocumentAll.jsx";
                 app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-                $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocument.jsx";
                 ban = ban + 1;
                 var lop = 1;
@@ -253,7 +253,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
                 #include "cropDocumentAll.jsx";
                 app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-                $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
                 #include "createDocument.jsx";
@@ -309,7 +309,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-            $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+            $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
         }
     }
 }

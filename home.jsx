@@ -9,7 +9,7 @@ var selectFileJson;
 // ======
 {
     var dialog = new Window("dialog");
-    dialog.text = "photoshop script V4-ultimate..............................................................";
+    dialog.text = "photoshop-script-V4-ultimate..............................................................";
     dialog.preferredSize.width = 600;
     dialog.preferredSize.height = 250;
     dialog.orientation = "row";
@@ -29,7 +29,7 @@ var selectFileJson;
     group1.margins = 0;
 
 
-    $.evalFile(linkFIle = File("//192.168.1.194/photoshop script V4-ultimate/image/utimate.jsx"));
+    $.evalFile(linkFIle = File("//192.168.1.194/photoshop-script-V4-ultimate/image/utimate.jsx"));
     var image3 = group1.add("image", undefined, File.decode(image3_imgString), { name: "image3" });
 
     var radiobutton1 = group1.add("radiobutton", undefined, undefined, { name: "radiobutton1" });
@@ -283,7 +283,7 @@ button2.onClick = function () {
                     #include "before.jsx";
 
                     // alert("1vvv11")
-                var geo_dynamic = File("//192.168.1.194/photoshop script V4-ultimate/products/" + type + ".jsx");
+                var geo_dynamic = File("//192.168.1.194/photoshop-script-V4-ultimate/products/" + type + ".jsx");
                 if (fileHong == 0)
                     $.evalFile(geo_dynamic);
                 else alert(fileHong + " : file bi hong !")
@@ -306,7 +306,7 @@ button3.onClick = function () {
     if (inputBarcode.text != "") {
         app.open(File("//192.168.1.194/ps script data/tem.tif"));
 
-        var pathObj = File("//192.168.1.194/photoshop script V4-ultimate/label/objBarcode.jsx");
+        var pathObj = File("//192.168.1.194/photoshop-script-V4-ultimate/label/objBarcode.jsx");
         $.evalFile(pathObj);
         var nameItem = inputBarcode.text.split("");
         // alert(nameItem)`

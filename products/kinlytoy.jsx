@@ -227,5 +227,5 @@ function cropin() {
     app.activeDocument.resizeCanvas(app.activeDocument.width + 30, app.activeDocument.height + 30, AnchorPosition.MIDDLECENTER);
 }
 
-var pathmoveTemm = File("//192.168.1.194/photoshop script V4-ultimate/label/moveTem.jsx");
+var pathmoveTemm = File("//192.168.1.194/photoshop-script-V4-ultimate/label/moveTem.jsx");
 $.evalFile(pathmoveTemm);

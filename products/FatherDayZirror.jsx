@@ -161,7 +161,7 @@ function moveTem(item, type) {
 
     app.activeDocument.artLayers[0].textItem.contents = item.orderId; // thong tin order
 
-    var pathObj = File("//192.168.1.194/photoshop script V4-ultimate/label/objBarcode.jsx");
+    var pathObj = File("//192.168.1.194/photoshop-script-V4-ultimate/label/objBarcode.jsx");
     $.evalFile(pathObj);
 
     var nameItem = item.barcode.split("");

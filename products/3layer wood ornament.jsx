@@ -17,7 +17,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
         #include "saveallcrop.jsx";
-        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -37,7 +37,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         #include "saveallcrop.jsx";
-        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -57,7 +57,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt).remove();
         #include "saveallcrop.jsx";
-        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -75,7 +75,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((i == arr.length - 1) & (lop == 3)) {
 
         #include "saveallcrop.jsx";
-        $.evalFile(File("//192.168.1.194/photoshop script V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
