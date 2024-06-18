@@ -1,4 +1,4 @@
-////////////////////////////////////
+////////////////////////////////////  
 #include "createDocument.jsx";
 var textColor = new SolidColor;
 textColor.rgb.red = 255;
@@ -6,11 +6,11 @@ textColor.rgb.green = 0;
 textColor.rgb.blue = 0;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
-    openFile(FileDesign, arr[i], "front");
-    app.doAction("strokeRed1px", "tool");
+    openFile(FileDesign, arr[i], "");
+    cropBoxIn(1, 1, 1, 2, app.activeDocument.width, app.activeDocument.height);
 
-    if (app.activeDocument.width > app.activeDocument.height)
-        app.activeDocument.rotateCanvas(90);
+
+    app.activeDocument.rotateCanvas(90);
     #include "cropAndResize-autoFill.jsx";
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -29,11 +29,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "translateCMYK.jsx";
 
-
-    openFile(FileDesign, arr[i], "back");
-    app.doAction("strokeRed1px", "tool");
-    if (app.activeDocument.width > app.activeDocument.height)
-        app.activeDocument.rotateCanvas(90);
+    openFile(FileDesign, arr[i], "");
+    cropBoxIn(1, 2, 1, 2, app.activeDocument.width, app.activeDocument.height);
+    app.activeDocument.rotateCanvas(90);
 
     #include "cropAndResize-autoFill.jsx";
 
@@ -74,3 +72,23 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 }
 
+function cropBoxIn(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
+
+    app.activeDocument.selection.select([
+        [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+        [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+        [(boxX) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+        [(boxX) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+
+    ]);
+
+
+
+
+
+    app.activeDocument.selection.stroke(app.foregroundColor, 1, StrokeLocation.INSIDE);
+    app.doAction("duplicateSelection", "tool")
+    app.activeDocument.layers[1].remove();
+    var PSpotKhung = app.activeDocument.activeLayer.bounds;
+    app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
+}

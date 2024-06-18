@@ -20,7 +20,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
     app.activeDocument.activeLayer.name = "SPOT";
 
 
-    // alert(hAll)
+    
     var yPosition = 0;
     var xPosition = 0;
     var hLast = 0;

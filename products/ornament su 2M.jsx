@@ -1,7 +1,7 @@
 //////////////////////////////////
 #include "createDocument.jsx";
 app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "KHUNG2";
+app.activeDocument.activeLayer.name = "KHUNG2"; 
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openCropFile(arr[i], FileDesign, "front")
@@ -35,7 +35,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         if (arr[i].nameId == "O.Ceramic-tron-2M")
-            app.activeDocument.activeLayer.translate((xPosition + 9), (yPosition + 9) * (-1));
+            app.activeDocument.activeLayer.translate((xPosition + 15), (yPosition + 15) * (-1));
         else if (arr[i].nameId == "O.Ceramic-ao-2M")
             app.activeDocument.activeLayer.translate((xPosition + 18), (yPosition + 18) * (-1));
         else
@@ -49,7 +49,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG2"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         if (arr[i].nameId == "O.Ceramic-tron-2M")
-            app.activeDocument.activeLayer.translate((xPosition + 9), (yPosition + 9) * (-1));
+            app.activeDocument.activeLayer.translate((xPosition + 15), (yPosition + 15) * (-1));
         else if (arr[i].nameId == "O.Ceramic-ao-2M")
             app.activeDocument.activeLayer.translate((xPosition + 18), (yPosition + 18) * (-1));
         else

@@ -45,7 +45,7 @@ function saveImageTool(item, value, crop) {
             activeDocument.exportDocument(Folder(linkServerCheckFile + dateitem[0] + "/" + dateitem[1] + "/" + item.barcode + ".jpg"), ExportType.SAVEFORWEB, sfwOptions);
 
     } catch (error) {
-        alert("loi luu anh barcode !");
+        
 
     }
 

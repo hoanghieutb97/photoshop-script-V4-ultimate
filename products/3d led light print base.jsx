@@ -14,7 +14,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.resizeCanvas(2480, 5315, AnchorPosition.TOPCENTER);
     }
 
-    else if (arr[i].nameId == "Y-led-WB-5,9in") {
+    else if (arr[i].nameId == "Y-led-WB-5,9in"|| arr[i].nameId == "RGB-led-WB-5,9in" ) {
         app.activeDocument.resizeCanvas(1890, 3780, AnchorPosition.TOPCENTER);
     }
     #include "cropBlackCut-1Size.jsx";
@@ -38,7 +38,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.resizeCanvas(2480, 5315, AnchorPosition.TOPCENTER);
         }
 
-        else if (arr[i].nameId == "Y-led-WB-5,9in") {
+        else if (arr[i].nameId == "Y-led-WB-5,9in"|| arr[i].nameId == "RGB-led-WB-5,9in" ) {
             app.activeDocument.resizeCanvas(1890, 3780, AnchorPosition.TOPCENTER);
         }
         #include "cropBlackCut-1Size.jsx";
@@ -51,7 +51,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
     }
-    #include "xoaExpand12px.jsx";
+    // #include "xoaExpand12px.jsx";
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
         $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -79,12 +79,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     } else if (arr[i].nameId == "RGB-led-WB-7,87in" || arr[i].nameId == "Y-led-WB-7,87in" || arr[i].nameId == "RGB-led-OB-7,87" || arr[i].nameId == "RGB-led-OB-7,87in" || arr[i].nameId == "Y-oval-7,87") {
         app.activeDocument.resizeCanvas(2480, 484, AnchorPosition.BOTTOMCENTER);
-    } else if (arr[i].nameId == "Y-led-WB-5,9in") {
-        app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.TOPCENTER);
+    } else if (arr[i].nameId == "Y-led-WB-5,9in"|| arr[i].nameId == "RGB-led-WB-5,9in" ) {
+        app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.BOTTOMCENTER);
     }
+    app.activeDocument.resizeCanvas(app.activeDocument.width-120, app.activeDocument.height-120, AnchorPosition.MIDDLECENTER);
+
     app.activeDocument.artLayers.add();
 
     app.doAction("strokeRed1px", "tool");
+    app.activeDocument.mergeVisibleLayers();
     #include "boxWFlexible.jsx";
 
 
@@ -106,11 +109,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         } else if (arr[i].nameId == "RGB-led-WB-7,87in" || arr[i].nameId == "Y-led-WB-7,87in" || arr[i].nameId == "RGB-led-OB-7,87" || arr[i].nameId == "RGB-led-OB-7,87in" || arr[i].nameId == "Y-oval-7,87") {
             app.activeDocument.resizeCanvas(2480, 484, AnchorPosition.BOTTOMCENTER);
-        } else if (arr[i].nameId == "Y-led-WB-5,9in") {
-            app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.TOPCENTER);
+        } else if (arr[i].nameId == "Y-led-WB-5,9in"|| arr[i].nameId == "RGB-led-WB-5,9in" ) {
+            app.activeDocument.resizeCanvas(1890, 472, AnchorPosition.BOTTOMCENTER);
         }
+        app.activeDocument.resizeCanvas(app.activeDocument.width-120, app.activeDocument.height-120, AnchorPosition.MIDDLECENTER);
         app.activeDocument.artLayers.add();
         app.doAction("strokeRed1px", "tool");
+        app.activeDocument.mergeVisibleLayers();
         #include "boxWFlexible.jsx";
         stt = i;
     }

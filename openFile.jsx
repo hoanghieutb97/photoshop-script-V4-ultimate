@@ -1,7 +1,7 @@
 
 
 function openFile(FileDesign, item, type) {
-   
+
     if (type == "front") {
         try {
 
@@ -15,7 +15,8 @@ function openFile(FileDesign, item, type) {
                 try {
                     app.open(File(FileDesign + "/" + item.sku + " front.jpeg"));
                 } catch (error2) {
-                    alert("ko mo duoc file stt; " + item.stt)
+                    #include "runfail.jsx";
+
                 }
 
 
@@ -38,7 +39,8 @@ function openFile(FileDesign, item, type) {
                     try {
                         app.open(File(FileDesign + "/" + item.sku + " front.png"));
                     } catch (error3) {
-                        alert("ko mo duoc file stt; " + item.stt)
+                        #include "runfail.jsx";
+
                     }
 
                 }
@@ -48,7 +50,7 @@ function openFile(FileDesign, item, type) {
         }
     }
     else {
-        
+
         try {
             app.open(File(FileDesign + "/" + item.sku + ".png"));
         } catch (error) {
@@ -60,7 +62,8 @@ function openFile(FileDesign, item, type) {
                 try {
                     app.open(File(FileDesign + "/" + item.sku + ".jpeg"));
                 } catch (error2) {
-                    alert("ko mo duoc file stt; " + item.stt)
+                    #include "runfail.jsx";
+
                 }
 
 
@@ -71,5 +74,6 @@ function openFile(FileDesign, item, type) {
 
 
     if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
+    app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
 
 }

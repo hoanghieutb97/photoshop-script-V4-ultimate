@@ -1,5 +1,5 @@
 if (xoay == undefined) var xoay = 1;
-if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+// if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
 app.activeDocument.selection.select([[0, 0], [0, layerHeight / 2], [layerWidth, layerHeight / 2], [layerWidth, 0]]);
@@ -31,12 +31,18 @@ var heightden = bounds1[3] - bounds1[1];
 //     heightden = bounds1[2] - bounds1[0];
 //     widthden = bounds1[3] - bounds1[1];
 // }
-
+var scall = 0;
 if (arr[i].direction == "2")
     app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 else if (arr[i].direction == "1") {
-    if (widthden > heightden) app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / widthden, AnchorPosition.MIDDLECENTER);
-    else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+
+    if ((wphone / widthden) < (hphone / heightden))
+        scall = wphone * 100 / widthden;
+    else scall = hphone * 100 / heightden;
+
+    app.activeDocument.activeLayer.resize(scall, scall, AnchorPosition.MIDDLECENTER);
+
+
 }
 
 var bounds1 = app.activeDocument.activeLayer.bounds;
@@ -44,11 +50,11 @@ app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers
 app.doAction("moveZero", "tool");
 app.doAction("xoa stroke layer", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
+
 if (arr[i].direction == "2")
     app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 else if (arr[i].direction == "1") {
-    if (widthden > heightden) app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / widthden, AnchorPosition.MIDDLECENTER);
-    else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+    app.activeDocument.activeLayer.resize(scall, scall, AnchorPosition.MIDDLECENTER);
 }
 var bounds2 = app.activeDocument.activeLayer.bounds;
 var boxW = bounds1[2] - bounds1[0] + 30;

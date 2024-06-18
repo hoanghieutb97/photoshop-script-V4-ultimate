@@ -1,5 +1,5 @@
 
-#include "createDocument.jsx";
+
 for (var i = 0; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], type);
     app.activeDocument.activeLayer.name = "1";

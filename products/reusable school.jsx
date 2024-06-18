@@ -8,7 +8,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
     } catch (error2) {
-        alert("ko mo duoc file stt; " + arr[i].stt)
+        
     }
 
     if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -48,7 +48,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         try {
             app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
         } catch (error2) {
-            alert("ko mo duoc file stt; " + arr[i].stt)
+          
         }
 
         if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -123,7 +123,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
     } catch (error2) {
-        alert("ko mo duoc file stt; " + arr[i].stt)
+      
     }
 
     if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -181,7 +181,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         try {
             app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
         } catch (error2) {
-            alert("ko mo duoc file stt; " + arr[i].stt)
+         
         }
 
         if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -275,7 +275,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
     } catch (error2) {
-        alert("ko mo duoc file stt; " + arr[i].stt)
+    
     }
 
     if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -332,7 +332,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         try {
             app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
         } catch (error2) {
-            alert("ko mo duoc file stt; " + arr[i].stt)
+        
         }
 
         if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -425,7 +425,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
     } catch (error2) {
-        alert("ko mo duoc file stt; " + arr[i].stt)
+     
     }
 
     app.activeDocument.saveAs(Folder("//192.168.1.240/inVN/psd/" + arr[i].barcode + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);

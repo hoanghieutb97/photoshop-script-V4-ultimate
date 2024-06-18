@@ -69,7 +69,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + "flash.png"));
         app.doAction("canvasHoriz", "tool");
-    } catch (error) { alert("thieu file: skuflash.png") }
+    } catch (error) { }
 
     app.doAction("strokeWhite1px", "tool");
 

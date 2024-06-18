@@ -1,6 +1,6 @@
 if (xPosition + wLast + boxW <= wAll) {
     xPosition = xPosition + wLast;
-    // alert(boxW)
+    
     wLast = boxW;
     if (hLast <= boxH)
         hLast = boxH;

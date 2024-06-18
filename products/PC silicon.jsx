@@ -41,7 +41,7 @@ for (var i = 0; i < arr.length; i++) {
     var boundKhung = app.activeDocument.activeLayer.bounds;
     app.activeDocument.activeLayer.resize(wphone * 100 / (boundKhung[2] - boundKhung[0]), 100 * hphone / (boundKhung[3] - boundKhung[1]), AnchorPosition.MIDDLECENTER);
     var boundKhung2 = app.activeDocument.activeLayer.bounds;
-    // alert((boundKhung[2] - boundKhung[0]), (boundKhung[3] - boundKhung[1]))
+    
     app.doAction("selectAreaLayer", "tool");
     app.activeDocument.activeLayer.remove();
     app.doAction("duplicateSelection", "tool"); // tạo layer mới từ vùng chọn

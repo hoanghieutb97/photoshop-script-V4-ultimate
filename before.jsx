@@ -13,7 +13,7 @@ if (!folderTool.exists) { folderTool.create(); }
 
 var folderTem = Folder(folderContainer + "/tem");
 if (!folderTem.exists) { folderTem.create(); }
-if (type == "tem normal") radiobutton1.value = true;
+if (type == "tem normal ") radiobutton1.value = true;
 if (radiobutton1.value == true) {
 
     if (type != "PC led")
@@ -78,3 +78,4 @@ if (radiobutton1.value == true) {
 
 #include "openFile.jsx";
 #include "saveDesign.jsx";
+ 

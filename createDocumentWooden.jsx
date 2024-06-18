@@ -1,0 +1,12 @@
+app.documents.add(10748, 10748, 300, "GLLM");
+app.activeDocument.layerSets.add();
+app.activeDocument.activeLayer.name = "CMYK";
+app.activeDocument.layerSets.add();
+app.activeDocument.activeLayer.name = "SPOT";
+app.activeDocument.layerSets.add();
+app.activeDocument.activeLayer.name = "KHUNG";
+ yPosition = 30;
+ xPosition = 30;
+ hLast = 0;
+ wLast = 0;
+ hAll=10748; wAll=10748;

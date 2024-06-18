@@ -4,10 +4,10 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
     openFile(FileDesign, arr[i], type);
-    if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
-    #include "cropBlackCut-1Size.jsx";
+    app.activeDocument.rotateCanvas(90);
     
+    #include "cropBlackCut-1Size.jsx";
+
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
@@ -17,7 +17,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "createDocument.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
-        if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+        app.activeDocument.rotateCanvas(90);
 
         #include "cropBlackCut-1Size.jsx";
         stt = i;

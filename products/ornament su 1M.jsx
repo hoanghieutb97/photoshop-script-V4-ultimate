@@ -26,7 +26,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         if (arr[i].nameId == "O.Ceramic-tron")
-            app.activeDocument.activeLayer.translate((xPosition + 9), (yPosition + 9) * (-1));
+            app.activeDocument.activeLayer.translate((xPosition + 15), (yPosition + 15) * (-1));
         else if (arr[i].nameId == "O.Ceramic-ao")
             app.activeDocument.activeLayer.translate((xPosition + 18), (yPosition + 18) * (-1));
         else app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));

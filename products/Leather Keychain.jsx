@@ -82,7 +82,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.doAction("overlayblack", "tool");
     app.doAction("khac moca khoa da", "tool");
     app.activeDocument.rotateCanvas(180);
-    // alert(folderKhac + "/" + arr[i].stt + "-ngoai-" + nameXX + ".jpg")
+    
     app.activeDocument.saveAs(Folder(folderKhac + "/" + arr[i].stt + "-ngoai-" + nameXX + ".png"), PNGSaveOptions);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
@@ -115,7 +115,7 @@ function cropBoxIn(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
 
 function cropBoxKhac(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
-    // alert((boxX) * (widthF / boxSumX), (boxX) * (widthF / boxSumX) - 12)
+    
     app.activeDocument.selection.select([
         [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
         [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],

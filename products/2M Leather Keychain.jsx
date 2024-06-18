@@ -85,7 +85,7 @@ function cropkhacda() {
     var minHeight = 354
 
     if (app.activeDocument.width < minWidth && app.activeDocument.height < minHeight) {
-        // alert(true);
+        
         if (aspectRatio > 1) {
             newWidth = minWidth;
             newHeight = minWidth / aspectRatio;
@@ -129,7 +129,7 @@ function cropBoxIn(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 function cropBoxKhac(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
     if (boxX == 2) {
-        // alert((boxX) * (widthF / boxSumX), (boxX) * (widthF / boxSumX) - 12)
+        
 
         app.activeDocument.selection.select([
             [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],

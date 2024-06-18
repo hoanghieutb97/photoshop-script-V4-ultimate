@@ -7,7 +7,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 
     #include "cropBlackCut-1Size.jsx";
-    
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();

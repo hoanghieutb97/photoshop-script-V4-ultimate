@@ -25,9 +25,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
     {// tao khung 
         if (arr[i].nameId == "chanNen thuong")
-            app.open(File("//192.168.1.194/back up in/ps script data/khung Wood Candle.png"));
+            app.open(File("//192.168.1.194/ps script data/khung Wood Candle.png"));
         else if ((arr[i].nameId == "chanNen tim"))
-            app.open(File("//192.168.1.194/back up in/ps script data/khung Wood Candle tim.png"));
+            app.open(File("//192.168.1.194/ps script data/khung Wood Candle tim.png"));
 
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
