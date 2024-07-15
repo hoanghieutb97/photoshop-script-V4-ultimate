@@ -1,9 +1,9 @@
 
-app.open(File("//192.168.1.194/ps script data/tem.tif"));
+app.open(File("//192.168.1.240/ps script data/tem.tif"));
 
 if (i < arr.length - 1)
     for (var j = stt; j < i; j++) {
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/moveTem.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/moveTem.jsx"));
         
         moveTem(arr[j], type);
 
@@ -17,7 +17,7 @@ if (i < arr.length - 1)
 else if (i == arr.length - 1)
     for (var j = stt; j <= i; j++) {
         
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/moveTem.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/moveTem.jsx"));
               
         moveTem(arr[j], type);
         folderType = Folder(folderTem + "/" + typeTem);

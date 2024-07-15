@@ -32,7 +32,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
             {// tao khung su
 
 
-                app.open(File("//192.168.1.194/ps script data/khung mica 2cm/" + arr[i][j].case + ".png"));
+                app.open(File("//192.168.1.240/ps script data/khung mica 2cm/" + arr[i][j].case + ".png"));
                 app.doAction("canvasHoriz", "tool");
                 app.activeDocument.activeLayer.name = arr[i][j].stt;
                 app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in

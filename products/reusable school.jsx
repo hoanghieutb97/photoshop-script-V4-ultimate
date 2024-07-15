@@ -1,4 +1,9 @@
+var arrNew = []
+for (var i = 0; i <= arr.length - 1; i++) {
+    if (arr[i].nameId != "PAINTED PIECE") arrNew.push(arr[i])
+}
 
+arr = arrNew;
 var stt = 0;
 ban = 0;
 #include "createDocument.jsx";
@@ -8,7 +13,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
     } catch (error2) {
-        
+
     }
 
     if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -40,15 +45,16 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        #include "save1Mat.jsx";
-        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        nameSave = "go5mm-";
+        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "createDocument.jsx";
         ban = ban + 1;
 
         try {
             app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
         } catch (error2) {
-          
+
         }
 
         if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -107,8 +113,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
-        #include "save1Mat.jsx";
-        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        nameSave = "go5mm-";
+        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+
+        //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -123,7 +133,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
     } catch (error2) {
-      
+
     }
 
     if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -172,16 +182,16 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + "go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
         try {
             app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
         } catch (error2) {
-         
+
         }
 
         if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -216,9 +226,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
             if (app.activeDocument.layers[k].name.toLowerCase() == "wooden")
                 arr2.push(app.activeDocument.layers[k])
         }
-            for (var k = 0; k < arr2.length; k++) {
-                arr2[k].move(layerSet, ElementPlacement.INSIDE);
-            }
+        for (var k = 0; k < arr2.length; k++) {
+            arr2[k].move(layerSet, ElementPlacement.INSIDE);
+        }
 
         var bounds4 = app.activeDocument.layerSets[0].bounds;
         boxW = bounds4[2] - bounds4[0];
@@ -259,9 +269,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + "go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        //$.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -274,8 +284,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     try {
         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
+        app.doAction("canvasHoriz", "tool");
     } catch (error2) {
-    
+
     }
 
     if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -323,16 +334,18 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + "mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
         try {
             app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
+            app.doAction("canvasHoriz", "tool");
         } catch (error2) {
-        
+
         }
 
         if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -411,25 +424,25 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + "mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 
 
 
-for (var i = stt; i <= arr.length - 1; i++) {
+// for (var i = stt; i <= arr.length - 1; i++) {
 
-    try {
-        app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-    } catch (error2) {
-     
-    }
+//     try {
+//         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
+//     } catch (error2) {
 
-    app.activeDocument.saveAs(Folder("//192.168.1.240/inVN/psd/" + arr[i].barcode + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+//     }
 
-    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-}
+//     app.activeDocument.saveAs(Folder("//192.168.1.240/inVN/psd/" + arr[i].barcode + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+
+//     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+// }
 

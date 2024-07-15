@@ -1,6 +1,6 @@
 
 {
-    app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+    app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
     app.doAction("sttkinlytoy", "tool");
     var boxW = app.activeDocument.width;
@@ -31,7 +31,7 @@
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         if (nameSave == "go3mm") {
             #include "createDocumentWooden.jsx";
         }
@@ -43,7 +43,7 @@
         }
         ban = ban + 1;
         stt = i;
-        app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+        app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
         app.activeDocument.artLayers[0].textItem.contents = i + 1;
         app.doAction("sttkinlytoy", "tool");
         var boxW = app.activeDocument.width;

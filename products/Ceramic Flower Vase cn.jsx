@@ -46,7 +46,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
      
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -57,7 +57,7 @@ function embedKhung(param) {
     var idIdnt = charIDToTypeID("Idnt");
     desc16.putInteger(idIdnt, 2);
     var idnull = charIDToTypeID("null");
-    desc16.putPath(idnull, new File("//192.168.1.194/ps script data/flag/" + param + ".png"));
+    desc16.putPath(idnull, new File("//192.168.1.240/ps script data/flag/" + param + ".png"));
     var idFTcs = charIDToTypeID("FTcs");
     var idQCSt = charIDToTypeID("QCSt");
     var idQcsa = charIDToTypeID("Qcsa");

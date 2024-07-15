@@ -6,7 +6,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, "front");
@@ -34,7 +34,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateKHUNG.jsx";
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -48,7 +48,7 @@ function openCropFile(item, FileDesign, type) {
     else if (item.nameId == "Go-Medalion-nho-2M") tenKhung = "medalion nho";
 
 
-    app.open(File("//192.168.1.194/ps script data/mica dzt/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.240/ps script data/mica dzt/" + tenKhung + ".png"));
 
     openFile(FileDesign, item, type);
     // app.doAction("canvasHoriz", "tool");
@@ -70,6 +70,6 @@ function layKhung(item) {
     else if (item.nameId == "Go-Medalion-to-2M") tenKhung = "medalion to";
     else if (item.nameId == "Go-Medalion-nho-2M") tenKhung = "medalion nho";
 
-    app.open(File("//192.168.1.194/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.240/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
 
 }

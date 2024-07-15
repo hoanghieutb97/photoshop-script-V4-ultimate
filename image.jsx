@@ -4,7 +4,7 @@ var image1_imgString = "%C2%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%1E%00%00%
 var imgArr = ["yaso1", "masterYi", "nunuCBR","thuythan1","convat1","convat2","convat3","choncc","convat4","shisha","dango","caotien","chocon","convat5"]
 var rdNum = Math.floor(Math.random() * (imgArr.length))
 
-var linkFIle = File("//192.168.1.194/photoshop-script-V4-ultimate/image/" + imgArr[rdNum] + ".jsx")
+var linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/" + imgArr[rdNum] + ".jsx")
 
 $.evalFile(linkFIle);
 

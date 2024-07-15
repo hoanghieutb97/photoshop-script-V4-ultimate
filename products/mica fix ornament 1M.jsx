@@ -25,7 +25,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, type);
@@ -63,7 +63,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
-        $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -79,7 +79,7 @@ function openCropFile(item, FileDesign, type) {
     else if (item.nameId == "MicaDZT-tron-1M") tenKhung = "tron 3in";
     else if (item.nameId == "Mica-elip-1M") tenKhung = "elip";
 
-    app.open(File("//192.168.1.194/ps script data/mica dzt/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.240/ps script data/mica dzt/" + tenKhung + ".png"));
 
     openFile(FileDesign, item, type);
     app.doAction("canvasHoriz", "tool");
@@ -103,6 +103,6 @@ function layKhung(item) {
     else if (item.nameId == "MicaDZT-tron-1M") tenKhung = "tron 3in";
     else if (item.nameId == "Mica-elip-1M") tenKhung = "elip";
 
-    app.open(File("//192.168.1.194/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
+    app.open(File("//192.168.1.240/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
 
 }

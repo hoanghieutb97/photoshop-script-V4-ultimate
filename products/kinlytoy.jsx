@@ -133,7 +133,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
     }
 
     {
-        app.open(File("//192.168.1.194/ps script data/tem.tif"));
+        app.open(File("//192.168.1.240/ps script data/tem.tif"));
 
 
         for (var j = 0; j < arrcut.length; j++) {
@@ -149,7 +149,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
 
 function sttkinlytoy(yPosition, xPosition, hLast, wLast, ban, khoangcach, arrcut, i, k, hallcut, wallcut, start, type, FileName) {
 
-    app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+    app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
     app.activeDocument.artLayers[0].textItem.contents = i + 1;
     app.doAction("sttkinlytoy", "tool");
     var boxW = app.activeDocument.width;
@@ -227,5 +227,5 @@ function cropin() {
     app.activeDocument.resizeCanvas(app.activeDocument.width + 30, app.activeDocument.height + 30, AnchorPosition.MIDDLECENTER);
 }
 
-var pathmoveTemm = File("//192.168.1.194/photoshop-script-V4-ultimate/label/moveTem.jsx");
+var pathmoveTemm = File("//192.168.1.240/photoshop-script-V4-ultimate/label/moveTem.jsx");
 $.evalFile(pathmoveTemm);

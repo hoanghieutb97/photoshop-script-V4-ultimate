@@ -99,7 +99,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var bounds2 = app.activeDocument.activeLayer.bounds;
 
             // {
-            //     app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+            //     app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
             //     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
             //     app.doAction("sttkinlytoy", "tool");
             //     var boxW = app.activeDocument.width;
@@ -139,7 +139,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var bounds2 = app.activeDocument.activeLayer.bounds;
 
             // {
-            //     app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+            //     app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
             //     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
             //     app.doAction("sttkinlytoy", "tool");
             //     var boxW = app.activeDocument.width;
@@ -179,7 +179,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.saveAs(Folder(folderTool + "/ " + namexxx + ".psd"));
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-        // $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        // $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
         app.documents.add(wAll, hAll, 300, "GLLM");
         app.activeDocument.layerSets.add();
@@ -275,7 +275,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 var bounds2 = app.activeDocument.activeLayer.bounds;
     
                 // {
-                //     app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+                //     app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
                 //     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                 //     app.doAction("sttkinlytoy", "tool");
                 //     var boxW = app.activeDocument.width;
@@ -315,7 +315,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 var bounds2 = app.activeDocument.activeLayer.bounds;
     
                 // {
-                //     app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+                //     app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
                 //     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                 //     app.doAction("sttkinlytoy", "tool");
                 //     var boxW = app.activeDocument.width;
@@ -364,7 +364,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("xoa group", "Default Actions");
         app.activeDocument.saveAs(Folder(folderTool + "/ " + namexxx + ".psd"));
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        // $.evalFile(File("//192.168.1.194/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        // $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -474,7 +474,7 @@ function tonghistogram(histo) {
 //         var bounds2 = app.activeDocument.activeLayer.bounds;
 
 //         {
-//             app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+//             app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
 //             app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
 //             app.doAction("sttkinlytoy", "tool");
 //             var boxW = app.activeDocument.width;
@@ -513,7 +513,7 @@ function tonghistogram(histo) {
 //         var bounds2 = app.activeDocument.activeLayer.bounds;
 
 //         {
-//             app.open(File("//192.168.1.194/ps script data/sttkinlytoy.tif"));
+//             app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
 //             app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
 //             app.doAction("sttkinlytoy", "tool");
 //             var boxW = app.activeDocument.width;
