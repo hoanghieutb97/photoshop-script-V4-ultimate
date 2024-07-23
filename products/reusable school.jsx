@@ -10,37 +10,12 @@ ban = 0;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
-    try {
-        app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-    } catch (error2) {
+    openAndResizeFile(arr[i], FileDesign, wphone, hphone, "type");
 
-    }
+    app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
+    boxW = app.activeDocument.width + 30;
+    boxH = app.activeDocument.height + 30;
 
-    if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
-
-    { // resize document
-        {
-            app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
-            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-            var PSpotKhung = app.activeDocument.activeLayer.bounds;
-            app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-            if (arr[i].direction == "2")
-                app.activeDocument.resizeImage(UnitValue(wphone, "px"), UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-            else if (arr[i].direction == "1") {
-                if (app.activeDocument.width < app.activeDocument.height) {
-                    app.activeDocument.resizeImage(null, UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                }
-                else {
-                    app.activeDocument.resizeImage(UnitValue(wphone, "px"), null, 300, ResampleMethod.BICUBIC);
-                }
-            }
-            else
-                app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
-        }
-        boxW = app.activeDocument.width + 30;
-        boxH = app.activeDocument.height + 30;
-    }
     #include "boxWFlexible.jsx";
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -51,34 +26,10 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "createDocument.jsx";
         ban = ban + 1;
 
-        try {
-            app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-        } catch (error2) {
-
-        }
-
-        if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
+        openAndResizeFile(arr[i], FileDesign, wphone, hphone, "type");
 
         { // resize document
-            {
-                app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
-                if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-                var PSpotKhung = app.activeDocument.activeLayer.bounds;
-                app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-                if (arr[i].direction == "2")
-                    app.activeDocument.resizeImage(UnitValue(wphone, "px"), UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                else if (arr[i].direction == "1") {
-                    if (app.activeDocument.width < app.activeDocument.height) {
-                        app.activeDocument.resizeImage(null, UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                    }
-                    else {
-                        app.activeDocument.resizeImage(UnitValue(wphone, "px"), null, 300, ResampleMethod.BICUBIC);
-                    }
-                }
-                else
-                    app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
-            }
+
             boxW = app.activeDocument.width + 30;
             boxH = app.activeDocument.height + 30;
         }
@@ -130,42 +81,14 @@ ban = 0;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
-    try {
-        app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-    } catch (error2) {
+    openAndResizeFile(arr[i], FileDesign, wphone, hphone, "type");
 
-    }
-
-    if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
-
-    { // resize document
-        {
-            app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
-            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-            var PSpotKhung = app.activeDocument.activeLayer.bounds;
-            app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-            if (arr[i].direction == "2")
-                app.activeDocument.resizeImage(UnitValue(wphone, "px"), UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-            else if (arr[i].direction == "1") {
-                if (app.activeDocument.width < app.activeDocument.height) {
-                    app.activeDocument.resizeImage(null, UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                }
-                else {
-                    app.activeDocument.resizeImage(UnitValue(wphone, "px"), null, 300, ResampleMethod.BICUBIC);
-                }
-            }
-            else
-                app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
-        }
-
-    }
 
     var layerSet = app.activeDocument.layerSets.add();
     layerSet.name = "a" + arr[i].stt;
     var arr2 = [];
     for (var k = 0; k < app.activeDocument.layers.length; k++) {
-        if (app.activeDocument.layers[k].name.toLowerCase() == "wooden")
+        if (app.activeDocument.layers[k].name.toLowerCase().split(" ").join("") == "wooden")
             arr2.push(app.activeDocument.layers[k])
     }
 
@@ -182,42 +105,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        app.activeDocument.layerSets["SPOT"].move(app.activeDocument, ElementPlacement.PLACEATBEGINNING)
+
         app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
-        try {
-            app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-        } catch (error2) {
-
-        }
-
-        if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
-
-        { // resize document
-            {
-                app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
-                if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-                var PSpotKhung = app.activeDocument.activeLayer.bounds;
-                app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-                if (arr[i].direction == "2")
-                    app.activeDocument.resizeImage(UnitValue(wphone, "px"), UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                else if (arr[i].direction == "1") {
-                    if (app.activeDocument.width < app.activeDocument.height) {
-                        app.activeDocument.resizeImage(null, UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                    }
-                    else {
-                        app.activeDocument.resizeImage(UnitValue(wphone, "px"), null, 300, ResampleMethod.BICUBIC);
-                    }
-                }
-                else
-                    app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
-            }
-
-        }
+        openAndResizeFile(arr[i], FileDesign, wphone, hphone, "type");
 
         var layerSet = app.activeDocument.layerSets.add();
         layerSet.name = "a" + arr[i].stt;
@@ -242,11 +138,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 
 
-
+    var noneGroup = true;
     app.activeDocument.layerSets[0].duplicate(app.documents["GLLM"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "caculatorPosition.jsx";
     if (app.activeDocument.layerSets[0].artLayers.length > 0) {
+        noneGroup = false;
         app.doAction("moveZero", "tool");
         app.activeDocument.layerSets[0].translate(xPosition, (yPosition) * (-1));
     }
@@ -265,10 +162,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
-        app.activeDocument.layers["a" + arr[i].stt].move(app.activeDocument.layerSets["SPOT"], ElementPlacement.INSIDE);
+        if (!noneGroup) app.activeDocument.layers["a" + arr[i].stt].move(app.activeDocument.layerSets["SPOT"], ElementPlacement.INSIDE);
+        else app.activeDocument.layers["a" + arr[i].stt].remove();
     }
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
+        app.activeDocument.layerSets["SPOT"].move(app.activeDocument, ElementPlacement.PLACEATBEGINNING)
+
         app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -282,43 +182,16 @@ ban = 0;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
-    try {
-        app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-        app.doAction("canvasHoriz", "tool");
-    } catch (error2) {
-
-    }
-
-    if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 
 
-    { // resize document
-        {
-            app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
-            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-            var PSpotKhung = app.activeDocument.activeLayer.bounds;
-            app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-            if (arr[i].direction == "2")
-                app.activeDocument.resizeImage(UnitValue(wphone, "px"), UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-            else if (arr[i].direction == "1") {
-                if (app.activeDocument.width < app.activeDocument.height) {
-                    app.activeDocument.resizeImage(null, UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                }
-                else {
-                    app.activeDocument.resizeImage(UnitValue(wphone, "px"), null, 300, ResampleMethod.BICUBIC);
-                }
-            }
-            else
-                app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
-        }
+    openAndResizeFile(arr[i], FileDesign, wphone, hphone, "mica");
 
-    }
 
     var layerSet = app.activeDocument.layerSets.add();
     layerSet.name = "a" + arr[i].stt;
     var arr2 = [];
     for (var k = 0; k < app.activeDocument.layers.length; k++) {
-        if (app.activeDocument.layers[k].name.toLowerCase() == "acrylic")
+        if (app.activeDocument.layers[k].name.toLowerCase().split(" ").join("") == "acrylic")
             arr2.push(app.activeDocument.layers[k])
     }
     for (var k = 0; k < arr2.length; k++) {
@@ -334,6 +207,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        app.activeDocument.layerSets["SPOT"].move(app.activeDocument, ElementPlacement.PLACEATBEGINNING)
+
         app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
@@ -341,37 +216,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "createDocument.jsx";
         ban = ban + 1;
 
-        try {
-            app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-            app.doAction("canvasHoriz", "tool");
-        } catch (error2) {
-
-        }
-
-        if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
-
-        { // resize document
-            {
-                app.activeDocument.activeLayer = app.activeDocument.layers.getByName("0")
-                if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-                var PSpotKhung = app.activeDocument.activeLayer.bounds;
-                app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
-                if (arr[i].direction == "2")
-                    app.activeDocument.resizeImage(UnitValue(wphone, "px"), UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                else if (arr[i].direction == "1") {
-                    if (app.activeDocument.width < app.activeDocument.height) {
-                        app.activeDocument.resizeImage(null, UnitValue(hphone, "px"), 300, ResampleMethod.BICUBIC);
-                    }
-                    else {
-                        app.activeDocument.resizeImage(UnitValue(wphone, "px"), null, 300, ResampleMethod.BICUBIC);
-                    }
-                }
-                else
-                    app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
-            }
-
-        }
+        openAndResizeFile(arr[i], FileDesign, wphone, hphone, "mica");
 
         var layerSet = app.activeDocument.layerSets.add();
         layerSet.name = "a" + arr[i].stt;
@@ -396,12 +241,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     }
 
-
+    var noneGroup = true;
 
     app.activeDocument.layerSets[0].duplicate(app.documents["GLLM"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "caculatorPosition.jsx";
     if (app.activeDocument.layerSets[0].layers.length !== 0) {
+        noneGroup = false;
         app.doAction("moveZero", "tool");
         app.activeDocument.layerSets[0].translate(xPosition, (yPosition) * (-1));
     }
@@ -420,10 +266,14 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
-        app.activeDocument.layers["a" + arr[i].stt].move(app.activeDocument.layerSets["SPOT"], ElementPlacement.INSIDE);
+
+        if (!noneGroup) app.activeDocument.layers["a" + arr[i].stt].move(app.activeDocument.layerSets["SPOT"], ElementPlacement.INSIDE);
+        else app.activeDocument.layers["a" + arr[i].stt].remove();
     }
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
+app.activeDocument.layerSets["SPOT"].move(app.activeDocument, ElementPlacement.PLACEATBEGINNING)
+
         app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -433,16 +283,49 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
 
-// for (var i = stt; i <= arr.length - 1; i++) {
+function openAndResizeFile(item, FileDesign, wphone, hphone, type) {
 
-//     try {
-//         app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
-//     } catch (error2) {
+    try {
+        app.open(File(FileDesign + "/" + item.sku + ".psd"));
+        if (type == "mica") app.doAction("canvasHoriz", "tool");
+    } catch (error2) {
 
-//     }
+    }
 
-//     app.activeDocument.saveAs(Folder("//192.168.1.240/inVN/psd/" + arr[i].barcode + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 
-//     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-// }
+    app.activeDocument.mergeVisibleLayers();
+    var xoay = false;
+    var PSpotKhung = app.activeDocument.activeLayer.bounds;
+    if ((PSpotKhung[2] - PSpotKhung[0]) < (PSpotKhung[3] - PSpotKhung[1])) {
+        app.activeDocument.rotateCanvas(90);
+        xoay = true
+    }
+    PSpotKhung = app.activeDocument.activeLayer.bounds;
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
+    try {
+        app.open(File(FileDesign + "/" + item.sku + ".psd"));
+        if (type == "mica") app.doAction("canvasHoriz", "tool");
+    } catch (error2) {
+
+    }
+
+
+    if (xoay) app.activeDocument.rotateCanvas(90);
+    if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
+    app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
+    // if (item.direction == "2")
+    //     app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
+
+    // else if (item.direction == "1") {
+    //     if (app.activeDocument.width < app.activeDocument.height) {
+    //         app.activeDocument.resizeImage(null, UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
+    //     }
+    //     else {
+    //         app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), null, 300, ResampleMethod.BICUBIC);
+    //     }
+    // }
+    // else
+    //     app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
+
+}

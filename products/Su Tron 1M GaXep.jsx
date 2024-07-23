@@ -40,7 +40,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         hLast = 0;
         wLast = 0;
         ban = ban + 1;
-        openCropFile(arr[i], FileDesign, type)
+        openCropFile(arr[i], FileDesign, "front")
         stt = i;
     }
 
@@ -70,8 +70,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((i > 0) && (app.activeDocument.layerSets["CMYK"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
 
     openCropFile(arr[i], FileDesign, "back")
-    boxW = 950;
-    boxH = 970;
     app.activeDocument.activeLayer.name = arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -79,17 +77,20 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.doAction("moveZero", "tool");
     app.activeDocument.activeLayer.translate(xPosition - keothem / 2, (yPosition - keothem / 2) * (-1));
     if ((i > 0) && (app.activeDocument.layerSets["SPOT"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
-    // openKhung(arr[i]);
-    // // #include "translateKHUNG.jsx";
-    // { // translate layer đến vị trí cần in
-    //     app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-    //     app.doAction("moveZero", "tool");
-    //     app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));
 
-    //     if ((i > 0) && (app.activeDocument.layerSets["KHUNG"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
+    openKhung(arr[i]);
+    // #include "translateKHUNG.jsx";
+
+    app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+    app.doAction("moveZero", "tool");
+    app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));
+
+    if ((i > 0) && (app.activeDocument.layerSets["KHUNG"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
 
 
-    // }
+
+
+
     if (i == arr.length - 1) {
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
