@@ -1,1 +1,1 @@
-git push https://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@github.com/hoanghieutb97/photoshop-script-V4-ultimate.git
+git push https://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@github.com/hoanghieutb97/photoshop-script-V4-ultimate.git
