@@ -43,14 +43,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layers["1a"]
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
-        // app.activeDocument.activeLayer.duplicate();
-        // app.activeDocument.activeLayer = app.activeDocument.layers["1b copy"];
-        // app.doAction("moveZero", "tool");
-        // app.activeDocument.activeLayer.move(app.activeDocument, ElementPlacement.PLACEATBEGINNING);
-        // app.doAction("xoa constract 3px", "tool")
-        // app.activeDocument.activeLayer.merge();
-        // app.activeDocument.activeLayer.name = "1a";
-        // app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
         app.doAction("moveZero", "tool");
 
 
@@ -102,7 +94,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var bounds4 = app.activeDocument.layerSets[arr[i].stt + "l"].bounds;
         boxW = bounds4[2] - bounds4[0];
         boxH = bounds4[3] - bounds4[1];
-
+// vsdvs
     }
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -156,14 +148,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layers["1a"]
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
-        // app.activeDocument.activeLayer.duplicate();
-        // app.activeDocument.activeLayer = app.activeDocument.layers["1b copy"];
-        // app.doAction("moveZero", "tool");
-        // app.activeDocument.activeLayer.move(app.activeDocument, ElementPlacement.PLACEATBEGINNING);
-        // app.doAction("xoa constract 3px", "tool")
-        // app.activeDocument.activeLayer.merge();
-        // app.activeDocument.activeLayer.name = "1a";
-        // app.activeDocument.activeLayer = app.activeDocument.layers["1b"]
         app.doAction("moveZero", "tool");
 
 
