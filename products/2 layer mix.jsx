@@ -1,17 +1,8 @@
-wAll = 14173;
-hAll = 9449;
-app.documents.add(wAll, hAll, 300, "GLLM");
-app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "CMYK";
-app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "SPOT";
-app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "KHUNG";
-yPosition = 30;
-xPosition = 30;
-hLast = 0;
-wLast = 0;
+#include "createDocumentMica.jsx";
+typeTem = "mica3mm";
+nameSave = "mica3mm";
 for (var i = stt; i <= arr.length - 1; i++) {
+
     #include "convertPixel.jsx";
 
     var widthden = 0;
@@ -49,6 +40,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // lop 3
         var lop = 3;
         openFile(FileDesign, arr[i], type);
+        app.doAction("canvasHoriz", "tool");
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -71,15 +63,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
-            #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/lop duoi- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+            #include "saveallcropByName.jsx";
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-            #include "createDocument.jsx";
+            #include "createDocumentMica.jsx";
+
             ban = ban + 1;
             var lop = 3;
 
             openFile(FileDesign, arr[i], type);
+            app.doAction("canvasHoriz", "tool");
             cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -115,6 +107,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     {// lop 4
         var lop = 4;
         openFile(FileDesign, arr[i], type);
+        app.doAction("canvasHoriz", "tool");
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
         app.activeDocument.activeLayer.name = arr[i].stt;
 
@@ -150,10 +143,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
         if ((i == arr.length - 1) & (lop == 4)) {
-            #include "cropDocumentAll.jsx";
-
-            app.activeDocument.saveAs(Folder(folderTool + "/lop duoi- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+            #include "saveallcropByName.jsx";
+            
 
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
         }
@@ -162,22 +153,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 var stt = 0;
 ban = 0;
-wAll = 10748;
-hAll = 10748;
-app.documents.add(wAll, hAll, 300, "GLLM");
-app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "CMYK";
-app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "SPOT";
-app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "KHUNG";
-yPosition = 30;
-xPosition = 30;
-hLast = 0;
-wLast = 0;
+#include "createDocumentWooden.jsx";
+
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
-
+    typeTem = "go3mm";
+    nameSave = "go3mm";
 
     var widthden = 0;
     var heightden = 0;
@@ -234,12 +215,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var boxH = bounds1[3] - bounds1[1] + 30;
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
+            #include "saveallcropByName.jsx";
+            
 
-            #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/lop tren- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+            #include "createDocumentWooden.jsx";
 
-            #include "createDocument.jsx";
             ban = ban + 1;
             var lop = 3;
             openFile(FileDesign, arr[i], type);
@@ -307,9 +287,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
     if ((i == arr.length - 1) & (lop == 2)) {
-        #include "cropDocumentAll.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/lop tren- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        #include "saveallcropByName.jsx";
+        
 
     }
 }

@@ -1,7 +1,7 @@
 //////////////////////////////////
 #include "createDocument.jsx";
 app.activeDocument.layerSets.add();
-app.activeDocument.activeLayer.name = "KHUNG2"; 
+app.activeDocument.activeLayer.name = "KHUNG2";
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openCropFile(arr[i], FileDesign, "front")
@@ -97,14 +97,15 @@ function openCropFile(item, FileDesign, type) {
     else
         app.open(File("//192.168.1.240/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
-    app.doAction("LayerToBackgroundWhite", "tool");
+    app.activeDocument.activeLayer.name = "1 copy";
+    app.doAction("strokeWhite1px", "tool");
 
     #include "cropAndResize-autoFill.jsx";
-    app.activeDocument.activeLayer.name = "1 copy";
     if (type == "back" && item.nameId == "O.Ceramic-ao-2M")
         app.activeDocument.activeLayer.duplicate(app.documents["ao sau.png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     else app.activeDocument.activeLayer.duplicate(app.documents[tenKhung + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    app.activeDocument.activeLayer.name = "1 copy";
     app.doAction("moveCenter", "tool");
     app.doAction("crop mica dzt", "tool");
 }

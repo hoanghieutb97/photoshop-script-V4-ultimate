@@ -1,5 +1,0 @@
-# This directory is a Syncthing folder marker.
-# Do not delete.
-
-folderID: kxmic-szhun
-created: 2024-06-20T12:39:21+07:00

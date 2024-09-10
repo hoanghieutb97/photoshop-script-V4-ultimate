@@ -62,12 +62,14 @@ function openCropFile(item, FileDesign, type) {
     var tenKhung = checkTenKhung(item);
     app.open(File("//192.168.1.240/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
-    app.doAction("LayerToBackgroundWhite", "tool");
+    app.activeDocument.activeLayer.name = "1 copy";
+    app.doAction("strokeWhite1px", "tool");
 
     #include "cropAndResize-autoFill.jsx";
-    app.activeDocument.activeLayer.name = "1 copy";
+
     app.activeDocument.activeLayer.duplicate(app.documents[tenKhung + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    app.activeDocument.activeLayer.name = "1 copy";
     app.doAction("moveCenter", "tool");
     app.doAction("crop mica dzt", "tool");
 }
