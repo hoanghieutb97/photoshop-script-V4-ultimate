@@ -1,4 +1,6 @@
 //////////////////////////////////
+nameSave = "suTron2M";
+
 wAll = 28346;
 hAll = 7087;
 app.documents.add(wAll, hAll, 300, "GLLM");
@@ -25,8 +27,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     boxH = 970;
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        #include "saveallcropByName.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         app.documents.add(wAll, hAll, 300, "GLLM");
         app.activeDocument.layerSets.add();
@@ -92,9 +93,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
     if (i == arr.length - 1) {
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        #include "saveallcropByName.jsx";
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
     }
 }
 
@@ -116,7 +116,8 @@ function openCropFile(item, FileDesign, type) {
     var tenKhung = "tron"
     app.open(File("//192.168.1.240/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
-    app.doAction("LayerToBackgroundWhite", "tool");
+    app.doAction("strokeWhite1px", "tool");
+
 
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";
