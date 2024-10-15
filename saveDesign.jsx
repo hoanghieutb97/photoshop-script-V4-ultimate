@@ -40,7 +40,7 @@ function saveImageTool(item, value, crop) {
         if (value == "front")
             activeDocument.exportDocument(Folder(linkServerCheckFile + dateitem[0] + "/" + dateitem[1] + "/" + item.barcode + "-A.jpg"), ExportType.SAVEFORWEB, sfwOptions);
         else if (value == "back")
-            activeDocument.exportDocument(Folder(linkServerCheckFile + dateitem[0] + "/" + dateitem[1] + "/" + item.barcode + "-B.jpg"), ExportType.SAVEFORWEB, sfwOptions);
+            activeDocument.exportDocument(Folder(linkServerCheckFile + dateitem[0] + "/" + dateitem[1] + "/" + item.barcode + "-B."), ExportType.SAVEFORWEB, sfwOptions);
         else
             activeDocument.exportDocument(Folder(linkServerCheckFile + dateitem[0] + "/" + dateitem[1] + "/" + item.barcode + ".jpg"), ExportType.SAVEFORWEB, sfwOptions);
 

@@ -1,7 +1,7 @@
 
 
 //////////////////////////////////////////////////////////////
-#include "createDocument.jsx";
+#include "createDocumentMica.jsx";
 for (var i = stt; i <= arr.length - 1; i++) {
     var marginItem = 30;
     #include "convertPixel.jsx";
@@ -14,7 +14,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-        #include "createDocument.jsx";
+        #include "createDocumentMica.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], "0front");
         #include "cropBlackCut-2Size.jsx";

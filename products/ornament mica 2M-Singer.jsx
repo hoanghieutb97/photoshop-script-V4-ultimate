@@ -1,5 +1,5 @@
 
-#include "createDocument.jsx";
+#include "createDocumentMica.jsx";
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], "front");
@@ -13,7 +13,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-        #include "createDocument.jsx";
+        #include "createDocumentMica.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], "front");
         app.doAction("canvasHoriz", "tool");
