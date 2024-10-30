@@ -1,4 +1,5 @@
-app.documents.add(14173, 9449, 300, "GLLM");
+hAll=9567; wAll=14291;
+app.documents.add(wAll, hAll, 300, "GLLM");
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "CMYK";
 app.activeDocument.layerSets.add();
@@ -9,4 +10,4 @@ app.activeDocument.activeLayer.name = "KHUNG";
  xPosition = 30;
  hLast = 0;
  wLast = 0;
- hAll=9449; wAll=14173;
+ 

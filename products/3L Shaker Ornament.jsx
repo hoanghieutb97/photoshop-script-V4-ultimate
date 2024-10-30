@@ -1,7 +1,9 @@
 #include "createDocument.jsx";
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
-
+    var boundsLayer1 = 0;
+    var layer1Width = 0;
+    var layer1Height = 0;
     { // lop 1
         var lop = 1;
         openFile(FileDesign, arr[i], type);
@@ -46,7 +48,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "caculatorPosition.jsx";
         #include "translateCMYK.jsx";
-
+        boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
+        layer1Width = boundsLayer1[2] - boundsLayer1[0];
+        layer1Height = boundsLayer1[3] - boundsLayer1[1];
     }
 
     { // lop 5
@@ -67,8 +71,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((bounds2[2] - bounds2[0]) != 0) {
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-            app.doAction("moveZero", "tool");
-            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+            var layer2Width = bounds2[2] - bounds2[0];
+            var layer2Height = bounds2[3] - bounds2[1];
+            // Tính toán vị trí mới để căn giữa Layer 2 theo Layer 1
+            var centerX = boundsLayer1[0] + (layer1Width / 2);
+            var centerY = boundsLayer1[1] + (layer1Height / 2);
+            app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
         }
         else app.activeDocument.activeLayer.remove();
         // app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
@@ -123,7 +131,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "caculatorPosition.jsx";
         #include "translateCMYK.jsx";
-
+        boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
+        layer1Width = boundsLayer1[2] - boundsLayer1[0];
+        layer1Height = boundsLayer1[3] - boundsLayer1[1];
     }
 
     { // lop 8
@@ -143,8 +153,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((bounds2[2] - bounds2[0]) != 0) {
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-            app.doAction("moveZero", "tool");
-            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+            var layer2Width = bounds2[2] - bounds2[0];
+            var layer2Height = bounds2[3] - bounds2[1];
+            // Tính toán vị trí mới để căn giữa Layer 2 theo Layer 1
+            var centerX = boundsLayer1[0] + (layer1Width / 2);
+            var centerY = boundsLayer1[1] + (layer1Height / 2);
+            app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
         }
         // else app.activeDocument.activeLayer.remove();
         // app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
@@ -280,6 +294,64 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
 
+    {
+        app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+        app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
+        app.doAction("sttkinlytoy", "tool");
+        var boxW = app.activeDocument.width;
+        var boxH = app.activeDocument.height;
+        app.activeDocument.activeLayer.name = "stt" + arr[i].stt;
+        app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+        app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        if ((yPosition + boxH + 30 + hLast > hAll) && (xPosition + boxW + 30 + wLast) > wAll) {
+            app.activeDocument.layerSets["SPOT"].artLayers.getByName("stt" + arr[i].stt).remove();
+            app.activeDocument.layerSets["CMYK"].artLayers.getByName("stt" + arr[i].stt).remove();
+
+            #include "cropDocumentAll.jsx";
+            app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+            #include "createDocumentMica.jsx";
+
+            ban = ban + 1;
+            stt = i;
+            app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+            app.activeDocument.artLayers[0].textItem.contents = i + 1;
+            app.doAction("sttkinlytoy", "tool");
+            var boxW = app.activeDocument.width;
+            var boxH = app.activeDocument.height;
+            app.activeDocument.activeLayer.name = "stt" + arr[i].stt;
+            app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+            app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        }
+        {// tinh boxW va boxH moi
+            boxW = boxW + 30;
+            boxH = boxH + 30;
+
+            if (xPosition + wLast + boxW <= wAll) {
+                xPosition = xPosition + wLast;
+                wLast = boxW;
+                if (hLast <= boxH)
+                    hLast = boxH;
+            }
+            else {
+                xPosition = 0;
+                yPosition = yPosition + hLast;
+                wLast = boxW;
+                hLast = boxH;
+            }
+        }
+        app.activeDocument.activeLayer = app.activeDocument.layerSets["SPOT"].artLayers.getByName("stt" + arr[i].stt);
+        app.doAction("moveZero", "tool");
+        app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
+
+        app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName("stt" + arr[i].stt);
+        app.doAction("moveZero", "tool");
+        app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
+    }
 
 
     if ((i == arr.length - 1) & (lop == 7)) {
