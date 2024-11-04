@@ -2,8 +2,8 @@
 function moveTem(item, type) {
 
 
-    app.activeDocument.artLayers[3].textItem.contents = item.nameId + " - " + item.stt // thong tin stt;
-    app.activeDocument.artLayers[7].textItem.contents = item.stt // thong tin stt;
+    app.activeDocument.artLayers[3].textItem.contents = item.nameId ; // thong tin stt;
+    app.activeDocument.artLayers[7].textItem.contents = item.stt; // thong tin stt;
 
     app.activeDocument.artLayers[0].textItem.contents = item.orderId; // thong tin order
 
