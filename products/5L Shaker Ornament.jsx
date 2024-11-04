@@ -46,9 +46,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "caculatorPosition.jsx";
         #include "translateCMYK.jsx";
 
-        boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
-        layer1Width = boundsLayer1[2] - boundsLayer1[0];
-        layer1Height = boundsLayer1[3] - boundsLayer1[1];
+        // boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
+        // layer1Width = boundsLayer1[2] - boundsLayer1[0];
+        // layer1Height = boundsLayer1[3] - boundsLayer1[1];
 
     }
 
@@ -69,15 +69,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((bounds2[2] - bounds2[0]) != 0) {
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-            var layer2Width = bounds2[2] - bounds2[0];
-            var layer2Height = bounds2[3] - bounds2[1];
-            // Tính toán vị trí mới để căn giữa Layer 2 theo Layer 1
-            var centerX = boundsLayer1[0] + (layer1Width / 2);
-            var centerY = boundsLayer1[1] + (layer1Height / 2);
-            app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
+            // var layer2Width = bounds2[2] - bounds2[0];
+            // var layer2Height = bounds2[3] - bounds2[1];
+            // // Tính toán vị trí mới để căn giữa Layer 2 theo Layer 1
+            // var centerX = boundsLayer1[0] + (layer1Width / 2);
+            // var centerY = boundsLayer1[1] + (layer1Height / 2);
+            // app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
 
-            // app.doAction("moveZero", "tool");
-            // app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
 
 
 
@@ -131,9 +131,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "caculatorPosition.jsx";
         #include "translateCMYK.jsx";
 
-        boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
-        layer1Width = boundsLayer1[2] - boundsLayer1[0];
-        layer1Height = boundsLayer1[3] - boundsLayer1[1];
+        // boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
+        // layer1Width = boundsLayer1[2] - boundsLayer1[0];
+        // layer1Height = boundsLayer1[3] - boundsLayer1[1];
 
     }
 
@@ -152,15 +152,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((bounds2[2] - bounds2[0]) != 0) {
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
-            var layer2Width = bounds2[2] - bounds2[0];
-            var layer2Height = bounds2[3] - bounds2[1];
-            // Tính toán vị trí mới để căn giữa Layer 2 theo Layer 1
-            var centerX = boundsLayer1[0] + (layer1Width / 2);
-            var centerY = boundsLayer1[1] + (layer1Height / 2);
-            app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
+            // var layer2Width = bounds2[2] - bounds2[0];
+            // var layer2Height = bounds2[3] - bounds2[1];
+            // // Tính toán vị trí mới để căn giữa Layer 2 theo Layer 1
+            // var centerX = boundsLayer1[0] + (layer1Width / 2);
+            // var centerY = boundsLayer1[1] + (layer1Height / 2);
+            // app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
 
-            // app.doAction("moveZero", "tool");
-            // app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+            app.doAction("moveZero", "tool");
+            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
         }
         else app.activeDocument.activeLayer.remove();
 

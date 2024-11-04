@@ -2,10 +2,11 @@
 function moveTem(item, type) {
 
 
-    app.activeDocument.artLayers[3].textItem.contents = item.nameId + " - " + item.stt // thong tin stt
+    app.activeDocument.artLayers[3].textItem.contents = item.nameId + " - " + item.stt // thong tin stt;
+    app.activeDocument.artLayers[7].textItem.contents = item.stt // thong tin stt;
 
     app.activeDocument.artLayers[0].textItem.contents = item.orderId; // thong tin order
-   
+
     var pathObj = File("//192.168.1.240/photoshop-script-V4-ultimate/label/objBarcode.jsx");
     $.evalFile(pathObj);
 
@@ -34,5 +35,20 @@ function moveTem(item, type) {
     }
 
     app.activeDocument.artLayers[6].textItem.contents = item.country; // country
+
+    var NameUuTien = "";
+
+    if (item.partner == "PWSER1411") {
+        NameUuTien = "K";
+        app.activeDocument.artLayers[8].textItem.contents = NameUuTien; // country
+        if (app.activeDocument.artLayers[9].visible === false) app.activeDocument.artLayers[9].visible = true;
+    }
+    else {
+        if (app.activeDocument.artLayers[9].visible === true) app.activeDocument.artLayers[9].visible = false;
+
+    }
+
+
+
 
 }

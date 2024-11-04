@@ -6,6 +6,7 @@ app.preferences.rulerUnits = Units.PIXELS; // hệ đo pixel
 
 
 
+
 {
     var file = new File("~/Desktop/ServerFile/photoshopStatus.txt");
     file.open("w");
@@ -62,7 +63,7 @@ try {
 
         #include "openFile.jsx";
         #include "saveDesign.jsx";
-
+        #include "functions.jsx";
     }
     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
     if (fileHong == 0)
