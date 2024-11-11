@@ -8,9 +8,10 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], "front");
-    if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 
     #include "cropAndResize-autoFill.jsx";
+    if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+
     #include "boxWFlexible.jsx";
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -49,6 +50,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "cropAndResize-autoFill.jsx";
 
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+    #include "boxWFlexible.jsx";
     app.doAction("canvasHoriz", "tool");
 
     app.activeDocument.activeLayer.name = arr[i].stt;

@@ -6,8 +6,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], type);
     app.doAction("canvasHoriz", "tool");
     app.activeDocument.activeLayer.name = "1";
-    app.doAction("path xu ly vien", "tool");
-    app.doAction("xu ly canh thot", "tool");
+    // app.doAction("path xu ly vien", "tool");
+    // app.doAction("xu ly canh thot", "tool");
     { // crop xóa khoảng trắng
         var PSpotKhung = app.activeDocument.activeLayer.bounds;
         app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
@@ -24,8 +24,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
         openFile(FileDesign, arr[i], type);
         app.doAction("canvasHoriz", "tool");
         app.activeDocument.activeLayer.name = "1";
-        app.doAction("path xu ly vien", "tool");
-        app.doAction("xu ly canh thot", "tool");
+        // app.doAction("path xu ly vien", "tool");
+        // app.doAction("xu ly canh thot", "tool");
         { // crop xóa khoảng trắng
             var PSpotKhung = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
