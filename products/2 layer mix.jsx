@@ -35,7 +35,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         heightden = heightden3;
     }
 
-
+    var bounds1 = [];
 
     { // lop 3
         var lop = 3;
@@ -48,6 +48,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
+        bounds1 = app.activeDocument.activeLayer.bounds;
+
         app.activeDocument.activeLayer.name = arr[i].stt;
 
         if (arr[i].direction == "2")
@@ -57,9 +59,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
             else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
         }
 
-        var bounds1 = app.activeDocument.activeLayer.bounds;
-        var boxW = bounds1[2] - bounds1[0] + 30;
-        var boxH = bounds1[3] - bounds1[1] + 30;
+        var boundsxxx = app.activeDocument.activeLayer.bounds;
+        var boxW = boundsxxx[2] - boundsxxx[0] + 30;
+        var boxH = boundsxxx[3] - boundsxxx[1] + 30;
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
@@ -81,9 +83,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.doAction("xoa stroke layer", "tool");
             app.activeDocument.activeLayer.name = arr[i].stt;
 
-            var bounds1 = app.activeDocument.activeLayer.bounds;
-            var widthden = bounds1[2] - bounds1[0];
-            var heightden = bounds1[3] - bounds1[1];
+            boundsxxx = app.activeDocument.activeLayer.bounds;
+            var widthden = boundsxxx[2] - boundsxxx[0];
+            var heightden = boundsxxx[3] - boundsxxx[1];
             if (arr[i].direction == "2")
                 app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
             else if (arr[i].direction == "1") {
@@ -91,9 +93,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
             }
 
-            var bounds1 = app.activeDocument.activeLayer.bounds;
-            var boxW = bounds1[2] - bounds1[0] + 30;
-            var boxH = bounds1[3] - bounds1[1] + 30;
+            boundsxxx = app.activeDocument.activeLayer.bounds;
+            var boxW = boundsxxx[2] - boundsxxx[0] + 30;
+            var boxH = boundsxxx[3] - boundsxxx[1] + 30;
 
             stt = i;
         }
@@ -117,6 +119,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("moveZero", "tool");
         app.doAction("xoa stroke layer", "tool");
 
+        var bounds2 = app.activeDocument.activeLayer.bounds;
         app.activeDocument.activeLayer.name = arr[i].stt;
 
         if (arr[i].direction == "2")
@@ -126,25 +129,29 @@ for (var i = stt; i <= arr.length - 1; i++) {
             else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
         }
 
-        var bounds2 = app.activeDocument.activeLayer.bounds;
 
         if ((bounds2[2] - bounds2[0]) != 0) {
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
             app.doAction("moveZero", "tool");
-            app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
+            if (widthden > heightden)
+                app.activeDocument.activeLayer.translate(((xPosition + (wphone / widthden) * (bounds2[0] - bounds1[0]))), ((yPosition + (wphone / widthden) * (bounds1[3] - bounds2[3]))) * (-1));
+            else
+                app.activeDocument.activeLayer.translate(((xPosition + (wphone / heightden) * (bounds2[0] - bounds1[0]))), ((yPosition + (wphone / heightden) * (bounds1[3] - bounds2[3]))) * (-1));
+
         }
         else app.activeDocument.activeLayer.remove();
 
-
+        // vsvsd
 
 
         // ávssvsvsv
 
 
         if ((i == arr.length - 1) & (lop == 4)) {
-            #include "saveallcropByName.jsx";
             
+            #include "saveallcropByName.jsx";
+
 
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
         }
@@ -216,7 +223,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
             #include "saveallcropByName.jsx";
-            
+
 
             #include "createDocumentWooden.jsx";
 
@@ -288,7 +295,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((i == arr.length - 1) & (lop == 2)) {
         #include "saveallcropByName.jsx";
-        
+
 
     }
 }

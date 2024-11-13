@@ -48,7 +48,7 @@ function openCropFile(item, FileDesign, type) {
     app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/" + item.nameId + ".png"));
     openFile(FileDesign, item, type);
     app.doAction("strokeWhite1px", "tool");
-
+    app.doAction("canvasHoriz", "tool");
 
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";
