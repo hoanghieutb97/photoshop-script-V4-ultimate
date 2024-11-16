@@ -7,12 +7,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
 
     #include "cropBlackCut-1Size.jsx";
+    
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         // #include "xoaExpand12px.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        #include "save1Mat.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocumentMica.jsx";
         ban = ban + 1;
@@ -30,8 +30,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
     }
     if (i == arr.length - 1) {
-        app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        // #include "xoaExpand12px.jsx";
+        #include "save1Mat.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }

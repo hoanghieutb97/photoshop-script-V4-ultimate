@@ -73,3 +73,33 @@ function resize_Document_____tinhKichThuocToNhatHaiLop_coToaDo(item, Current_Wid
     var activeBounds = app.activeDocument.activeLayer.bounds;
     app.activeDocument.crop(activeBounds, 0, activeBounds[2] - activeBounds[0], activeBounds[3] - activeBounds[1]);
 }
+
+
+function cropBoxInXY(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
+
+    // app.activeDocument.selection.select([
+    //     [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+    //     [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+    //     [(boxX) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
+    //     [(boxX) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
+
+    // ]);
+
+    app.activeDocument.selection.select([
+        [Math.round((boxX - 1) * (widthF / boxSumX))
+            , Math.round((boxY - 1) * (heightF / boxSumY))],
+        [Math.round((boxX - 1) * (widthF / boxSumX)), Math.round((boxY) * (heightF / boxSumY))],
+        [Math.round((boxX) * (widthF / boxSumX)), Math.round((boxY) * (heightF / boxSumY))],
+        [Math.round((boxX) * (widthF / boxSumX)), Math.round((boxY - 1) * (heightF / boxSumY))],
+
+    ]);
+
+
+    app.activeDocument.selection.stroke(app.foregroundColor, 1, StrokeLocation.INSIDE);
+    app.doAction("duplicateSelection", "tool")
+    app.activeDocument.layers[1].remove();
+    var PSpotKhung = app.activeDocument.activeLayer.bounds;
+    app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
+
+
+}
