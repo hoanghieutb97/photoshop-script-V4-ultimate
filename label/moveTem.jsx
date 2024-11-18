@@ -2,7 +2,7 @@
 function moveTem(item, type) {
 
 
-    app.activeDocument.artLayers[3].textItem.contents = item.nameId ; // thong tin stt;
+    app.activeDocument.artLayers[3].textItem.contents = item.nameId; // thong tin stt;
     app.activeDocument.artLayers[7].textItem.contents = item.stt; // thong tin stt;
 
     app.activeDocument.artLayers[0].textItem.contents = item.orderId; // thong tin order
@@ -40,6 +40,11 @@ function moveTem(item, type) {
 
     if (item.partner == "PWSER1411") {
         NameUuTien = "K";
+        app.activeDocument.artLayers[8].textItem.contents = NameUuTien; // country
+        if (app.activeDocument.artLayers[9].visible === false) app.activeDocument.artLayers[9].visible = true;
+    }
+    else if (item.partner == "PWSER115") {
+        NameUuTien = "N";
         app.activeDocument.artLayers[8].textItem.contents = NameUuTien; // country
         if (app.activeDocument.artLayers[9].visible === false) app.activeDocument.artLayers[9].visible = true;
     }
