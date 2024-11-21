@@ -1,5 +1,5 @@
 
-#include "createDocument.jsx";
+#include "createDocumentAll.jsx";
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     #include "openFileThotTron.jsx";
@@ -8,7 +8,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("create spot in bo vien 20", "tool");
         #include "save1Mat.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-        #include "createDocument.jsx";
+        #include "createDocumentAll.jsx";
         ban = ban + 1;
         #include "openFileThotTron.jsx";
         stt = i;

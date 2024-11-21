@@ -44,12 +44,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateKHUNG.jsx";
     app.doAction("olverlay DEN CAT", "tool");
 
-
+ 
 
     openFile(FileDesign, arr[i], "back");
     #include "cropAndResize-autoFill.jsx";
 
-    if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+    if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
     #include "boxWFlexible.jsx";
     app.doAction("canvasHoriz", "tool");
 

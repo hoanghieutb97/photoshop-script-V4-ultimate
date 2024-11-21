@@ -41,7 +41,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         hLast = 0;
         wLast = 0;
         ban = ban + 1;
-        openCropFile(arr[i], FileDesign, "front")
+        openCropFile(arr[i], FileDesign, "")
         stt = i;
     }
 

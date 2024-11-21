@@ -42,7 +42,7 @@ var bounds1 = app.activeDocument.activeLayer.bounds;
 if (arr[i].direction == "2")
     app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 else if (arr[i].direction == "1")
-    app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+    app.activeDocument.activeLayer.resize(hphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 
 
 boundsxxx = app.activeDocument.activeLayer.bounds;
@@ -60,7 +60,8 @@ if ((bounds2[2] - bounds2[0]) != 0)
     if (arr[i].direction == "2")
         app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
     else if (arr[i].direction == "1")
-        app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+        app.activeDocument.activeLayer.resize(hphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 
 
 
+ 

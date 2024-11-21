@@ -63,7 +63,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer = app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate(((xPosition + (wphone / heightden) * (bounds2[0] - bounds1[0]))), ((yPosition + (wphone / heightden) * (bounds1[3] - bounds2[3]))) * (-1));
+        app.activeDocument.activeLayer.translate(((xPosition + (wphone / widthden) * (bounds2[0] - bounds1[0]))), ((yPosition + (hphone / heightden) * (bounds1[3] - bounds2[3]))) * (-1));
 
     }
     else {

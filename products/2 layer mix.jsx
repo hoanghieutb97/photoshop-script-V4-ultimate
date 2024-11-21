@@ -40,7 +40,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // lop 3
         var lop = 3;
         openFile(FileDesign, arr[i], type);
-        // app.doAction("canvasHoriz", "tool");
+        app.doAction("canvasHoriz", "tool");
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -73,7 +73,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var lop = 3;
 
             openFile(FileDesign, arr[i], type);
-            // app.doAction("canvasHoriz", "tool");
+            app.doAction("canvasHoriz", "tool");
             cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["CMYK"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -109,7 +109,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     {// lop 4
         var lop = 4;
         openFile(FileDesign, arr[i], type);
-        // app.doAction("canvasHoriz", "tool");
+        app.doAction("canvasHoriz", "tool");
         cropBoxIn8(lop, app.activeDocument.width, app.activeDocument.height);
         app.activeDocument.activeLayer.name = arr[i].stt;
 
