@@ -38,7 +38,12 @@ function moveTem(item, type) {
 
     var NameUuTien = "";
 
-    if (item.partner == "PWSER1411") {
+    if (item.orderId.substring(0, 3).toLowerCase() == "pwt" ) {
+        NameUuTien = "T";
+        app.activeDocument.artLayers[8].textItem.contents = NameUuTien; // country
+        if (app.activeDocument.artLayers[9].visible === false) app.activeDocument.artLayers[9].visible = true;
+    }
+    else if (item.partner == "PWSER1411") {
         NameUuTien = "K";
         app.activeDocument.artLayers[8].textItem.contents = NameUuTien; // country
         if (app.activeDocument.artLayers[9].visible === false) app.activeDocument.artLayers[9].visible = true;
