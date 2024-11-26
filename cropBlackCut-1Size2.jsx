@@ -1,7 +1,7 @@
 
 
 
-
+ 
 
 var layerWidth = app.activeDocument.width;
 var layerHeight = app.activeDocument.height;
@@ -37,7 +37,7 @@ app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers
 app.doAction("moveZero", "tool");
 app.doAction("xoa stroke layer", "tool");
 app.activeDocument.activeLayer.name = arr[i].stt;
-var bounds1 = app.activeDocument.activeLayer.bounds;
+ bounds1 = app.activeDocument.activeLayer.bounds;
 
 if (arr[i].direction == "2")
     app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
@@ -55,7 +55,7 @@ app.doAction("moveZero", "tool");
 app.doAction("xoa stroke layer", "tool");
 
 app.activeDocument.activeLayer.name = arr[i].stt;
-var bounds2 = app.activeDocument.activeLayer.bounds;
+ bounds2 = app.activeDocument.activeLayer.bounds;
 if ((bounds2[2] - bounds2[0]) != 0)
     if (arr[i].direction == "2")
         app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);

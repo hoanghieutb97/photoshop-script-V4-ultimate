@@ -18,6 +18,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     var boxH = 0;
 
     openFile(FileDesign, arr[i], type);
+
     if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
     cropBoxInXY(1, 1, 1, 2, app.activeDocument.width, app.activeDocument.height);
     app.doAction("xoa stroke layer", "tool");
@@ -63,8 +64,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer = app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
-        app.activeDocument.activeLayer.translate(((xPosition + (wphone / widthden) * (bounds2[0] - bounds1[0]))), ((yPosition + (hphone / heightden) * (bounds1[3] - bounds2[3]))) * (-1));
-
+        // alert(hphone / heightden)
+        // alert(wphone / widthden)
+        // alert(wphone); // 1063
+        // alert(widthden); // 727
+        if (arr[i].direction == "2")
+            app.activeDocument.activeLayer.translate(((xPosition + (wphone / widthden) * (bounds2[0] - bounds1[0]))), ((yPosition + (hphone / heightden) * (bounds1[3] - bounds2[3]))) * (-1));
+        else app.activeDocument.activeLayer.translate(((xPosition + (hphone / heightden) * (bounds2[0] - bounds1[0]))), ((yPosition + (hphone / heightden) * (bounds1[3] - bounds2[3]))) * (-1));
     }
     else {
         app.activeDocument.activeLayer = app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt);
