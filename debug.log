@@ -156,3 +156,11 @@ C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use
 [1010/105611.146:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842
 [1010/123915.224:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
 [1030/193713.372:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
+[1203/105941.301:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 1612
+[1203/105941.302:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842
+[1203/105941.324:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(69,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[1203/162221.092:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 1612
+[1203/162221.093:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842

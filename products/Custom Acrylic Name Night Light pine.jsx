@@ -259,7 +259,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.doAction("strokeRed1px", "tool");
     #include "cropAndResize-autoFill.jsx";
     boxW = app.activeDocument.width + 700;
-    boxH = app.activeDocument.height + 30;
+    boxH = app.activeDocument.height + 300;
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -281,7 +281,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("strokeRed1px", "tool");
         #include "cropAndResize-autoFill.jsx";
         boxW = app.activeDocument.width + 700;
-        boxH = app.activeDocument.height + 30;
+        boxH = app.activeDocument.height + 300;
         stt = i;
 
     }

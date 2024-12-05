@@ -16,7 +16,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "createDocument.jsx";
 
         ban = ban + 1;
-        openCropFile(arr[i], FileDesign, "front")
+        openCropFile(arr[i], FileDesign, "")
         stt = i;
     }
 
