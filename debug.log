@@ -164,3 +164,20 @@ C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use
 
 [1203/162221.092:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 1612
 [1203/162221.093:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842
+[1210/195347.924:ERROR:viz_main_impl.cc(184)] Exiting GPU process due to errors during initialization
+[1210/195348.115:ERROR:viz_main_impl.cc(184)] Exiting GPU process due to errors during initialization
+[1210/195348.122:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
+[1212/162808.142:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 1612
+[1212/162808.143:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842
+[1212/162808.176:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(69,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[1213/100412.156:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 1612
+[1213/100412.159:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842
+[1213/100412.201:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(69,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[1213/110828.618:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 1612
+[1213/110828.618:ERROR:mf_helpers.cc(14)] Error in dxva_video_decode_accelerator_win.cc on line 842

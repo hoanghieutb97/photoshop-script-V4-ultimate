@@ -70,7 +70,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "createDocument.jsx";
         ban = ban + 1;
-
+        openFile(FileDesign, arr[i], type);
+        if (app.activeDocument.width < 2400) nho = true
         app.activeDocument.crop([0, app.activeDocument.height - 412, app.activeDocument.width, app.activeDocument.height]);
 
         app.doAction("strokeRed1px", "tool");
