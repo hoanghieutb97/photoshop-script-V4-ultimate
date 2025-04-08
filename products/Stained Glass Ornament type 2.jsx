@@ -1,16 +1,17 @@
 
 #include "createDocument2.jsx";
-nameSave = "tool-in xuoi-2 lan-khong trang";
+nameSave = "tool-in xuoi-co trang";
 var bovien = 3; //mm
 
 
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
-    openCropFile(arr[i], FileDesign, "")
+    openCropFile(arr[i], FileDesign, "front")
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
         {
             app.doAction("tao stroke glass suncatcher", "tool")
             // Đặt màu foreground là đen
@@ -21,16 +22,18 @@ for (var i = stt; i <= arr.length - 1; i++) {
             // Stroke vùng chọn 15px, inside
             app.activeDocument.selection.stroke(app.foregroundColor, bovien / 0.084667, StrokeLocation.INSIDE, ColorBlendMode.NORMAL, 100, false);
             app.activeDocument.selection.deselect();
-            app.activeDocument.activeLayer.move(app.activeDocument.layerSets.getByName("IN SAU"), ElementPlacement.INSIDE);
+            // app.activeDocument.activeLayer.move(app.activeDocument.layerSets.getByName("IN SAU"), ElementPlacement.INSIDE);
             app.activeDocument.artLayers.getByName("KHUNG copy").remove();
-            
+
         }
+
+
         #include "saveallcropByNameNew.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument2.jsx";
 
         ban = ban + 1;
-        openCropFile(arr[i], FileDesign, "")
+        openCropFile(arr[i], FileDesign, "front")
         stt = i;
     }
 
@@ -42,6 +45,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.doAction("moveZero", "tool");
     app.activeDocument.activeLayer.translate(xPosition + (bovien / 0.084667), (yPosition + (bovien / 0.084667)) * (-1));
 
+    openCropFile(arr[i], FileDesign, "back")
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["IN SAU"], ElementPlacement.PLACEATBEGINNING);
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    app.activeDocument.activeLayer = app.activeDocument.layerSets["IN SAU"].artLayers.getByName(arr[i].stt);
+    app.doAction("moveZero", "tool");
+    app.activeDocument.activeLayer.translate(xPosition + (bovien / 0.084667), (yPosition + (bovien / 0.084667)) * (-1));
 
     openKhung(arr[i]);
 
@@ -61,9 +71,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
             // Stroke vùng chọn 15px, inside
             app.activeDocument.selection.stroke(app.foregroundColor, bovien / 0.084667, StrokeLocation.INSIDE, ColorBlendMode.NORMAL, 100, false);
             app.activeDocument.selection.deselect();
-            app.activeDocument.activeLayer.move(app.activeDocument.layerSets.getByName("IN SAU"), ElementPlacement.INSIDE);
+            // app.activeDocument.activeLayer.move(app.activeDocument.layerSets.getByName("IN SAU"), ElementPlacement.INSIDE);
             app.activeDocument.artLayers.getByName("KHUNG copy").remove();
-            
+
         }
 
         #include "saveallcropByNameNew.jsx";
@@ -74,7 +84,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 function openKhung(item) {
 
-    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/khung " + item.nameId + ".png"));
+    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/khung " + getTenKhung(item) + ".png"));
     hphone = Math.round((item.hight) / 0.084667);
     wphone = Math.round((item.width) / 0.084667);
 
@@ -85,25 +95,30 @@ function openKhung(item) {
 }
 
 function openCropFile(item, FileDesign, type) {
-    var tenKhung = item.nameId
-    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/" + item.nameId + ".png"));
-    openFile(FileDesign, item, type);
+
+    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/" + getTenKhung(item) + ".png"));
+    openFile(FileDesign, item, "");
+    var thongsotype = 1;
+    if (type == "back") thongsotype = 2;
+    else app.doAction("canvasHoriz", "tool");
+    cropBoxInXY(1, thongsotype, 1, 2, app.activeDocument.width, app.activeDocument.height);
+
     app.doAction("strokeWhite1px", "tool");
     app.doAction("canvasHoriz", "tool");
     switch (item.nameId) {
-        case "G-Suncatcher-3,9in":
+        case "G-Ornament-3,9in-type2":
             hphone = Math.round(105 / 0.084667);
             wphone = Math.round(105 / 0.084667);
             break;
-        case "G-Suncatcher-5,9in":
+        case "G-Ornament-5,9in-type2":
             hphone = Math.round(155 / 0.084667);
             wphone = Math.round(155 / 0.084667);
             break;
-        case "G-Suncatcher-9,9in":
+        case "G-Ornament-9,9in-type2":
             hphone = Math.round(255 / 0.084667);
             wphone = Math.round(255 / 0.084667);
             break;
-        case "G-Suncatcher-7,9in":
+        case "G-Ornament-7,9in-type2":
             hphone = Math.round(205 / 0.084667);
             wphone = Math.round(205 / 0.084667);
             break;
@@ -112,7 +127,7 @@ function openCropFile(item, FileDesign, type) {
     }
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";
-    app.activeDocument.activeLayer.duplicate(app.documents[tenKhung + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+    app.activeDocument.activeLayer.duplicate(app.documents[getTenKhung(item) + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.doAction("moveCenter", "tool");
     app.doAction("crop mica dzt", "tool");
@@ -126,4 +141,24 @@ function openCropFile(item, FileDesign, type) {
     // app.doAction("strokeWhite1px", "tool");
 
 
-} 
+}
+function getTenKhung(item) {
+    var tenkhung = ""
+    switch (item.nameId) {
+        case "G-Ornament-3,9in-type2":
+            tenkhung = "G-Suncatcher-3,9in"
+            break;
+        case "G-Ornament-5,9in-type2":
+            tenkhung = "G-Suncatcher-5,9in"
+            break;
+        case "G-Ornament-7,9in-type2":
+            tenkhung = "G-Suncatcher-7,9in"
+            break;
+        case "G-Ornament-9,9in-type2":
+            tenkhung = "G-Suncatcher-9,9in"
+            break;
+        default:
+            break;
+    }
+    return tenkhung
+}

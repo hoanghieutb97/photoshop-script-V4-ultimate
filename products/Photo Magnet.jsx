@@ -7,7 +7,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (arr[i].nameId.split("-")[0] == "P") coanh = true
     { // lop 11
         var lop = 11;
-        if (coanh) openFile(FileDesign, arr[i], "front");
+        if (coanh) openFile(FileDesign, arr[i], "");
         else openFile(FileDesign, arr[i], type);
         xulyGOD();
         cropBoxIn(1, 1, 4, 2, app.activeDocument.width, app.activeDocument.height);
@@ -32,7 +32,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             #include "createDocumentWooden.jsx";
             ban = ban + 1;
             var lop = 11;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -63,7 +63,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // lop 12
         var lop = 12;
 
-        if (coanh) openFile(FileDesign, arr[i], "front");
+        if (coanh) openFile(FileDesign, arr[i], "");
         else openFile(FileDesign, arr[i], type);
         xulyGOD();
 
@@ -92,7 +92,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     { // lop 21
         var lop = 21;
-        if (coanh) openFile(FileDesign, arr[i], "front");
+        if (coanh) openFile(FileDesign, arr[i], "");
         else openFile(FileDesign, arr[i], type);
         xulyGOD();
 
@@ -119,7 +119,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             #include "createDocumentWooden.jsx";
             ban = ban + 1;
             var lop = 21;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -148,7 +148,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     { // lop 2-1
         var lop = 22;
-        if (coanh) openFile(FileDesign, arr[i], "front");
+        if (coanh) openFile(FileDesign, arr[i], "");
         else openFile(FileDesign, arr[i], type);
         xulyGOD();
 
@@ -176,7 +176,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     { // lop 3-1
         var lop = 31;
-        if (coanh) openFile(FileDesign, arr[i], "front");
+        if (coanh) openFile(FileDesign, arr[i], "");
         else openFile(FileDesign, arr[i], type);
         xulyGOD();
 
@@ -202,7 +202,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             #include "createDocumentWooden.jsx";
             ban = ban + 1;
             var lop = 31;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -231,7 +231,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     { // lop 3-2
         var lop = 32;
-        if (coanh) openFile(FileDesign, arr[i], "front");
+        if (coanh) openFile(FileDesign, arr[i], "");
         else openFile(FileDesign, arr[i], type);
         xulyGOD();
 
@@ -260,7 +260,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         { // lop 41
             var lop = 41;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -286,7 +286,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 #include "createDocumentWooden.jsx";
                 ban = ban + 1;
                 var lop = 41;
-                if (coanh) openFile(FileDesign, arr[i], "front");
+                if (coanh) openFile(FileDesign, arr[i], "");
                 else openFile(FileDesign, arr[i], type);
                 xulyGOD();
 
@@ -315,7 +315,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         }
         { // lop 4-2
             var lop = 42;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -433,7 +433,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         { // lop 21
             var lop = 41;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -460,7 +460,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 #include "createDocumentMica.jsx";
                 ban = ban + 1;
                 var lop = 41;
-                if (coanh) openFile(FileDesign, arr[i], "front");
+                if (coanh) openFile(FileDesign, arr[i], "");
                 else openFile(FileDesign, arr[i], type);
                 xulyGOD();
 
@@ -490,7 +490,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         }
         { // lop 12
             var lop = 42;
-            if (coanh) openFile(FileDesign, arr[i], "front");
+            if (coanh) openFile(FileDesign, arr[i], "");
             else openFile(FileDesign, arr[i], type);
             xulyGOD();
 
@@ -611,7 +611,7 @@ if (!folderKhac.exists) { folderKhac.create(); }
 for (var i = stt; i <= arr.length - 1; i++) {
     if (arr[i].nameId.split("-")[0] == "P") {
         nogiay = true;
-        openFile(FileDesign, arr[i], "back");
+        openFile(FileDesign, arr[i], "");
         xulyAnhGOD()
         var PSpotKhung = app.activeDocument.activeLayer.bounds;
         app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
@@ -621,13 +621,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-            #include "cropDocument.jsx";
+            #include "cropDocumentAll.jsx";
             // app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
             app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             #include "createDocumentA4.jsx";
             ban = ban + 1;
-            openFile(FileDesign, arr[i], "back");
+            openFile(FileDesign, arr[i], "");
             xulyAnhGOD()
             var PSpotKhung = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
@@ -656,26 +656,12 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             if ((yPosition + boxH + 30 + hLast > hAll) && (xPosition + boxW + 30 + wLast) > wAll) {
                 app.activeDocument.layerSets["SPOT"].artLayers.getByName("stt" + arr[i].stt).remove();
-                {
-                    app.doAction("crop document all", "tool");
+                #include "cropDocumentAll.jsx";
+                // app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
+                app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-                    var selectionBounds = app.activeDocument.activeLayer.bounds;
-                    var padding = 30;
-                    var newBounds = [
-                        selectionBounds[0] - padding,
-                        selectionBounds[1] - padding,
-                        selectionBounds[2] + padding,
-                        selectionBounds[3] + padding
-                    ];
-                    app.activeDocument.crop(newBounds);
-                    app.activeDocument.activeLayer.remove();
-                    if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
-
-                    app.activeDocument.saveAs(Folder(folderKhac + "/giay" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-                    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-                }
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-                #include "createDocumentWooden.jsx";
+                #include "createDocumentA4.jsx";
                 ban = ban + 1;
                 stt = i;
                 app.open(File("//192.168.1.240/ps script data/bcsttkinlytoy.tif"));
@@ -718,7 +704,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         if (nogiay) {
-            #include "cropDocument.jsx";
+            #include "cropDocumentAll.jsx";
             // app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
             app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 

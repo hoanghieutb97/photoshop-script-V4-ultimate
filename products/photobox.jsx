@@ -94,6 +94,7 @@ for (var i = 0; i < result.length; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         app.doAction("moveZero", "tool");
         app.activeDocument.activeLayer.translate(292 + j * (952), (873) * (-1));
+        app.activeDocument.artLayers[j].textItem.contents = result[i][j].orderId; // thong tin order
 
 
     }
