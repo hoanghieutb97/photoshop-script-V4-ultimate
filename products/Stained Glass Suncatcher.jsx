@@ -23,7 +23,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.selection.deselect();
             app.activeDocument.activeLayer.move(app.activeDocument.layerSets.getByName("IN SAU"), ElementPlacement.INSIDE);
             app.activeDocument.artLayers.getByName("KHUNG copy").remove();
-            
+            app.activeDocument.layerSets["IN SAU"].move(app.activeDocument.layers[0], ElementPlacement.PLACEBEFORE)
         }
         #include "saveallcropByNameNew.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
@@ -40,7 +40,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.activeDocument.activeLayer = app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt);
     app.doAction("moveZero", "tool");
-    app.activeDocument.activeLayer.translate(xPosition + (bovien / 0.084667), (yPosition + (bovien / 0.084667)) * (-1));
+    app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
 
 
     openKhung(arr[i]);
@@ -63,9 +63,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.selection.deselect();
             app.activeDocument.activeLayer.move(app.activeDocument.layerSets.getByName("IN SAU"), ElementPlacement.INSIDE);
             app.activeDocument.artLayers.getByName("KHUNG copy").remove();
-            
-        }
 
+        }
+        app.activeDocument.layerSets["IN SAU"].move(app.activeDocument.layers[0], ElementPlacement.PLACEBEFORE)
         #include "saveallcropByNameNew.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
@@ -116,8 +116,8 @@ function openCropFile(item, FileDesign, type) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.doAction("moveCenter", "tool");
     app.doAction("crop mica dzt", "tool");
-    hphone = Math.round((item.hight - (bovien * 2)) / 0.084667);
-    wphone = Math.round((item.width - (bovien * 2)) / 0.084667);
+    hphone = Math.round((item.hight) / 0.084667);
+    wphone = Math.round((item.width) / 0.084667);
 
     #include "cropAndResize-autoFill.jsx";
     boxW = Math.round(item.box[0] / 0.084667);
