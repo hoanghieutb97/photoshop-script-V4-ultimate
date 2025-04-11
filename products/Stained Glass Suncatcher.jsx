@@ -1,7 +1,7 @@
 
 #include "createDocument2.jsx";
 nameSave = "tool-in xuoi-2 lan-khong trang";
-var bovien = 3; //mm
+var bovien = 2; //mm
 
 
 for (var i = stt; i <= arr.length - 1; i++) {

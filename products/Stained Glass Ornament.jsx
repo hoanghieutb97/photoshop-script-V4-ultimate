@@ -43,7 +43,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.activeDocument.activeLayer = app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt);
     app.doAction("moveZero", "tool");
-    app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
+    app.activeDocument.activeLayer.translate(xPosition  , (yPosition ) * (-1));
 
     openCropFile(arr[i], FileDesign, "back")
     app.activeDocument.activeLayer.name = arr[i].stt;
@@ -51,7 +51,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.activeDocument.activeLayer = app.activeDocument.layerSets["IN SAU"].artLayers.getByName(arr[i].stt);
     app.doAction("moveZero", "tool");
-    app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
+    app.activeDocument.activeLayer.translate(xPosition , (yPosition ) * (-1));
 
     openKhung(arr[i]);
 
@@ -104,21 +104,21 @@ function openCropFile(item, FileDesign, type) {
     cropBoxInXY(1, thongsotype, 1, 2, app.activeDocument.width, app.activeDocument.height);
 
     app.doAction("strokeWhite1px", "tool");
-    app.doAction("canvasHoriz", "tool");
+    
     switch (item.nameId) {
-        case "G-Ornament-3,9in-type2":
+        case "G-Ornament-3,9in":
             hphone = Math.round(105 / 0.084667);
             wphone = Math.round(105 / 0.084667);
             break;
-        case "G-Ornament-5,9in-type2":
+        case "G-Ornament-5,9in":
             hphone = Math.round(155 / 0.084667);
             wphone = Math.round(155 / 0.084667);
             break;
-        case "G-Ornament-9,9in-type2":
+        case "G-Ornament-9,9in":
             hphone = Math.round(255 / 0.084667);
             wphone = Math.round(255 / 0.084667);
             break;
-        case "G-Ornament-7,9in-type2":
+        case "G-Ornament-7,9in":
             hphone = Math.round(205 / 0.084667);
             wphone = Math.round(205 / 0.084667);
             break;
@@ -131,8 +131,8 @@ function openCropFile(item, FileDesign, type) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.doAction("moveCenter", "tool");
     app.doAction("crop mica dzt", "tool");
-    hphone = Math.round((item.hight) / 0.084667);
-    wphone = Math.round((item.width) / 0.084667);
+    hphone = Math.round((item.hight ) / 0.084667);
+    wphone = Math.round((item.width ) / 0.084667);
 
     #include "cropAndResize-autoFill.jsx";
     boxW = Math.round(item.box[0] / 0.084667);
@@ -145,16 +145,16 @@ function openCropFile(item, FileDesign, type) {
 function getTenKhung(item) {
     var tenkhung = ""
     switch (item.nameId) {
-        case "G-Ornament-3,9in-type2":
+        case "G-Ornament-3,9in":
             tenkhung = "G-Suncatcher-3,9in"
             break;
-        case "G-Ornament-5,9in-type2":
+        case "G-Ornament-5,9in":
             tenkhung = "G-Suncatcher-5,9in"
             break;
-        case "G-Ornament-7,9in-type2":
+        case "G-Ornament-7,9in":
             tenkhung = "G-Suncatcher-7,9in"
             break;
-        case "G-Ornament-9,9in-type2":
+        case "G-Ornament-9,9in":
             tenkhung = "G-Suncatcher-9,9in"
             break;
         default:
