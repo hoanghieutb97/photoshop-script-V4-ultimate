@@ -1,0 +1,29 @@
+openFile(FileDesign, arr[i], type);
+if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
+if (lat) app.doAction("canvasHoriz", "tool");
+cropBoxInXY(sttCropBox[0], sttCropBox[1], sttCropBox[2], sttCropBox[3], app.activeDocument.width, app.activeDocument.height);
+if (xoay) app.activeDocument.activeLayer.rotate(90);
+app.doAction("xoa stroke layer", "tool");
+
+var activebounds = app.activeDocument.activeLayer.bounds;
+if (arr[i].direction == "2")
+    app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+else if (arr[i].direction == "1")
+    app.activeDocument.activeLayer.resize(hphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+
+app.activeDocument.activeLayer.name = arr[i].stt;
+app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+if ((activebounds[2] - activebounds[0]) != 0) {
+    app.activeDocument.activeLayer.name = arr[i].stt;
+    app.activeDocument.activeLayer = app.activeDocument.layerSets[Group_In].artLayers.getByName(arr[i].stt);
+    app.doAction("moveZero", "tool");
+    if (arr[i].direction == "2")
+        app.activeDocument.activeLayer.translate(((xPosition + (wphone / widthden) * (activebounds[0] - G_boundDen[0]))), ((yPosition + (hphone / heightden) * (G_boundDen[3] - activebounds[3]))) * (-1));
+    else app.activeDocument.activeLayer.translate(((xPosition + (hphone / heightden) * (activebounds[0] - G_boundDen[0]))), ((yPosition + (hphone / heightden) * (G_boundDen[3] - activebounds[3]))) * (-1));
+}
+else {
+    app.activeDocument.activeLayer = app.activeDocument.layerSets[Group_In].artLayers.getByName(arr[i].stt);
+    app.activeDocument.activeLayer.remove();
+} 

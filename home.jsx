@@ -29,8 +29,8 @@ var selectFileJson;
     group1.margins = 0;
 
 
-    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/utimate.jsx"));
-    var image3 = group1.add("image", undefined, File.decode(image3_imgString), { name: "image3" });
+    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/caotien.jsx"));
+    var image3 = group1.add("image", undefined, File.decode(image2_imgString), { name: "image3" });
 
     var radiobutton1 = group1.add("radiobutton", undefined, undefined, { name: "radiobutton1" });
     radiobutton1.text = "Không chạy ảnh";
@@ -41,13 +41,6 @@ var selectFileJson;
     group2.alignChildren = ["fill", "top"];
     group2.spacing = 10;
     group2.margins = 0;
-
-
-
-
-
-
-
 
 
     // PANEL1
@@ -92,14 +85,6 @@ var selectFileJson;
 
     var image1 = CreateJson.add("image", undefined, File.decode(image1_imgString), { name: "image1" });
 
-    // GROUP2
-    // ======
-    // var group2 = dialog.add("group", undefined, { name: "group2" });
-    // group2.preferredSize.width = 200;
-    // group2.orientation = "column";
-    // group2.alignChildren = ["fill", "top"];
-    // group2.spacing = 10;
-    // group2.margins = 0;
 
     // PANEL3
     // ======
@@ -145,21 +130,6 @@ var selectFileJson;
     inputXoa.text = "~\\Desktop\\xoa";
     inputXoa.preferredSize.width = 120;
     inputXoa.alignment = ["center", "center"];
-
-    // PANEL3
-    // ======
-    // var divider1 = panel3.add("panel", undefined, undefined, { name: "divider1" });
-    // divider1.enabled = false;
-    // divider1.alignment = "fill";
-
-    // GROUP3
-    // ======
-    // var group3 = dialog.add("group", undefined, { name: "group3" });
-    // group3.preferredSize.width = 200;
-    // group3.orientation = "column";
-    // group3.alignChildren = ["fill", "top"];
-    // group3.spacing = 10;
-    // group3.margins = 0;
 
     // PANEL6
     // ======
@@ -220,33 +190,6 @@ var selectFileJson;
     var button5 = panel7.add("button", undefined, undefined, { name: "button5" });
     button5.text = "Run";
 
-    // PANEL6
-    // ======
-    // var divider2 = panel6.add("panel", undefined, undefined, { name: "divider2" });
-    // divider2.enabled = false;
-    // divider2.alignment = "fill";
-
-    // {// them anh
-    // GROUP6
-    // ======
-    // var group6 = dialog.add("group", undefined, { name: "group6" });
-    // group6.preferredSize.width = 200;
-    // group6.orientation = "column";
-    // group6.alignChildren = ["fill", "top"];
-    // group6.spacing = 10;
-    // group6.margins = 0;
-
-    // PANEL8
-    // ======
-    // var panel8 = group6.add("panel", undefined, undefined, { name: "panel8" });
-    // panel8.preferredSize.height = 205;
-    // panel8.orientation = "column";
-    // panel8.alignChildren = ["left", "top"];
-    // panel8.spacing = 10;
-    // panel8.margins = 10;
-
-    // var image2 = panel8.add("image", undefined, File.decode(image2_imgString), { name: "image2" });
-    // }
 
 
 }
@@ -276,18 +219,21 @@ button2.onClick = function () {
             var FileDesign = data.FileDesign;
             var hAll = Math.round(data.hAll / 0.084667);
             var wAll = Math.round(data.wAll / 0.084667);
-            var fileHong = 0;
+
 
             try {
-              
-                    #include "before.jsx";
-                    #include "functions.jsx";
-                    // alert("1vvv11")
-                var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
-                if (fileHong == 0)
+
+                #include "before.jsx";
+                #include "functions.jsx";
+                // alert("1vvv11")
+                try {
+                    var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
                     $.evalFile(geo_dynamic);
-                else alert(fileHong + " : file bi hong !")
-                // #include "openFile.jsx";
+                } catch (error) {
+                    var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+                    $.evalFile(geo_dynamic);
+                }
+
                 #include "after.jsx";
 
             } catch (error) {

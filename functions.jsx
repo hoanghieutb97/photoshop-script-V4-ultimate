@@ -77,17 +77,8 @@ function resize_Document_____tinhKichThuocToNhatHaiLop_coToaDo(item, Current_Wid
 
 function cropBoxInXY(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
-    // app.activeDocument.selection.select([
-    //     [(boxX - 1) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
-    //     [(boxX - 1) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
-    //     [(boxX) * (widthF / boxSumX), (boxY) * (heightF / boxSumY)],
-    //     [(boxX) * (widthF / boxSumX), (boxY - 1) * (heightF / boxSumY)],
-
-    // ]);
-
     app.activeDocument.selection.select([
-        [Math.round((boxX - 1) * (widthF / boxSumX))
-            , Math.round((boxY - 1) * (heightF / boxSumY))],
+        [Math.round((boxX - 1) * (widthF / boxSumX)), Math.round((boxY - 1) * (heightF / boxSumY))],
         [Math.round((boxX - 1) * (widthF / boxSumX)), Math.round((boxY) * (heightF / boxSumY))],
         [Math.round((boxX) * (widthF / boxSumX)), Math.round((boxY) * (heightF / boxSumY))],
         [Math.round((boxX) * (widthF / boxSumX)), Math.round((boxY - 1) * (heightF / boxSumY))],
@@ -102,4 +93,56 @@ function cropBoxInXY(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
     app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
 
 
+}
+function selectWhitePixels() {
+    var idClrR = charIDToTypeID("ClrR");
+    var desc = new ActionDescriptor();
+
+    // Fuzziness = 0 (chọn chính xác trắng 255,255,255)
+    desc.putInteger(charIDToTypeID("Fzns"), 15);
+
+    // Màu trắng RGB(255,255,255)
+    var white = new ActionDescriptor();
+    white.putDouble(charIDToTypeID("Rd  "), 255);
+    white.putDouble(charIDToTypeID("Grn "), 255);
+    white.putDouble(charIDToTypeID("Bl  "), 255);
+
+    desc.putObject(charIDToTypeID("Mnm "), charIDToTypeID("RGBC"), white);
+
+    executeAction(idClrR, desc, DialogModes.NO);
+}
+
+function getShortCodeLabel(str, ban) {
+    var parts = str.replace(/ /g, "_").split("_");
+
+    var result = "";
+    var dayMonth = "";
+    var hasDate = false;
+
+    // Check nếu có ngày kiểu yyyy-mm-dd
+    var last3 = parts.slice(-3);
+    if (last3[0] && last3[0].match(/^\d{4}-\d{2}-\d{2}$/)) {
+        hasDate = true;
+        var dateParts = last3[0].split("-");
+        var day = parseInt(dateParts[2], 10);   // bỏ số 0 đầu
+        var month = parseInt(dateParts[1], 10); // bỏ số 0 đầu
+        dayMonth = day + "-" + month;
+    }
+
+    // Lấy phần chính (trừ ngày/giờ/đuôi)
+    var mainParts = hasDate ? parts.slice(0, parts.length - 3) : parts;
+
+    // Tạo mã viết tắt từ ký tự đầu
+    for (var i = 0; i < mainParts.length; i++) {
+        result += mainParts[i].charAt(0).toUpperCase();
+    }
+
+    // Nếu ký tự đầu là số thì tách riêng
+  
+    if (!isNaN(mainParts[0])) {
+        return mainParts[0] + " " + result.slice(mainParts[0].length) + (hasDate ? " " + dayMonth : "");
+    }
+    else {
+        return "Ban " + (ban + 1) + " - " + result + (hasDate ? " " + dayMonth : "");
+    }
 }

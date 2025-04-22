@@ -1,4 +1,13 @@
 
+app.activeDocument.artLayers.getByName("Background").remove()
+
+
+var groups = app.activeDocument.layerSets;
+
+for (var t = 0; t < groups.length; t++) {
+    selectGroup(groups[t].name, t > 0);
+}
+
 app.doAction("cropDOcumentAllNew", "tool");
 
 var selectionBounds = app.activeDocument.activeLayer.bounds;
@@ -15,3 +24,12 @@ if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMod
 
 app.activeDocument.saveAs(Folder(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES); 
+function selectGroup(name, add) {
+    var desc = new ActionDescriptor();
+    var ref = new ActionReference();
+    ref.putName(charIDToTypeID("Lyr "), name);
+    desc.putReference(charIDToTypeID("null"), ref);
+    if (add) desc.putEnumerated(stringIDToTypeID("selectionModifier"), stringIDToTypeID("selectionModifierType"), stringIDToTypeID("addToSelection"));
+    desc.putBoolean(charIDToTypeID("MkVs"), false);
+    executeAction(charIDToTypeID("slct"), desc, DialogModes.NO);
+}
