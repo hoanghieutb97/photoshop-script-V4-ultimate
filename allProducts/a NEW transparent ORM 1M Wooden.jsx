@@ -13,8 +13,8 @@ var Group_Delete2 = "IN SAU";// merge 1 mặt- bàn in
 var Group_Khung = "KHUNG" // group file cắt đen, file khung
 var Group_In = "IN TRUOC" //group file in
 var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
-var lat = true; // lật mica
-var kenhSpot1 = false;
+var lat = false; // lật mica
+var kenhSpot1 = true;
 
 if (arr.length > Min_Number_auto) {
     #include "../split/taoTenBan.jsx";
@@ -28,7 +28,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     {// lấy file đen làm file gốc tính kích thước
         openFile(FileDesign, arr[i], type);
         if (lat) app.doAction("canvasHoriz", "tool");
-        if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+        if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
+
         cropBoxInXY(1, 1, 1, 2, app.activeDocument.width, app.activeDocument.height);
         app.doAction("xoa stroke layer", "tool");
         var boundsGoc = app.activeDocument.activeLayer.bounds;

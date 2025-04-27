@@ -1,4 +1,4 @@
-hAll=9567; wAll=14291;
+hAll = 9567; wAll = 14350;
 app.documents.add(wAll, hAll, 300, "GLLM");
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "KHUNG";
@@ -7,8 +7,8 @@ app.activeDocument.activeLayer.name = "IN SAU";
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "IN TRUOC";
 
- yPosition = 30;
- xPosition = 30;
- hLast = 0;
- wLast = 0;
- 
+yPosition = 30;
+xPosition = 30;
+hLast = 0;
+wLast = 0;
+

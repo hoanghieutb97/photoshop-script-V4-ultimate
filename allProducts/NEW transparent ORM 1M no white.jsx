@@ -28,7 +28,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     {// lấy file đen làm file gốc tính kích thước
         openFile(FileDesign, arr[i], type);
         if (lat) app.doAction("canvasHoriz", "tool");
-        if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+        if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
         cropBoxInXY(1, 1, 1, 2, app.activeDocument.width, app.activeDocument.height);
         app.doAction("xoa stroke layer", "tool");
         var boundsGoc = app.activeDocument.activeLayer.bounds;
