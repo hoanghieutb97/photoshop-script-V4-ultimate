@@ -7,7 +7,7 @@ if (i < arr.length - 1)
         moveTem(arr[j], type);
         folderBan = Folder(folderTem + "/b-" + (ban + 1));
         if (!folderBan.exists) { folderBan.create(); }
-        app.activeDocument.saveAs(Folder(folderBan + "/" + arr[j].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderBan + "/" + arr[j].stt + "-" + arr[j].barcode + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
     }
 else if (i == arr.length - 1)
     for (var j = stt; j <= i; j++) {
@@ -15,7 +15,7 @@ else if (i == arr.length - 1)
         moveTem(arr[j], type);
         folderBan = Folder(folderTem + "/b-" + (ban + 1));
         if (!folderBan.exists) { folderBan.create(); }
-        app.activeDocument.saveAs(Folder(folderBan + "/" + arr[j].stt + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderBan + "/" + arr[j].stt + "-" + arr[j].barcode + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
     }
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 

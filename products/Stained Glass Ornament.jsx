@@ -1,5 +1,5 @@
 
-#include "createDocument2.jsx";
+#include "createDocumentAll2.jsx";
 nameSave = "tool-in xuoi-co trang";
 var bovien = 2; //mm
 
@@ -30,7 +30,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "saveallcropByNameNew.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-        #include "createDocument2.jsx";
+        #include "createDocumentAll2.jsx";
 
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, "front")

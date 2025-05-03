@@ -219,7 +219,7 @@ button2.onClick = function () {
             var FileDesign = data.FileDesign;
             var hAll = Math.round(data.hAll / 0.084667);
             var wAll = Math.round(data.wAll / 0.084667);
-
+            var chayTuDong = false; // khai báo trên gllm xem có chạy tự động ra bàn in hay không, các size to đều không chạy
 
             try {
 

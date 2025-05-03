@@ -1,4 +1,3 @@
-var chayTuDong = true; // khai báo trên gllm xem có chạy tự động ra bàn in hay không, các size to đều không chạy
 
 #include "createDocumentMica2.jsx";
 var doc = app.activeDocument;
@@ -29,7 +28,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         openFile(FileDesign, arr[i], type);
         if (lat) app.doAction("canvasHoriz", "tool");
         if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
-     
+
         cropBoxInXY(1, 1, 1, 2, app.activeDocument.width, app.activeDocument.height);
         app.doAction("xoa stroke layer", "tool");
         var boundsGoc = app.activeDocument.activeLayer.bounds;
@@ -70,13 +69,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
     }
+    if ((G_boundDen[2] - G_boundDen[0]) != 0) {
+        #include "caculatorPosition.jsx";
+        #include "translateKHUNG.jsx";
+        var sttCropBox = [1, 2, 1, 2]
+        #include "../split/cropBoxXY_resize_Dup_trans.jsx";
+        #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+    }
 
 
-    #include "caculatorPosition.jsx";
-    #include "translateKHUNG.jsx";
-    var sttCropBox = [1, 2, 1, 2]
-    #include "../split/cropBoxXY_resize_Dup_trans.jsx";
-    #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem

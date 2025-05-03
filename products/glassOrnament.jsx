@@ -3,7 +3,7 @@
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openCropFile(arr[i], FileDesign, type)
-    
+
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -26,11 +26,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // translate layer đến vị trí cần in
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
-        if (arr[i].nameId == "round-Glass-O")
+        if (arr[i].nameId == "round-Glass-O" || arr[i].nameId == "WC-GlassO-Round")
             app.activeDocument.activeLayer.translate((xPosition - 11), (yPosition - 11) * (-1));
-        else if (arr[i].nameId == "heart-Glass-O")
+        else if (arr[i].nameId == "heart-Glass-O" || arr[i].nameId == "WC-GlassO-Heart")
             app.activeDocument.activeLayer.translate((xPosition - 10), (yPosition - 11) * (-1));
-        
+
         if ((i > 0) && (app.activeDocument.layerSets["CMYK"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
 
 
@@ -50,7 +50,7 @@ function openKhung(item) {
 }
 function checkTenKhung(item) {
     var tenKhung = "round";
-    if (arr[i].nameId == "heart-Glass-O") tenKhung = "heart";
+    if (arr[i].nameId == "heart-Glass-O" || arr[i].nameId == "WC-GlassO-Heart") tenKhung = "heart";
 
     return tenKhung
 }

@@ -1,4 +1,3 @@
-var chayTuDong = true; // khai báo trên gllm xem có chạy tự động ra bàn in hay không, các size to đều không chạy
 
 #include "createDocumentMica2.jsx";
 var doc = app.activeDocument;
