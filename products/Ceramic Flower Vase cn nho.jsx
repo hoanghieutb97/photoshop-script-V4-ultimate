@@ -27,7 +27,19 @@ for (var i = stt; i <= arr.length - 1; i++) {
     var boxW = G_boundAll[2] - G_boundAll[0] + 30;
     var boxH = G_boundAll[3] - G_boundAll[1] + 30;
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
+        doc.layerSets[Group_In].artLayers.getByName(arr[i].stt).remove();
+        doc.activeLayer = doc.layerSets.getByName(Group_In);
+        app.doAction("merge active group", "tool");
+        var selectionBounds = app.activeDocument.activeLayer.bounds;
+        var padding = 30;
+        var newBounds = [selectionBounds[0] - padding, selectionBounds[1] - padding, selectionBounds[2] + padding, selectionBounds[3] + padding];
+        app.activeDocument.crop(newBounds);
+        app.activeDocument.mergeVisibleLayers();
+        app.doAction("canvasHoriz", "tool");
+        app.doAction("lam mau coc flowervase", "tool");
+        app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
 
 
         #include "createDocumentGiayCN.jsx";
