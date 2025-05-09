@@ -7,10 +7,14 @@ if (xoay) app.activeDocument.activeLayer.rotate(90);
 app.doAction("xoa stroke layer", "tool");
 
 var activebounds = app.activeDocument.activeLayer.bounds;
-if (arr[i].direction == "2")
-    app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
-else if (arr[i].direction == "1")
-    app.activeDocument.activeLayer.resize(hphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+
+if ((activebounds[2] - activebounds[0]) != 0) {
+    if (arr[i].direction == "2")
+        app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+    else if (arr[i].direction == "1")
+        app.activeDocument.activeLayer.resize(hphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+
+}
 
 app.activeDocument.activeLayer.name = arr[i].stt;
 

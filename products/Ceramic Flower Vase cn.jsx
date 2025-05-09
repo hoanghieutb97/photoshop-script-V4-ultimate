@@ -91,11 +91,6 @@ function cropBoxIn(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
     ]);
 
-
-
-
-
-
     // if(boxX==2 && boxY==2)vsvsdv
     app.doAction("duplicateSelection", "tool")
 

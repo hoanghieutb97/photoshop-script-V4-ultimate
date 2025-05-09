@@ -1,4 +1,4 @@
-#include "createDocument.jsx";
+#include "createDocumentAll.jsx"; 
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
 
@@ -14,7 +14,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-        #include "createDocument.jsx";
+        #include "createDocumentAll.jsx";
         ban = ban + 1;
         stt = i;
 
