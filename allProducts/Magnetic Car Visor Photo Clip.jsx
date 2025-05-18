@@ -180,7 +180,7 @@
                 }
 
                 var typeCrop = "den";
-                var sttCropBox = soLayerCut[g][0]
+                var sttCropBox = soLayerCut[g]
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
 
