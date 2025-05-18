@@ -19,7 +19,8 @@
         #include "saveallcropByNameNew.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
 
-        #include "createDocumentMica2.jsx";
+        #include "createDocumentGiayAnh.jsx";
+
         ban = ban + 1;
         stt = i;
         app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
