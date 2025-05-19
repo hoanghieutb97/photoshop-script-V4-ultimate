@@ -184,10 +184,12 @@
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
 
-            #include "caculatorPosition.jsx";
-            #include "translateKHUNG.jsx";
-            app.doAction("puzzle_selectionlayer", "tool");
-            app.doAction("stroke red 1px selection", "tool");
+            if ((G_boundDen[2] - G_boundDen[0]) != 0) {
+                #include "caculatorPosition.jsx";
+                #include "translateKHUNG.jsx";
+                app.doAction("puzzle_selectionlayer", "tool");
+                app.doAction("stroke red 1px selection", "tool");
+            }
 
 
 
