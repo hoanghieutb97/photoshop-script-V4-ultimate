@@ -10,10 +10,7 @@ for (var k = 0; k <= ban; k++) {
         doc_Open.layerSets.getByName(Group_Delete2).remove();
         doc_Open.activeLayer = doc_Open.layerSets.getByName(grop_Merge);
         app.doAction("merge active group", "tool");
-        var bounds_AC = app.activeDocument.activeLayer.bounds;
-        var padding = 30;
-        var newBounds = [bounds_AC[0] - padding, bounds_AC[1] - padding, bounds_AC[2] + padding, bounds_AC[3] + padding];
-        doc_Open.crop(newBounds);
+
         app.doAction("stroke red 3px inside", "tool");
         doc_Open.activeLayer.name = k + 1;
         doc_Open.rotateCanvas(90);
@@ -49,10 +46,7 @@ for (var k = 0; k <= ban; k++) {
             doc_Open.layerSets.getByName(Group_Delete2).remove();
             doc_Open.activeLayer = doc_Open.layerSets.getByName(grop_Merge);
             app.doAction("merge active group", "tool");
-            var bounds_AC = app.activeDocument.activeLayer.bounds;
-            var padding = 30;
-            var newBounds = [bounds_AC[0] - padding, bounds_AC[1] - padding, bounds_AC[2] + padding, bounds_AC[3] + padding];
-            doc_Open.crop(newBounds);
+
             app.doAction("stroke red 3px inside", "tool");
             doc_Open.activeLayer.name = k + 1;
             doc_Open.rotateCanvas(90);

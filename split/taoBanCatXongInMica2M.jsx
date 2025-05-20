@@ -21,7 +21,7 @@ app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN TRUO
 app.doAction("merge active group", "tool");
 selectWhitePixels();
 
-app.doAction("similar same color", "tool");
+app.doAction("similar same color ", "tool");
 
 app.doAction("tao ban in truoc 2M", "tool");
 app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
