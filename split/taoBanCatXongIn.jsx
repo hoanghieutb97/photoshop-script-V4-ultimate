@@ -22,6 +22,8 @@ app.activeDocument.activeLayer.remove();
 
 app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("khung");
 app.doAction("tao ban khung", "tool");
+
+
 app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 
 app.activeDocument.artLayers.getByName("trang").remove();

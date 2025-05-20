@@ -221,20 +221,20 @@
 
 
 
-if (chayTuDong) {
-    if (arr.length > 10) {
-        var active_H = 14291;
-        var active_W = 28701;
-        var k_position = 0;
-        var ten_Ban = "";
-        app.documents.add(active_W, active_H, 300, "GLLM", NewDocumentMode.CMYK);
-        var actice_DOC = app.activeDocument;
-        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-        if (!folderBanInTool.exists) { folderBanInTool.create() }
-        #include "../split/tif_mergeRed_group.jsx";
-    }
-    else {
-        #include "../split/taoBanCatXongIn.jsx";
-    }
-    #include "../split/taoFileCatDen.jsx";
-}
+// if (chayTuDong) {
+//     if (arr.length > 10) {
+//         var active_H = 14291;
+//         var active_W = 28701;
+//         var k_position = 0;
+//         var ten_Ban = "";
+//         app.documents.add(active_W, active_H, 300, "GLLM", NewDocumentMode.CMYK);
+//         var actice_DOC = app.activeDocument;
+//         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+//         if (!folderBanInTool.exists) { folderBanInTool.create() }
+//         #include "../split/tif_mergeRed_group.jsx";
+//     }
+//     else {
+//         #include "../split/taoBanCatXongIn.jsx";
+//     }
+//     #include "../split/taoFileCatDen.jsx";
+// }

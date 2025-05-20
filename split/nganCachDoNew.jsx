@@ -22,6 +22,7 @@
         #include "createDocumentMica2.jsx";
         ban = ban + 1;
         stt = i;
+        var doc = app.activeDocument;
         app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
         app.activeDocument.artLayers[0].textItem.contents = i + 1;
         app.doAction("sttkinlytoy", "tool");

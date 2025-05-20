@@ -3,11 +3,9 @@
 var doc = app.activeDocument;
 var typeTem = "mica"; // khi createtem-group thì mới dùng
 var nameSave = "mica"; // tên khi lưu
-
-
 var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
-var Group_Delete1 = "KHUNG";// merge 1 mặt- bàn in
-var Group_Delete2 = "IN SAU";// merge 1 mặt- bàn in
+
+
 
 var Group_Khung = "KHUNG" // group file cắt đen, file khung
 var Group_In = "IN TRUOC" //group file in
@@ -16,7 +14,7 @@ var lat = true; // lật mica
 var kenhSpot1 = true;
 
 if (arr.length > Min_Number_auto) {
-    #include "../split/taoTenBan.jsx";
+    #include "../split/taoTenBanMica2M.jsx";
 }
 
 for (var i = stt; i <= arr.length - 1; i++) {
@@ -59,11 +57,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "createDocumentMica2.jsx";
         doc = app.activeDocument;
         if (arr.length > Min_Number_auto) {
-            #include "../split/taoTenBan.jsx";
+            #include "../split/taoTenBanMica2M.jsx";
         }
 
         var typeCrop = "den";
-        var sttCropBox = [1, 1, 1, 2]
+        var sttCropBox = [1, 1, 1, 3]
         #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
 
@@ -99,4 +97,17 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
     }
+}
+if (chayTuDong) {
+    if (arr.length > 10) {
+
+
+        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+        if (!folderBanInTool.exists) { folderBanInTool.create() }
+        #include "../split/tif_mergeRed_groupMica2M.jsx";
+    }
+    else {
+        #include "../split/taoBanCatXongInMica2M.jsx";
+    }
+    #include "../split/taoFileCatDen.jsx";
 }

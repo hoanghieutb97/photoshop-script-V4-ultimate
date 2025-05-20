@@ -11,7 +11,7 @@ var Group_Delete2 = "IN SAU";// merge 1 mặt- bàn in
 
 var Group_Khung = "KHUNG" // group file cắt đen, file khung
 var Group_In = "IN TRUOC" //group file in
-var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
+var Min_Number_auto = 3; // giới hạn 10 file để tạo bàn in
 var lat = true; // lật mica
 var kenhSpot1 = true;
 
@@ -103,15 +103,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 }
 if (chayTuDong) {
-    if (arr.length > 10) {
-        var active_H = 14291;
-        var active_W = 28701;
-        var k_position = 0;
-        var ten_Ban = "";
-        app.documents.add(active_W, active_H, 300, "GLLM", NewDocumentMode.CMYK);
-        var actice_DOC = app.activeDocument;
+    if (arr.length > Min_Number_auto) {
+
         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
         if (!folderBanInTool.exists) { folderBanInTool.create() }
+        #include "../split/taoBanGopMicaTo.jsx";
         #include "../split/tif_mergeRed_group.jsx";
     }
     else {

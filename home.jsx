@@ -29,7 +29,7 @@ var selectFileJson;
     group1.margins = 0;
 
 
-    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/caotien.jsx"));
+    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/masterYi.jsx"));
     var image3 = group1.add("image", undefined, File.decode(image2_imgString), { name: "image3" });
 
     var radiobutton1 = group1.add("radiobutton", undefined, undefined, { name: "radiobutton1" });
@@ -204,7 +204,7 @@ selectJson.onClick = function () {
 // chạy file JSON
 button2.onClick = function () {
     dialog.hide();
-    #include "KiemTraKhungDesktop.jsx";
+    // #include "KiemTraKhungDesktop.jsx";
 
     {
         if (statictext1.text !== "...") {
@@ -219,7 +219,7 @@ button2.onClick = function () {
             var FileDesign = data.FileDesign;
             var hAll = Math.round(data.hAll / 0.084667);
             var wAll = Math.round(data.wAll / 0.084667);
-            var chayTuDong = false; // khai báo trên gllm xem có chạy tự động ra bàn in hay không, các size to đều không chạy
+            var chayTuDong = true; // khai báo trên gllm xem có chạy tự động ra bàn in hay không, các size to đều không chạy
 
             try {
 
