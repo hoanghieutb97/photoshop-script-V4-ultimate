@@ -53,6 +53,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.doAction("strokeRed1px", "tool");
     app.activeDocument.activeLayer.name = arr[i].stt;
     var G_boundAll = app.activeDocument.activeLayer.bounds;
+    app.doAction("canvasHoriz", "tool");
+   
     app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     var boxW = G_boundAll[2] - G_boundAll[0] + 30;
@@ -76,7 +78,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("lam mau coc flowervase", "tool");
             app.doAction("canvasHoriz", "tool");
          app.doAction("crop canvas a4", "tool");
-   
+    
         
         app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -127,6 +129,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.doAction("strokeRed1px", "tool");
     app.activeDocument.activeLayer.name = arr[i].stt;
     var G_boundAll = app.activeDocument.activeLayer.bounds;
+       app.doAction("canvasHoriz", "tool");   
     app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     var boxW = G_boundAll[2] - G_boundAll[0] + 30;
@@ -155,6 +158,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.doAction("lam mau coc flowervase", "tool");
             app.doAction("canvasHoriz", "tool");
          app.doAction("crop canvas a4", "tool");
+  
 
         app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
        

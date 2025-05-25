@@ -7,6 +7,7 @@ var BuVienTong = 1.5 / 0.084667;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], type);
+    app.doAction("strokeRed1px", "tool");
     app.doAction("canvasHoriz", "tool");
     if (arr[i].nameId == "CSA-TMZ-4,3x5,9in") app.activeDocument.rotateCanvas(90);
     #include "cropAndResize-boxW.jsx";
@@ -19,6 +20,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
+        app.doAction("strokeRed1px", "tool");
         app.doAction("canvasHoriz", "tool");
         if (arr[i].nameId == "CSA-TMZ-4,3x5,9in") app.activeDocument.rotateCanvas(90);
         #include "cropAndResize-boxW.jsx";
