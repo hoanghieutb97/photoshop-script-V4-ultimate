@@ -34,10 +34,7 @@ for (var k = 0; k <= ban; k++) {
         }
 
         /////////////////////////////////////////////////////////////////
-        ten_Ban = "";
-        app.documents.add(active_W, active_H, 300, "GLLM", NewDocumentMode.CMYK);
-        actice_DOC = app.activeDocument;
-        k_position = 0;
+        #include "../split/taoBanGopMicaTo.jsx";
 
         {// xu ly file !!!!!!!!!!!!!!!!!!!
             app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));

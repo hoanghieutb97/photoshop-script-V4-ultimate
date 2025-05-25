@@ -28,15 +28,23 @@ for (var i = stt; i <= arr.length - 1; i++) {
     var boxH = G_boundAll[3] - G_boundAll[1] + 30;
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         doc.layerSets[Group_In].artLayers.getByName(arr[i].stt).remove();
-        doc.activeLayer = doc.layerSets.getByName(Group_In);
+        if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+          app.open(File("//192.168.1.240/ps script data/mau coc a4.tif"));
+    app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+             doc.activeLayer = doc.layerSets.getByName(Group_In);
         app.doAction("merge active group", "tool");
         var selectionBounds = app.activeDocument.activeLayer.bounds;
         var padding = 30;
         var newBounds = [selectionBounds[0] - padding, selectionBounds[1] - padding, selectionBounds[2] + padding, selectionBounds[3] + padding];
         app.activeDocument.crop(newBounds);
-        app.activeDocument.mergeVisibleLayers();
+               app.activeDocument.mergeVisibleLayers();
         app.doAction("canvasHoriz", "tool");
         app.doAction("lam mau coc flowervase", "tool");
+            app.doAction("canvasHoriz", "tool");
+         app.doAction("crop canvas a4", "tool");
+   
+        
         app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -63,7 +71,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     #include "caculatorPosition.jsx";
     #include "translateTRUOC.jsx";
+     #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
     if (i == arr.length - 1) {
+        if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+          app.open(File("//192.168.1.240/ps script data/mau coc a4.tif"));
+    app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
         doc.activeLayer = doc.layerSets.getByName(Group_In);
         app.doAction("merge active group", "tool");
         var selectionBounds = app.activeDocument.activeLayer.bounds;
@@ -73,7 +87,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.mergeVisibleLayers();
         app.doAction("canvasHoriz", "tool");
         app.doAction("lam mau coc flowervase", "tool");
+            app.doAction("canvasHoriz", "tool");
+         app.doAction("crop canvas a4", "tool");
+
         app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
+       
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }

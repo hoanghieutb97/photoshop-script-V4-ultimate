@@ -2,11 +2,13 @@ openFile(FileDesign, arr[i], type);
 if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
 
 cropBoxInXY(sttCropBox[0], sttCropBox[1], sttCropBox[2], sttCropBox[3], app.activeDocument.width, app.activeDocument.height);
+
 if (lat) app.doAction("canvasHoriz", "tool");
 if (xoay) app.activeDocument.activeLayer.rotate(90);
 app.doAction("xoa stroke layer", "tool");
 
 var activebounds = app.activeDocument.activeLayer.bounds;
+
 
 if ((activebounds[2] - activebounds[0]) != 0) {
     if (arr[i].direction == "2")
@@ -15,6 +17,7 @@ if ((activebounds[2] - activebounds[0]) != 0) {
         app.activeDocument.activeLayer.resize(hphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
 
 }
+
 
 app.activeDocument.activeLayer.name = arr[i].stt;
 

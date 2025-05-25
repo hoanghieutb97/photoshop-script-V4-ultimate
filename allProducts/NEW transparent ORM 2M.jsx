@@ -99,7 +99,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 }
 if (chayTuDong) {
-    if (arr.length > 10) {
+    if (arr.length > Min_Number_auto) {
 
 
         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
