@@ -21,7 +21,7 @@
 
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
-
+  var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var soLayerCut = [[[1, 1, 3, 2], [1, 2, 3, 2]], [[2, 1, 3, 2], [2, 2, 3, 2]]];
         var layerCutGoc = [1, 1, 3, 2]
 

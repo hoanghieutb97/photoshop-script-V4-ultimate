@@ -20,6 +20,7 @@ if (arr.length > Min_Number_auto) {
 for (var i = stt; i <= arr.length - 1; i++) {
     lat = true; // lật mica
     #include "convertPixel.jsx";
+      var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
     var widthden = 0;
     var heightden = 0;
     var xoay = false;

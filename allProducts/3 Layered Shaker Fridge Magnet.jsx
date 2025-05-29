@@ -25,7 +25,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
-
+  var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var soLayerCut = [[[1, 1, 4, 2], [1, 2, 4, 2]], [[4, 1, 4, 2], [4, 2, 4, 2]]];
         var layerCutGoc = [1, 1, 4, 2]
 
@@ -147,6 +147,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
     }
 
     for (var i = stt; i <= arr.length - 1; i++) {
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         #include "convertPixel.jsx";
         var lat = false; // lật mica
         var soLayerCut = [[[3, 1, 4, 2], [2, 2, 4, 2], [3, 2, 4, 2]]];

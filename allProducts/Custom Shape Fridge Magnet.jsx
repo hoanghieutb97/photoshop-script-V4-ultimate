@@ -22,7 +22,7 @@
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
         ///////////////////////////////////////////////////// check so luogn cot
-
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var soLayerCut = [];
         var layerCutGoc = []
         if ((arr[i].nameId.split("-").shift() == "A")) { soLayerCut = [[[1, 1, 1, 2], [1, 2, 1, 2]]]; layerCutGoc = [1, 1, 1, 2] }
@@ -132,7 +132,7 @@
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
         ///////////////////////////////////////////////////// check so luogn cot
-
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var soLayerCut = [];
         var layerCutGoc = []
         if ((arr[i].nameId.split("-").shift() == "W")) { soLayerCut = [[[1, 1, 1, 2], [1, 2, 1, 2]]]; layerCutGoc = [1, 1, 1, 2] }

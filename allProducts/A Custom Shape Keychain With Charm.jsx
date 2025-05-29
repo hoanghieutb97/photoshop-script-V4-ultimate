@@ -22,7 +22,7 @@ if (arr.length > Min_Number_auto) {
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     ///////////////////////////////////////////////////// check so luogn cot
-
+    var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
     var soLayerCut = 1;
 
     if ((arr[i].nameId).substr(0, 2) == "1L") soLayerCut = 2;

@@ -10,7 +10,14 @@ app.doAction("xoa stroke layer", "tool");
 var activebounds = app.activeDocument.activeLayer.bounds;
 
 
+
 if ((activebounds[2] - activebounds[0]) != 0) {
+
+    if (Math.abs((G_boundDen[2] - G_boundDen[0]) - (activebounds[2] - activebounds[0])) < 10 && Math.abs((G_boundDen[3] - G_boundDen[1]) - (activebounds[3] - activebounds[1])) < 10) StatusCanGiua = true;
+    elseStatusCanGiua = false;
+
+
+
     if (arr[i].direction == "2")
         app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
     else if (arr[i].direction == "1")

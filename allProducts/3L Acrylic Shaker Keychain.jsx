@@ -1,4 +1,4 @@
-{ ////////////////////////////////////////////////////////////// c1m- mica 2mm
+{ ////////////////////////////////////////////////////////////// 1m- mica 2mm
     #include "createDocumentMica2.jsx";
     var doc = app.activeDocument;
     var typeTem = "mica"; // khi createtem-group thì mới dùng
@@ -22,7 +22,7 @@
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
         ///////////////////////////////////////////////////// check so luogn cot
-
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var layerCutGoc = [1, 1, 5, 2]
         var soLayerCut = [[[1, 1, 5, 2], [1, 2, 5, 2]]]
         var widthden = 0;
@@ -197,6 +197,7 @@
 
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         ///////////////////////////////////////////////////// check so luogn cot
 
         var layerCutGoc = [1, 1, 5, 2]

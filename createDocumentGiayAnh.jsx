@@ -1,4 +1,4 @@
-hAll = 5906; wAll = 5906;
+hAll = 6496; wAll = 6496;
 app.documents.add(wAll, hAll, 300, "GLLM");
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "KHUNG";
