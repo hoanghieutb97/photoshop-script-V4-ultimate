@@ -25,7 +25,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
-  var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var soLayerCut = [[[1, 1, 4, 2], [1, 2, 4, 2]], [[4, 1, 4, 2], [4, 2, 4, 2]]];
         var layerCutGoc = [1, 1, 4, 2]
 
@@ -108,18 +108,18 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
     }
 }
 
-// if (chayTuDong) {
-//     if (arr.length > Min_Number_auto) {
-//         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-//         if (!folderBanInTool.exists) { folderBanInTool.create() }
-//         #include "../split/taoBanGopMicaTo.jsx";
-//         #include "../split/tif_mergeRed_group.jsx";
-//     }
-//     else {
-//         #include "../split/taoBanCatXongIn.jsx";
-//     }
-//     #include "../split/taoFileCatDen.jsx";
-// }
+if (chayTuDong) {
+    if (arr.length > Min_Number_auto) {
+        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+        if (!folderBanInTool.exists) { folderBanInTool.create() }
+        #include "../split/taoBanGopMicaTo.jsx";
+        #include "../split/tif_mergeRed_group.jsx";
+    }
+    else {
+        #include "../split/taoBanCatXongIn.jsx";
+    }
+    #include "../split/taoFileCatDen.jsx";
+}
 
 
 
@@ -240,6 +240,13 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         }
     }
+
+    if (chayTuDong) {
+        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+        if (!folderBanInTool.exists) { folderBanInTool.create() }
+        #include "../split/tif_mergeRed_groupGo2M.jsx";
+        #include "../split/taoFileCatDen.jsx";
+    }
 }
 
 
@@ -270,7 +277,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
         var lat = false; // lật mica
-        var soLayerCut = [[[3, 1, 4, 2]]];
+        var soLayerCut = [[[2, 1, 4, 2]]];
         var layerCutGoc = [1, 1, 4, 2]
 
 
@@ -324,7 +331,11 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
+            if ((G_boundDen[2] - G_boundDen[0]) != 0) {
+                #include "caculatorPosition.jsx";
+                #include "translateKHUNG.jsx";
 
+            }
 
 
 
@@ -342,5 +353,12 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
 
         }
+
     }
+
+    if (chayTuDong) {
+
+        #include "../split/taoFileCatDen.jsx";
+    }
+
 }
