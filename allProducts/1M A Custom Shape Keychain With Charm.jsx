@@ -1,8 +1,8 @@
 
 #include "createDocumentMica2.jsx";
 var doc = app.activeDocument;
-var typeTem = "mica"; // khi createtem-group thì mới dùng
-var nameSave = "mica"; // tên khi lưu
+var typeTem = "mica 3mm"; // khi createtem-group thì mới dùng
+var nameSave = "mica 3mm"; // tên khi lưu
 
 
 var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -22,11 +22,17 @@ if (arr.length > Min_Number_auto) {
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     ///////////////////////////////////////////////////// check so luogn cot
-    var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
-    var soLayerCut = 1;
 
-    if ((arr[i].nameId).substr(0, 2) == "1L") soLayerCut = 2;
-    else if ((arr[i].nameId).substr(0, 2) == "2L") soLayerCut = 4;
+    var soLayerCut = [];
+    var layerCutGoc = []
+    if ((arr[i].nameId).substr(0, 2) == "1L") {
+        soLayerCut = [[[1, 1, 2, 3], [1, 2, 2, 3]], [[2, 1, 2, 3], [2, 2, 2, 3]]];
+        layerCutGoc = [1, 1, 2, 3]
+    }
+    else if ((arr[i].nameId).substr(0, 2) == "2L") {
+        soLayerCut = [[[1, 1, 4, 3], [1, 2, 4, 3]], [[2, 1, 4, 3], [2, 2, 4, 3]], [[3, 1, 4, 3], [3, 2, 4, 3]], [[4, 1, 4, 3], [4, 2, 4, 3]]];
+        layerCutGoc = [1, 1, 4, 3]
+    }
 
 
     var widthden = 0;
@@ -34,10 +40,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
     var xoay = false;
     {// lấy file đen làm file gốc tính kích thước
         openFile(FileDesign, arr[i], type);
-        if (lat) app.doAction("canvasHoriz", "tool");
+
         if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
 
-        cropBoxInXY(soLayerCut, 1, soLayerCut, 2, app.activeDocument.width, app.activeDocument.height);
+        cropBoxInXY(layerCutGoc[0], layerCutGoc[1], layerCutGoc[2], layerCutGoc[3], app.activeDocument.width, app.activeDocument.height);
+        if (lat) app.doAction("canvasHoriz", "tool");
         app.doAction("xoa stroke layer", "tool");
         var boundsGoc = app.activeDocument.activeLayer.bounds;
         widthden = boundsGoc[2] - boundsGoc[0];
@@ -51,10 +58,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     }
 
-    for (var g = 1; g <= soLayerCut; g++) {
-
+    for (var g = 0; g < soLayerCut.length; g++) {
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var typeCrop = "den";
-        var sttCropBox = [g, 1, soLayerCut, 2];
+        var sttCropBox = soLayerCut[g][0];
+        lat = true;
         #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -71,19 +79,24 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 #include "../split/taoTenBan.jsx";
             }
 
-            var typeCrop = "den";
-            var sttCropBox = [g, 1, 2, 2]
+            var sttCropBox = soLayerCut[g][0];
+            lat = true;
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
         }
 
         if ((G_boundDen[2] - G_boundDen[0]) != 0) {
             #include "caculatorPosition.jsx";
             #include "translateKHUNG.jsx";
-            var sttCropBox = [g, 2, soLayerCut, 2]
+            var sttCropBox = soLayerCut[g][1]
+            Group_In = "IN TRUOC" //group file in
+            lat = true;
             #include "../split/cropBoxXY_resize_Dup_trans.jsx";
+
             #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         }
+
+
 
 
 
@@ -103,10 +116,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 }
 if (chayTuDong) {
+    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+    if (!folderBanInTool.exists) { folderBanInTool.create() }
+    {
+        var typeFolderLuu = "in nguoc 1Mat-mica 3mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
+        #include "../split/createChildFolderByName.jsx";
+    }
     if (arr.length > Min_Number_auto) {
 
-        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-        if (!folderBanInTool.exists) { folderBanInTool.create() }
+
         #include "../split/taoBanGopMicaTo.jsx";
         #include "../split/tif_mergeRed_group.jsx";
     }

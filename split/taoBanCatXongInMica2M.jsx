@@ -1,5 +1,5 @@
-var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-if (!folderBanInTool.exists) { folderBanInTool.create(); }
+// var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+// if (!folderBanInTool.exists) { folderBanInTool.create(); }
 
 //////////////////////////////////////////////////////////////////////////// tao khung
 app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
@@ -21,7 +21,7 @@ app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN TRUO
 app.doAction("merge active group", "tool");
 selectWhitePixels();
 
-app.doAction("similar same color ", "tool");
+if (hasSelection()) app.doAction("select same color", "tool");
 
 app.doAction("tao ban in truoc 2M", "tool");
 app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);

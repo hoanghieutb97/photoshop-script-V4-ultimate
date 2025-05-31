@@ -20,7 +20,7 @@ if (arr.length > Min_Number_auto) {
 for (var i = stt; i <= arr.length - 1; i++) {
     lat = true; // lật mica
     #include "convertPixel.jsx";
-      var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
+    var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
     var widthden = 0;
     var heightden = 0;
     var xoay = false;
@@ -105,6 +105,8 @@ if (chayTuDong) {
 
         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
         if (!folderBanInTool.exists) { folderBanInTool.create() }
+        #include "../split/taoBanGopMicaTo.jsx";
+
         #include "../split/tif_mergeRed_groupMica2M.jsx";
     }
     else {

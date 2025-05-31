@@ -2,7 +2,7 @@
 
 var khoangCachBan = 12 / 0.084667;
 ////////////////////////////////////////////////////////////////// tao ban in truoc
-#include "../split/taoBanGopMicaTo.jsx";
+
 var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
 var Group_Delete1 = "KHUNG";// merge 1 mặt- bàn in
 var Group_Delete2 = "IN SAU";// merge 1 mặt- bàn in
@@ -31,7 +31,7 @@ for (var k = 0; k <= ban; k++) {
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
             selectWhitePixels();
-            app.doAction("select same color", "tool");
+           
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
@@ -78,7 +78,7 @@ for (var k = 0; k <= ban; k++) {
             actice_DOC.activeLayer.name = "layerGoc";
 
             selectWhitePixels();
-            app.doAction("select same color", "tool");
+           
 
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
@@ -121,7 +121,7 @@ for (var k = 0; k <= ban; k++) {
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
             selectWhitePixels();
-            app.doAction("select same color", "tool");
+           
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
@@ -168,7 +168,7 @@ for (var k = 0; k <= ban; k++) {
             actice_DOC.activeLayer.name = "layerGoc";
 
             selectWhitePixels();
-            app.doAction("select same color", "tool");
+           
 
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");

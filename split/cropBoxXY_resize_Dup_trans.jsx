@@ -14,7 +14,7 @@ var activebounds = app.activeDocument.activeLayer.bounds;
 if ((activebounds[2] - activebounds[0]) != 0) {
 
     if (Math.abs((G_boundDen[2] - G_boundDen[0]) - (activebounds[2] - activebounds[0])) < 10 && Math.abs((G_boundDen[3] - G_boundDen[1]) - (activebounds[3] - activebounds[1])) < 10) StatusCanGiua = true;
-    elseStatusCanGiua = false;
+    else StatusCanGiua = false;
 
 
 

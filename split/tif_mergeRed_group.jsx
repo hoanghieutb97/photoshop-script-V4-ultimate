@@ -26,7 +26,7 @@ for (var k = 0; k <= ban; k++) {
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
             selectWhitePixels();
-            app.doAction("select same color", "tool");
+           
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             app.activeDocument.saveAs(Folder(folderBanInTool + "/b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
@@ -71,7 +71,7 @@ for (var k = 0; k <= ban; k++) {
             actice_DOC.activeLayer.name = "layerGoc";
 
             selectWhitePixels();
-            app.doAction("select same color", "tool");
+           
 
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");

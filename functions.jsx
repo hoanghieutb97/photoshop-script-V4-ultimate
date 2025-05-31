@@ -110,6 +110,15 @@ function selectWhitePixels() {
     desc.putObject(charIDToTypeID("Mnm "), charIDToTypeID("RGBC"), white);
 
     executeAction(idClrR, desc, DialogModes.NO);
+    if (hasSelection()) app.doAction("select same color", "tool");
+}
+function hasSelection() {
+    try {
+        var b = app.activeDocument.selection.bounds;
+        return true;
+    } catch (e) {
+        return false;
+    }
 }
 
 function getShortCodeLabel(str, ban) {
@@ -175,3 +184,8 @@ function multiSelectByIDs(ids) {
     executeAction(id54, desc12, DialogModes.NO);
 }
 
+function tonTai(params) {
+    if (typeof params !== 'undefined') return params;
+    else return false
+
+}

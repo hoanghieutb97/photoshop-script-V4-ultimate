@@ -1,4 +1,4 @@
-var folderCatLaze = Folder(folderContainer + "/cat Laze");
+var folderCatLaze = Folder(folderContainer + "/file cat-tool");
 if (!folderCatLaze.exists) { folderCatLaze.create() }
 for (var k = 0; k <= ban; k++) {
     app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));
@@ -11,7 +11,7 @@ for (var k = 0; k <= ban; k++) {
     }
     app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_Khung);
     app.doAction("tao den group cat", "tool");
-    app.activeDocument.saveAs(Folder(folderCatLaze + "/cat - b" + (k + 1) + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderCatLaze + "/cat-" + nameSave + "-b" + (k + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 } 

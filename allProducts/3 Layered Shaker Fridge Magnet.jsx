@@ -5,8 +5,8 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 { ////////////////////////////////////////////////////////////// mica 2mm-1 mat
     #include "createDocumentMica2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "mica"; // khi createtem-group thì mới dùng
-    var nameSave = "mica2mm-1M"; // tên khi lưu
+    var typeTem = "mica2mm-1Mat"; // khi createtem-group thì mới dùng
+    var nameSave = "mica2mm-1Mat"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -65,7 +65,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -101,25 +101,31 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
 
         }
     }
-}
-
-if (chayTuDong) {
-    if (arr.length > Min_Number_auto) {
+    if (chayTuDong) {
         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
         if (!folderBanInTool.exists) { folderBanInTool.create() }
-        #include "../split/taoBanGopMicaTo.jsx";
-        #include "../split/tif_mergeRed_group.jsx";
+        {
+            var typeFolderLuu = "in xuoi 1Mat-mica 2mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
+            #include "../split/createChildFolderByName.jsx";
+        }
+
+        if (arr.length > Min_Number_auto) {
+            #include "../split/taoBanGopMicaTo.jsx";
+            #include "../split/tif_mergeRed_group.jsx";
+        }
+        else {
+            #include "../split/taoBanCatXongIn.jsx";
+        }
+        #include "../split/taoFileCatDen.jsx";
     }
-    else {
-        #include "../split/taoBanCatXongIn.jsx";
-    }
-    #include "../split/taoFileCatDen.jsx";
+
 }
+
 
 
 
@@ -128,8 +134,8 @@ if (chayTuDong) {
     var ban = 0;
     #include "createDocumentMica2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "mica2mm-2M"; // khi createtem-group thì mới dùng
-    var nameSave = "mica2mm-2M"; // tên khi lưu
+    var typeTem = "mica2mm-2Mat"; // khi createtem-group thì mới dùng
+    var nameSave = "mica2mm-2Mat"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -244,6 +250,10 @@ if (chayTuDong) {
     if (chayTuDong) {
         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
         if (!folderBanInTool.exists) { folderBanInTool.create() }
+        {
+            var typeFolderLuu = "in xuoi 2Mat-mica 2mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
+            #include "../split/createChildFolderByName.jsx";
+        }
         #include "../split/tif_mergeRed_groupGo2M.jsx";
         #include "../split/taoFileCatDen.jsx";
     }
