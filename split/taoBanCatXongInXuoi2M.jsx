@@ -32,7 +32,6 @@
 
 
 
-
     #include "../scontainer/deleteRedLineIn.jsx";
     selectWhitePixels();
 
@@ -40,6 +39,25 @@
 
     app.doAction("tao ban in truoc 2M", "tool");
 
-    app.activeDocument.saveAs(Folder(folderBanInTool + "/in" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+}
+
+{ //tao file in
+    app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+
+    app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN SAU");
+    app.doAction("merge active group", "tool");
+
+
+
+    #include "../scontainer/deleteRedLineIn.jsx";
+    selectWhitePixels();
+
+
+
+    app.doAction("tao ban in sau 2M", "tool");
+
+    app.activeDocument.saveAs(Folder(folderBanInTool + "/in sau" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }

@@ -1,20 +1,7 @@
 
 //////////////////////////////////////
 #include "createDocumentAll2.jsx";
-
 var nameSave = "mica15mm"; // tên khi lưu
-
-var typeTem = "mica15mm"; // khi createtem-group thì mới dùng
-var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
-var Group_Khung = "KHUNG" // group file cắt đen, file khung
-var Group_In = "IN TRUOC" //group file in
-var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
-var lat = true; // lật mica
-var kenhSpot1 = true;
-var Status_delete_redLine = true;
-
-
-
 var BuVienTong = 1.5 / 0.084667;
 
 for (var i = stt; i <= arr.length - 1; i++) {
@@ -22,7 +9,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], type);
     app.doAction("strokeRed1px", "tool");
     app.doAction("canvasHoriz", "tool");
-    // if (arr[i].nameId == "CSA-TMZ-4,3x5,9in") app.activeDocument.rotateCanvas(90);
+    if (arr[i].nameId == "CSA-TMZ-4,3x5,9in") app.activeDocument.rotateCanvas(90);
     #include "cropAndResize-boxW.jsx";
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -35,7 +22,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         openFile(FileDesign, arr[i], type);
         app.doAction("strokeRed1px", "tool");
         app.doAction("canvasHoriz", "tool");
-        // if (arr[i].nameId == "CSA-TMZ-4,3x5,9in") app.activeDocument.rotateCanvas(90);
+        if (arr[i].nameId == "CSA-TMZ-4,3x5,9in") app.activeDocument.rotateCanvas(90);
         #include "cropAndResize-boxW.jsx";
 
 
@@ -77,19 +64,4 @@ for (var i = stt; i <= arr.length - 1; i++) {
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
-if (chayTuDong) {
 
-    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-    if (!folderBanInTool.exists) { folderBanInTool.create() }
-    if (arr.length > Min_Number_auto) {
-
-
-        #include "../split/taoBanGopMicaTo.jsx";
-
-        #include "../split/tif_mergeRed_groupMica2M.jsx";
-    }
-    else {
-        #include "../split/taoBanCatXongInMica2M.jsx";
-    }
-    // #include "../split/taoFileCatDen.jsx";
-}

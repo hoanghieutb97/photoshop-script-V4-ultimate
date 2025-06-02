@@ -1,8 +1,8 @@
 
 #include "createDocumentAll2.jsx";
 var doc = app.activeDocument;
-var typeTem = "in Xuoi"; // khi createtem-group thì mới dùng
-var nameSave = "in Xuoi"; // tên khi lưu
+var typeTem = "in Xuoi 2M"; // khi createtem-group thì mới dùng
+var nameSave = "in Xuoi 2M"; // tên khi lưu
 var MarginByBox = true; // nếu có thì nó lấy BOX ừ trong sheet để lưu
 
 var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -20,6 +20,7 @@ var strokeDo = true;
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], type);
+    cropBoxInXY(1, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
     app.doAction("strokeRed1px", "tool");
     if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
     #include "../split/cropAndResize-autoFillNew.jsx";
@@ -36,6 +37,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         ban = ban + 1;
         stt = i;
         openFile(FileDesign, arr[i], type);
+        cropBoxInXY(1, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
         app.doAction("strokeRed1px", "tool");
         if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
         #include "../split/cropAndResize-autoFillNew.jsx";
@@ -49,16 +51,30 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "../split/DuplicateLayerGroup.jsx";
     #include "translateTRUOC.jsx";
 
-    openFile(FileDesign, arr[i], type);
-    app.doAction("strokeRed1px", "tool");
-    if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
-    #include "../split/cropAndResize-autoFillNew.jsx";
-    app.doAction("LayerToBackgroundWhite", "tool");
-    Group_Duplicate_layer = "KHUNG"
-    #include "../split/DuplicateLayerGroup.jsx";
-    #include "translateKHUNG.jsx";
-    app.doAction("overlayblack", "tool");
+    { // mat sau
+        openFile(FileDesign, arr[i], type);
+        cropBoxInXY(2, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
+        app.doAction("strokeRed1px", "tool");
+        if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
+        #include "../split/cropAndResize-autoFillNew.jsx";
+        var Group_Duplicate_layer = "IN SAU"
+        #include "../split/DuplicateLayerGroup.jsx";
+        #include "translateSAU.jsx";
+    }
 
+    {// tao khung
+        openFile(FileDesign, arr[i], type);
+        app.doAction("strokeRed1px", "tool");
+        if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
+        #include "../split/cropAndResize-autoFillNew.jsx";
+        app.doAction("LayerToBackgroundWhite", "tool");
+        Group_Duplicate_layer = "KHUNG"
+        #include "../split/DuplicateLayerGroup.jsx";
+        #include "translateKHUNG.jsx";
+        app.doAction("overlayblack", "tool");
+
+
+    }
 
 
 
@@ -74,6 +90,6 @@ if (chayTuDong) {
     if (!folderBanInTool.exists) { folderBanInTool.create() }
 
 
-    #include "../split/taoBanCatXongIn.jsx";
+    #include "../split/taoBanCatXongInXuoi2M.jsx";
 
 }

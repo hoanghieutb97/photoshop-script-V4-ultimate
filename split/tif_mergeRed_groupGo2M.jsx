@@ -24,9 +24,9 @@ for (var k = 0; k <= ban; k++) {
 
 
 
-
+        #include "../scontainer/deleteRedLineIn.jsx";
         selectWhitePixels();
-       
+
 
     }
 
@@ -58,9 +58,9 @@ for (var k = 0; k <= ban; k++) {
     }
 
 
-
+    #include "../scontainer/deleteRedLineIn.jsx";
     selectWhitePixels();
-   
+
 
 
     app.doAction("tao spot 1", "tool");
@@ -93,7 +93,7 @@ for (var k = 0; k <= ban; k++) {
     app.activeDocument.saveAs(Folder(folderBanInTool + "/Khung 2M-b" + (k + 1) + "-" + nameSave + "-" + Math.ceil(doc_Open.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(doc_Open.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }
-}
+
 
 
 

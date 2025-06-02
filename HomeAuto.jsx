@@ -65,11 +65,19 @@ try {
         #include "saveDesign.jsx";
         #include "functions.jsx";
     }
-    try {
-        var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+    // try {
+    //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+    //     $.evalFile(geo_dynamic);
+    // } catch (error) {
+    //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+    //     $.evalFile(geo_dynamic);
+    // }
+
+    var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+    if (geo_dynamic.exists) {
         $.evalFile(geo_dynamic);
-    } catch (error) {
-        var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+    } else {
+        geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
         $.evalFile(geo_dynamic);
     }
 

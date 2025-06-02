@@ -184,8 +184,16 @@ function multiSelectByIDs(ids) {
     executeAction(id54, desc12, DialogModes.NO);
 }
 
-function tonTai(params) {
-    if (typeof params !== 'undefined') return params;
-    else return false
+// function tonTai(params) {
+//     if (typeof params !== 'undefined') return params;
+//     else return false
 
+// }
+
+function tonTai(tenBien) {
+    try {
+        return eval(tenBien);
+    } catch (e) {
+        return false;
+    }
 }

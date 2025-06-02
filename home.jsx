@@ -29,7 +29,7 @@ var selectFileJson;
     group1.margins = 0;
 
 
-    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/masterYi.jsx"));
+    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx"));
     var image3 = group1.add("image", undefined, File.decode(image2_imgString), { name: "image3" });
 
     var radiobutton1 = group1.add("radiobutton", undefined, undefined, { name: "radiobutton1" });
@@ -226,13 +226,22 @@ button2.onClick = function () {
                 #include "before.jsx";
                 #include "functions.jsx";
                 // alert("1vvv11")
-                try {
-                    var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+                var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+                if (geo_dynamic.exists) {
                     $.evalFile(geo_dynamic);
-                } catch (error) {
-                    var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+                } else {
+                    geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
                     $.evalFile(geo_dynamic);
                 }
+                // try {
+                //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+                //     $.evalFile(geo_dynamic);
+                // } catch (error) {
+                //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+                //     $.evalFile(geo_dynamic);
+
+
+                // }
 
                 #include "after.jsx";
 

@@ -19,6 +19,7 @@ for (var k = 0; k <= ban; k++) {
         doc_Open.activeLayer.name = k + 1;
         doc_Open.rotateCanvas(90);
         var w_them_P = doc_Open.width.as("px");
+        var H_them_P = doc_Open.height.as("px");
     }
 
     if ((active_W - k_position - w_them_P) < 0) {
@@ -30,10 +31,12 @@ for (var k = 0; k <= ban; k++) {
             var PS_CROP = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
+            #include "../scontainer/deleteRedLineIn.jsx";
             selectWhitePixels();
-           
+
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
+            if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
             app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
@@ -68,7 +71,7 @@ for (var k = 0; k <= ban; k++) {
     k_position = k_position + khoangCachBan + w_them_P;
     ten_Ban = ten_Ban + " " + (k + 1)
 
-    if (k == ban) {
+    if (k == ban || H_them_P > 14409) {
         // xu ly luu
         { // luu file !!!!
             actice_DOC.artLayers.getByName("Background").remove();
@@ -76,12 +79,13 @@ for (var k = 0; k <= ban; k++) {
             var PS_CROP = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
-
+            #include "../scontainer/deleteRedLineIn.jsx";
             selectWhitePixels();
-           
+
 
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
+            if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
             app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
@@ -120,10 +124,12 @@ for (var k = 0; k <= ban; k++) {
             var PS_CROP = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
+            #include "../scontainer/deleteRedLineIn.jsx";
             selectWhitePixels();
-           
+
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
+            if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
             app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
@@ -145,6 +151,8 @@ for (var k = 0; k <= ban; k++) {
             doc_Open.activeLayer.name = k + 1;
             doc_Open.rotateCanvas(90);
             var w_them_P = doc_Open.width.as("px");
+            var H_them_P = doc_Open.height.as("px");
+
         }
 
     }
@@ -158,7 +166,7 @@ for (var k = 0; k <= ban; k++) {
     k_position = k_position + khoangCachBan + w_them_P;
     ten_Ban = ten_Ban + " " + (k + 1)
 
-    if (k == ban) {
+    if (k == ban || H_them_P > 14409) {
         // xu ly luu
         { // luu file !!!!
             actice_DOC.artLayers.getByName("Background").remove();
@@ -166,12 +174,13 @@ for (var k = 0; k <= ban; k++) {
             var PS_CROP = app.activeDocument.activeLayer.bounds;
             app.activeDocument.crop(PS_CROP, 0, PS_CROP[2] - PS_CROP[0], PS_CROP[3] - PS_CROP[1]);
             actice_DOC.activeLayer.name = "layerGoc";
-
+            #include "../scontainer/deleteRedLineIn.jsx";
             selectWhitePixels();
-           
+
 
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
+            if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
             app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }

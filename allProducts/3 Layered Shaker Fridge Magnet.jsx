@@ -3,6 +3,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
 
 { ////////////////////////////////////////////////////////////// mica 2mm-1 mat
+
     #include "createDocumentMica2.jsx";
     var doc = app.activeDocument;
     var typeTem = "mica2mm-1Mat"; // khi createtem-group thì mới dùng
