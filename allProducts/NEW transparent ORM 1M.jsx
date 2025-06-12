@@ -87,10 +87,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 }
 if (chayTuDong) {
+    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+    if (!folderBanInTool.exists) { folderBanInTool.create() }
     if (arr.length > Min_Number_auto) {
         #include "../split/taoBanGopMicaTo.jsx";
-        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-        if (!folderBanInTool.exists) { folderBanInTool.create() }
+
         #include "../split/tif_mergeRed_group.jsx";
     }
     else {

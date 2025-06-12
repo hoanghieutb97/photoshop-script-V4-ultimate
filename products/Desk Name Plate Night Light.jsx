@@ -30,8 +30,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
     openFile(FileDesign, arr[i], type);
-    // if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
     if (arr[i].nameId == "deskLight-8x4in") xoay = true;
     #include "cropBlackCut-deskplaque.jsx";
 
@@ -39,17 +37,15 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt).remove();
         #include "saveallcropByNameNew.jsx";
-        
+
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
         #include "createDocumentMica2.jsx";
 
 
         openFile(FileDesign, arr[i], type);
-        // if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
-
-
-        #include "cropBlackCut-1Size2.jsx";
+        if (arr[i].nameId == "deskLight-8x4in") xoay = true;
+        #include "cropBlackCut-deskplaque.jsx";
 
         ban = ban + 1;
         stt = i;

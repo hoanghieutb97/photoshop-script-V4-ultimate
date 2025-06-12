@@ -1,5 +1,5 @@
 { // tao khung merge all
-    app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+    app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
     app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_Khung);
     app.doAction("merge active group", "tool");
     app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_In);
@@ -25,7 +25,7 @@
 }
 
 { //tao file in
-    app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+    app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
 
     app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN TRUOC");
     app.doAction("merge active group", "tool");
@@ -44,7 +44,7 @@
 }
 
 { //tao file in
-    app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+    app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
 
     app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN SAU");
     app.doAction("merge active group", "tool");

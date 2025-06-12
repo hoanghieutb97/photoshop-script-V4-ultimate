@@ -1,45 +1,42 @@
-{ // tao khung merge all
-    app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
-    app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_Khung);
-    app.doAction("merge active group", "tool");
-    app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_In);
-    app.doAction("merge active group", "tool");
-    app.activeDocument.artLayers.getByName(Group_Khung).name = "khung";
-    app.activeDocument.artLayers.getByName(Group_In).name = "inTruoc";
+{
+    { // tao khung merge all
+        app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
+        if (app.activeDocument.layerSets.getByName(Group_In).layers.length !== 0) {
+            app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_Khung);
+            app.doAction("merge active group", "tool");
+            app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName(Group_In);
+            app.doAction("merge active group", "tool");
+            app.activeDocument.artLayers.getByName(Group_Khung).name = "khung";
+            app.activeDocument.artLayers.getByName(Group_In).name = "inTruoc";
+            app.doAction("merge All Width Duplicate", "tool");
+            var selectionBounds = app.activeDocument.activeLayer.bounds;
+            var padding = 30;
+            var newBounds = [selectionBounds[0] - padding, selectionBounds[1] - padding, selectionBounds[2] + padding, selectionBounds[3] + padding];
+            app.activeDocument.crop(newBounds);
+            app.activeDocument.activeLayer.remove();
 
+            app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("khung");
+            app.doAction("tao ban khung", "tool");
+            app.activeDocument.mergeVisibleLayers();
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        }
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-    app.doAction("merge All Width Duplicate", "tool");
-    var selectionBounds = app.activeDocument.activeLayer.bounds;
-    var padding = 30;
-    var newBounds = [selectionBounds[0] - padding, selectionBounds[1] - padding, selectionBounds[2] + padding, selectionBounds[3] + padding];
-    app.activeDocument.crop(newBounds);
-    app.activeDocument.activeLayer.remove();
+    }
 
-    app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("khung");
-    app.doAction("tao ban khung", "tool");
-    app.activeDocument.mergeVisibleLayers();
+    { //tao file in
+        app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
+        if (app.activeDocument.layerSets.getByName(Group_In).layers.length !== 0) {
 
+            app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN TRUOC");
+            app.doAction("merge active group", "tool");
+            #include "../scontainer/deleteRedLineIn.jsx";
+            selectWhitePixels();
 
-    app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-}
+            app.doAction("tao ban in truoc 2M", "tool");
 
-{ //tao file in
-    app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
-
-    app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN TRUOC");
-    app.doAction("merge active group", "tool");
-
-
-
-
-    #include "../scontainer/deleteRedLineIn.jsx";
-    selectWhitePixels();
-
-
-
-    app.doAction("tao ban in truoc 2M", "tool");
-
-    app.activeDocument.saveAs(Folder(folderBanInTool + "/in" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-    app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/in" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        }
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+    }
 }

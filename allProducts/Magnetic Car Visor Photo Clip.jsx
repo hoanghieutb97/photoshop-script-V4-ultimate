@@ -1,8 +1,8 @@
 { ////////////////////////////////////////////////////////////// chay lop mica
     #include "createDocumentMica2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "mica"; // khi createtem-group thì mới dùng
-    var nameSave = "mica"; // tên khi lưu
+    var typeTem = "mica 3mm"; // khi createtem-group thì mới dùng
+    var nameSave = "mica 3mm"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -11,7 +11,7 @@
 
     var Group_Khung = "KHUNG" // group file cắt đen, file khung
     var Group_In = "IN TRUOC" //group file in
-    var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
+    var Min_Number_auto = 5; // giới hạn 10 file để tạo bàn in
     var lat = true; // lật mica
     var kenhSpot1 = true;
 
@@ -21,7 +21,7 @@
 
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
-  var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
+        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         var soLayerCut = [[[1, 1, 3, 2], [1, 2, 3, 2]], [[2, 1, 3, 2], [2, 2, 3, 2]]];
         var layerCutGoc = [1, 1, 3, 2]
 
@@ -81,9 +81,9 @@
                 #include "translateKHUNG.jsx";
                 var sttCropBox = soLayerCut[g][1]
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
-            
+
                 #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
-             
+
 
 
             }
@@ -104,16 +104,40 @@
 
 
         }
+
+    }
+    if (chayTuDong) {
+
+        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+        if (!folderBanInTool.exists) { folderBanInTool.create() }
+        {
+            var typeFolderLuu = "in nguoc 1Mat-mica 3mm" // thư mục con trong
+            //  banin-tool- chia ra để lưu theo loại
+            #include "../split/createChildFolderByName.jsx";
+        }
+        if (arr.length > Min_Number_auto) {
+            #include "../split/taoBanGopMicaTo.jsx";
+
+            #include "../split/tif_mergeRed_group.jsx";
+        }
+        else {
+            #include "../split/taoBanCatXongIn.jsx";
+        }
+        #include "../split/taoFileCatDen.jsx";
     }
 }
 
-{ ////////////////////////////////////////////////////////////// chay lop mica
+{ ////////////////////////////////////////////////////////////// chạy in giay anh
     #include "createDocumentGiayAnh.jsx";
     ban = 0;
     stt = 0;
     var doc = app.activeDocument;
-    var typeTem = "giay"; // khi createtem-group thì mới dùng
-    var nameSave = "giay"; // tên khi lưu
+    var typeTem = "giay PTB"; // khi createtem-group thì mới dùng
+    var nameSave = "giay PTB"; // tên khi lưu
+
+
+    var typeFolderLuu = "in giay photobox" // thư mục con trong banin-tool- chia ra để lưu theo loại
+    #include "../split/createChildFolderByName.jsx";
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -169,9 +193,10 @@
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
             if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
+          
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
-                #include "saveallcropByNameNew.jsx";
+                #include "saveallcropByNameNewJPG.jsx";
 
 
                 ban = ban + 1;
@@ -204,10 +229,11 @@
         #include "../split/nganCachDoNEWGiay.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         if (i == arr.length - 1) {
-            #include "saveallcropByNameNew.jsx";
+
+            #include "saveallcropByNameNewJPG.jsx";
 
 
 
         }
     }
-}
+} 

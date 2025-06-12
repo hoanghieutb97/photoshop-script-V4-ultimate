@@ -2,7 +2,7 @@
 // if (!folderBanInTool.exists) { folderBanInTool.create(); }
 
 //////////////////////////////////////////////////////////////////////////// tao khung
-app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
 
 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("KHUNG");
 app.doAction("merge active group", "tool");
@@ -14,9 +14,9 @@ app.activeDocument.mergeVisibleLayers();
 app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////// in truoc
 
-app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN TRUOC");
 app.doAction("merge active group", "tool");
 #include "../scontainer/deleteRedLineIn.jsx";
@@ -28,13 +28,13 @@ app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-" + (ban + 1)
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 
-//////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////// in sau
 
-app.open(File(folderTool + "/ " + nameSave + "-" + (ban + 1) + ".tif"));
+app.open(File(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"));
 app.activeDocument.activeLayer = app.activeDocument.layerSets.getByName("IN SAU");
 app.doAction("merge active group", "tool");
 #include "../scontainer/deleteRedLineIn.jsx";
 selectWhitePixels();
-app.doAction("tao ban in sau 2M", "tool");
+app.doAction("tao ban in sau 2M sua", "tool");
 app.activeDocument.saveAs(Folder(folderBanInTool + "/in sau" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

@@ -21,9 +21,13 @@ var newBounds = [
 app.activeDocument.crop(newBounds);
 app.activeDocument.activeLayer.remove();
 if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+var saveOptsjpeg = new JPEGSaveOptions();
+saveOptsjpeg.quality = 12;
+app.activeDocument.mergeVisibleLayers();
 
-app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + "-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
-app.activeDocument.close(SaveOptions.DONOTSAVECHANGES); 
+app.activeDocument.saveAs(Folder(folderBanInTool + "/" + nameSave + "-" + (ban + 1) + ".jpg"), saveOptsjpeg, true, Extension.LOWERCASE);
+
+app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 function selectGroup(name, add) {
     var desc = new ActionDescriptor();
     var ref = new ActionReference();

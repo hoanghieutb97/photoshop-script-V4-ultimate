@@ -9,7 +9,7 @@ var Group_Delete2 = "IN SAU";// merge 1 mặt- bàn in
 for (var k = 0; k <= ban; k++) {
 
     {// xu ly file !!!!!!!!!!!!!!!!!!!
-        app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));
+        app.open(File(folderTool + "/" + nameSave + "-" + (k + 1) + ".tif"));
         var doc_Open = app.activeDocument;
         doc_Open.layerSets.getByName(Group_Delete1).remove();
         doc_Open.layerSets.getByName(Group_Delete2).remove();
@@ -48,7 +48,7 @@ for (var k = 0; k <= ban; k++) {
         k_position = 0;
 
         {// xu ly file !!!!!!!!!!!!!!!!!!!
-            app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));
+            app.open(File(folderTool + "/" + nameSave + "-" + (k + 1) + ".tif"));
             var doc_Open = app.activeDocument;
             doc_Open.layerSets.getByName(Group_Delete1).remove();
             doc_Open.layerSets.getByName(Group_Delete2).remove();
@@ -104,7 +104,7 @@ var Group_Delete2 = "IN TRUOC";// merge 1 mặt- bàn in
 for (var k = 0; k <= ban; k++) {
 
     {// xu ly file !!!!!!!!!!!!!!!!!!!
-        app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));
+        app.open(File(folderTool + "/" + nameSave + "-" + (k + 1) + ".tif"));
         var doc_Open = app.activeDocument;
         doc_Open.layerSets.getByName(Group_Delete1).remove();
         doc_Open.layerSets.getByName(Group_Delete2).remove();
@@ -141,7 +141,7 @@ for (var k = 0; k <= ban; k++) {
         k_position = 0;
 
         {// xu ly file !!!!!!!!!!!!!!!!!!!
-            app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));
+            app.open(File(folderTool + "/" + nameSave + "-" + (k + 1) + ".tif"));
             var doc_Open = app.activeDocument;
             doc_Open.layerSets.getByName(Group_Delete1).remove();
             doc_Open.layerSets.getByName(Group_Delete2).remove();

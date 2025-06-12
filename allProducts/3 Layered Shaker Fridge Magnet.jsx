@@ -238,7 +238,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-        // #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+        #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";

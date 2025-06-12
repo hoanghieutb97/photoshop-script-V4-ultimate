@@ -27,7 +27,7 @@
             app.activeDocument.activeLayer.remove();
             if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
 
-            app.activeDocument.saveAs(Folder(folderLuu + "/ " + nameSave + "-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderLuu + "/" + nameSave + "-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 

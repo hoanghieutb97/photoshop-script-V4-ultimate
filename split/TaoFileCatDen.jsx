@@ -1,7 +1,7 @@
 var folderCatLaze = Folder(folderContainer + "/file cat-tool");
 if (!folderCatLaze.exists) { folderCatLaze.create() }
 for (var k = 0; k <= ban; k++) {
-    app.open(File(folderTool + "/ " + nameSave + "-" + (k + 1) + ".tif"));
+    app.open(File(folderTool + "/" + nameSave + "-" + (k + 1) + ".tif"));
 
     for (var m = app.activeDocument.layerSets.length - 1; m >= 0; m--) {
         var group = app.activeDocument.layerSets[m];
