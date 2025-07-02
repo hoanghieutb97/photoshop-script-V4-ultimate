@@ -315,6 +315,16 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 }
 
+////////////////////////////////tem
+
+stt = 0;
+for (var i = stt; i <= arr.length - 1; i++) {
+    if (i == arr.length - 1) {
+
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+    }
+}
+
 
 //////////////////////////////////////////////////////////////////// function
 function ungroupAllGroups(doc) {
@@ -438,4 +448,4 @@ function rotateLayerIfWidthGreater(doc) {
     if (layerWidth > layerHeight) {
         activeLayer.rotate(90); // Xoay 90 độ
     }
-}
+} 

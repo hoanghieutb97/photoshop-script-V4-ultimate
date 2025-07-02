@@ -74,7 +74,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 function openKhung(item) {
 
-    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/khung " + item.nameId + ".png"));
+    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/khung " + getTenKhung(item) + ".png"));
     hphone = Math.round((item.hight) / 0.084667);
     wphone = Math.round((item.width) / 0.084667);
 
@@ -85,8 +85,8 @@ function openKhung(item) {
 }
 
 function openCropFile(item, FileDesign, type) {
-    var tenKhung = item.nameId
-    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/" + item.nameId + ".png"));
+
+    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/" + getTenKhung(item) + ".png"));
     openFile(FileDesign, item, type);
     app.doAction("strokeWhite1px", "tool");
     app.doAction("canvasHoriz", "tool");
@@ -107,12 +107,28 @@ function openCropFile(item, FileDesign, type) {
             hphone = Math.round(205 / 0.084667);
             wphone = Math.round(205 / 0.084667);
             break;
+        case "G-Suncatcher-3,9in-C":
+            hphone = Math.round(105 / 0.084667);
+            wphone = Math.round(105 / 0.084667);
+            break;
+        case "G-Suncatcher-5,9in-C":
+            hphone = Math.round(155 / 0.084667);
+            wphone = Math.round(155 / 0.084667);
+            break;
+        case "G-Suncatcher-9,9in-C":
+            hphone = Math.round(255 / 0.084667);
+            wphone = Math.round(255 / 0.084667);
+            break;
+        case "G-Suncatcher-7,9in-C":
+            hphone = Math.round(205 / 0.084667);
+            wphone = Math.round(205 / 0.084667);
+            break;
         default:
             break;
     }
     #include "cropAndResize-autoFill.jsx";
     app.activeDocument.activeLayer.name = "1 copy";
-    app.activeDocument.activeLayer.duplicate(app.documents[tenKhung + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+    app.activeDocument.activeLayer.duplicate(app.documents[getTenKhung(item) + ".png"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     app.doAction("moveCenter", "tool");
     app.doAction("crop mica dzt", "tool");
@@ -126,4 +142,38 @@ function openCropFile(item, FileDesign, type) {
     // app.doAction("strokeWhite1px", "tool");
 
 
-} 
+}
+
+function getTenKhung(item) {
+    var tenkhung = ""
+    switch (item.nameId) {
+        case "G-Suncatcher-3,9in":
+            tenkhung = "G-Suncatcher-3,9in"
+            break;
+        case "G-Suncatcher-5,9in":
+            tenkhung = "G-Suncatcher-5,9in"
+            break;
+        case "G-Suncatcher-7,9in":
+            tenkhung = "G-Suncatcher-7,9in"
+            break;
+        case "G-Suncatcher-9,9in":
+            tenkhung = "G-Suncatcher-9,9in"
+            break;
+
+        case "G-Suncatcher-3,9in-C":
+            tenkhung = "G-Suncatcher-3,9in"
+            break;
+        case "G-Suncatcher-5,9in-C":
+            tenkhung = "G-Suncatcher-5,9in"
+            break;
+        case "G-Suncatcher-7,9in-C":
+            tenkhung = "G-Suncatcher-7,9in"
+            break;
+        case "G-Suncatcher-9,9in-C":
+            tenkhung = "G-Suncatcher-9,9in"
+            break;
+        default:
+            break;
+    }
+    return tenkhung
+}

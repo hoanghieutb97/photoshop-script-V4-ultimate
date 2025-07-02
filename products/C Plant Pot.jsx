@@ -16,7 +16,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
     app.doAction("selectArea", "tool")
     
     app.doAction("createSPOTWithArea", "tool");
-    app.doAction("crop  cplanpot", "tool");
+    // app.doAction("crop  cplanpot", "tool");
     
     // app.doAction("bong plant pot", "tool");
 // app.activeDocument.activeLayer.remove();
