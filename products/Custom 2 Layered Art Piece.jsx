@@ -94,7 +94,7 @@ function movaxulyfile(item, FileDesign, type, tinhCur, wphone, hphone) {
         else app.activeDocument.layers[1 + "a"].resize(wphone * 100 / CurHeight, hphone * 100 / CurHeight, AnchorPosition.MIDDLECENTER);
 
 
-        if (widthdena > heightdena) app.activeDocument.layers[1 + "b"].resize(wphone * 100 / CurWidth, hphone * 100 / CurWidth, AnchorPosition.MIDDLECENTER);
+        if (CurWidth > CurHeight) app.activeDocument.layers[1 + "b"].resize(wphone * 100 / CurWidth, hphone * 100 / CurWidth, AnchorPosition.MIDDLECENTER);
         else app.activeDocument.layers[1 + "b"].resize(wphone * 100 / CurHeight, hphone * 100 / CurHeight, AnchorPosition.MIDDLECENTER);
 
         app.activeDocument.activeLayer = app.activeDocument.layers["1a"]

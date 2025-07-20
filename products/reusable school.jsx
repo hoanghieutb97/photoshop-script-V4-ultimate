@@ -2,7 +2,7 @@ var arrNew = []
 for (var i = 0; i <= arr.length - 1; i++) {
     if (arr[i].nameId != "PAINTED PIECE") arrNew.push(arr[i])
 }
-
+// alert(arrNew)
 arr = arrNew;
 var stt = 0;
 ban = 0;
@@ -272,7 +272,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
-app.activeDocument.layerSets["SPOT"].move(app.activeDocument, ElementPlacement.PLACEATBEGINNING)
+        app.activeDocument.layerSets["SPOT"].move(app.activeDocument, ElementPlacement.PLACEATBEGINNING)
 
         app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -313,19 +313,22 @@ function openAndResizeFile(item, FileDesign, wphone, hphone, type) {
 
     if (xoay) app.activeDocument.rotateCanvas(90);
     if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-    app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
-    // if (item.direction == "2")
-    //     app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
+    // app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
 
-    // else if (item.direction == "1") {
-    //     if (app.activeDocument.width < app.activeDocument.height) {
-    //         app.activeDocument.resizeImage(null, UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
-    //     }
-    //     else {
-    //         app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), null, 300, ResampleMethod.BICUBIC);
-    //     }
-    // }
-    // else
-    //     app.activeDocument.resizeImage(UnitValue(app.activeDocument.width, "px"), UnitValue(app.activeDocument.height, "px"), 300, ResampleMethod.BICUBIC);
+
+    var khungW = PSpotKhung[2] - PSpotKhung[0];
+    var khungH = PSpotKhung[3] - PSpotKhung[1];
+
+    var scaleW = wphone * 1.0 / khungW;
+    var scaleH = hphone * 1.0 / khungH;
+
+    var scale = Math.min(scaleW, scaleH); // scale nhỏ hơn để không vượt
+
+    app.activeDocument.resizeImage(
+        UnitValue(scale * app.activeDocument.width, "px"),
+        UnitValue(scale * app.activeDocument.height, "px"),
+        300,
+        ResampleMethod.BICUBIC
+    );
 
 }
