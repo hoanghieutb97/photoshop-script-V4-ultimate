@@ -5,7 +5,7 @@ cropBoxInXY(sttCropBox[0], sttCropBox[1], sttCropBox[2], sttCropBox[3], app.acti
 if (lat) app.doAction("canvasHoriz", "tool");
 if (xoay) app.activeDocument.activeLayer.rotate(90);
 app.doAction("xoa stroke layer", "tool");
-
+// alert(wphone, hphone)
 
 var G_boundDen = app.activeDocument.activeLayer.bounds;
 
