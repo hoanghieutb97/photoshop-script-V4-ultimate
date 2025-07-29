@@ -208,6 +208,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 ban = ban + 1;
 
                 app.open(File(FileDesign + "/" + arr[i].sku + ".psd"));
+                var activeDoc = app.activeDocument;
                 ungroupAllGroups(app.activeDocument);
                 app.activeDocument.selection.selectAll();
                 app.activeDocument.crop(app.activeDocument.selection.bounds);
