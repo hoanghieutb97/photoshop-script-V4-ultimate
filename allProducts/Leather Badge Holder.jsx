@@ -18,10 +18,10 @@ var strokeDo = true;
 
 
 for (var i = stt; i <= arr.length - 1; i++) {
-    #include "convertPixel.jsx";
+    #include "convertPixel.jsx"; 
     openFile(FileDesign, arr[i], type);
     app.doAction("strokeRed1px", "tool");
-    #include "cropAndResize-autoFill.jsx";
+    #include "cropAndResize-boxW.jsx";
 
 
     // if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
@@ -37,7 +37,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         openFile(FileDesign, arr[i], type);
         openFile(FileDesign, arr[i], type);
         app.doAction("strokeRed1px", "tool");
-        #include "cropAndResize-autoFill.jsx";
+        #include "cropAndResize-boxW.jsx";
 
 
 
