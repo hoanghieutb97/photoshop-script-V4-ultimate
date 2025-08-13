@@ -1,6 +1,6 @@
 //////////////////////////////////
 wAll = 28346;
-hAll = 7087;
+hAll = 14173;
 app.documents.add(wAll, hAll, 300, "GLLM");
 app.activeDocument.layerSets.add();
 app.activeDocument.activeLayer.name = "CMYK";
@@ -12,8 +12,8 @@ yPosition = 30;
 xPosition = 30;
 hLast = 0;
 wLast = 0;
-var HFix = Math.round(73.7 / 0.084667);
-var WFix = Math.round(73 / 0.084667);
+var HFix = Math.round(70.8 / 0.084667);
+var WFix = Math.round(70 / 0.084667);
 var keothem = 18;
 for (var i = stt; i <= arr.length - 1; i++) {
 
