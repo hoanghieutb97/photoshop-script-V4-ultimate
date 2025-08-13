@@ -96,6 +96,7 @@ ban = 0;
 var typeTem = "go3mm";
 for (var i = stt; i <= arr.length - 1; i++) {
     var slLop = 2;
+    if (arr[i].nameId.split("-")[1] == "2L") slLop = 2;
     if (arr[i].nameId.split("-")[1] == "3L") slLop = 3;
     else if (arr[i].nameId.split("-")[1] == "4L") slLop = 4;
     for (var k = 1; k < slLop; k++) {
@@ -189,6 +190,7 @@ ban = 0;
 var typeTem = "mica3mm";
 for (var i = stt; i <= arr.length - 1; i++) {
     var slLop = 2;
+    if (arr[i].nameId.split("-")[1] == "2L") slLop = 2;
     if (arr[i].nameId.split("-")[1] == "3L") slLop = 3;
     else if (arr[i].nameId.split("-")[1] == "4L") slLop = 4;
     for (var k = 1; k < slLop; k++) {

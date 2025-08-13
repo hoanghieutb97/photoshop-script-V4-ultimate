@@ -313,22 +313,22 @@ function openAndResizeFile(item, FileDesign, wphone, hphone, type) {
 
     if (xoay) app.activeDocument.rotateCanvas(90);
     if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-    // app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
+    app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
 
 
-    var khungW = PSpotKhung[2] - PSpotKhung[0];
-    var khungH = PSpotKhung[3] - PSpotKhung[1];
+    // var khungW = PSpotKhung[2] - PSpotKhung[0];
+    // var khungH = PSpotKhung[3] - PSpotKhung[1];
 
-    var scaleW = wphone * 1.0 / khungW;
-    var scaleH = hphone * 1.0 / khungH;
+    // var scaleW = wphone * 1.0 / khungW;
+    // var scaleH = hphone * 1.0 / khungH;
 
-    var scale = Math.min(scaleW, scaleH); // scale nhỏ hơn để không vượt
+    // var scale = Math.min(scaleW, scaleH); // scale nhỏ hơn để không vượt
 
-    app.activeDocument.resizeImage(
-        UnitValue(scale * app.activeDocument.width, "px"),
-        UnitValue(scale * app.activeDocument.height, "px"),
-        300,
-        ResampleMethod.BICUBIC
-    );
+    // app.activeDocument.resizeImage(
+    //     UnitValue(scale * app.activeDocument.width, "px"),
+    //     UnitValue(scale * app.activeDocument.height, "px"),
+    //     300,
+    //     ResampleMethod.BICUBIC
+    // );
 
 }

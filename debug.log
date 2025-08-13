@@ -276,3 +276,20 @@ C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use
 
 [0725/220333.677:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
 [0731/134403.815:WARNING:backend_impl.cc(1843)] Destroying invalid entry.
+[0804/144829.151:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0804/220744.893:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
+[0807/051153.138:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0808/164720.946:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(57,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(65,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
+[0809/155015.443:WARNING:angle_platform_impl.cc(52)] compileToBinary(230): 
+C:\fakepath(38,8-58): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+C:\fakepath(46,8-28): warning X3571: pow(f, e) will not work for negative f, use abs(f) or conditionally handle negative values if you expect them
+
