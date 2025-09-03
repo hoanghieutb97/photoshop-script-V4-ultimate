@@ -25,11 +25,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     { // translate layer đến vị trí cần in
         app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
         app.doAction("moveZero", "tool");
-        if (arr[i].nameId == "O.Ceramic-tron")
-            app.activeDocument.activeLayer.translate((xPosition + 15), (yPosition + 15) * (-1));
-        else if (arr[i].nameId == "O.Ceramic-ao")
-            app.activeDocument.activeLayer.translate((xPosition + 18), (yPosition + 18) * (-1));
-        else app.activeDocument.activeLayer.translate((xPosition), (yPosition) * (-1));
+
+        app.activeDocument.activeLayer.translate((xPosition - 25), (yPosition - 29) * (-1));
         if ((i > 0) && (app.activeDocument.layerSets["CMYK"].artLayers.length > 1)) app.activeDocument.activeLayer.merge();
 
 
