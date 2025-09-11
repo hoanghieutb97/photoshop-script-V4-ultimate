@@ -34,6 +34,19 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     app.doAction("createRectangleDeskplaque", "tool");
     app.activeDocument.activeLayer.name = arr[i].stt;
+    {
+        var bounds1 = app.activeDocument.activeLayer.bounds;
+
+        widthden = bounds1[2] - bounds1[0];
+        heightden = bounds1[3] - bounds1[1];
+
+        if (arr[i].direction == "2")
+            app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+        else if (arr[i].direction == "1") {
+            if (widthden > heightden) app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / widthden, AnchorPosition.MIDDLECENTER);
+            else app.activeDocument.activeLayer.resize(wphone * 100 / heightden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
+        }
+    }
     app.doAction("moveZero", "tool");
     app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
     app.activeDocument.activeLayer.move(app.activeDocument.layerSets["SPOT"], ElementPlacement.INSIDE);

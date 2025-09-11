@@ -186,7 +186,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                
 
                 ban = ban + 1;
                 stt = i;
@@ -223,7 +223,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            
 
 
         }
@@ -239,8 +239,8 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
     #include "createDocumentWooden2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "go3mm cat 0 in"; // khi createtem-group thì mới dùng
-    var nameSave = "go3mm cat 0 in"; // tên khi lưu
+    var typeTem = "go5mm cat 0 in"; // khi createtem-group thì mới dùng
+    var nameSave = "go5mm cat 0 in"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -291,7 +291,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
             var typeCrop = "den";
 
-            var sttCropBox = soLayerCut[g][0];
+            var sttCropBox = soLayerCut[g];
 
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
@@ -299,7 +299,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                
 
                 ban = ban + 1;
                 stt = i;
@@ -310,7 +310,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 }
 
                 var typeCrop = "den";
-                var sttCropBox = soLayerCut[g][0]
+                var sttCropBox = soLayerCut[g]
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
 
@@ -326,7 +326,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            
 
 
         }
@@ -401,7 +401,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                
 
                 ban = ban + 1;
                 stt = i;
@@ -438,7 +438,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            
 
 
         }
