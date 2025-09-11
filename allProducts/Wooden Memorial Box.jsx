@@ -186,7 +186,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                
+
 
                 ban = ban + 1;
                 stt = i;
@@ -223,7 +223,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            
+
 
 
         }
@@ -299,7 +299,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                
+
 
                 ban = ban + 1;
                 stt = i;
@@ -315,6 +315,11 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
             }
 
 
+            if ((G_boundDen[2] - G_boundDen[0]) != 0) {
+                #include "caculatorPosition.jsx";
+                #include "translateKHUNG.jsx";
+              
+            }
 
 
 
@@ -326,7 +331,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            
+
 
 
         }
@@ -401,7 +406,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                
+
 
                 ban = ban + 1;
                 stt = i;
@@ -438,7 +443,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            
+
 
 
         }
