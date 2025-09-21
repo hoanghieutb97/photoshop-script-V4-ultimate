@@ -118,7 +118,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 showRGBChannel();
 
                 app.activeDocument.channels.getByName("1").visible = true;
-                if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+                if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
                 app.activeDocument.saveAs(Folder(folderTool + "/in truoc 100 trang.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
 
             }

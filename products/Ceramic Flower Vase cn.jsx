@@ -16,7 +16,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
      #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], type);
-    if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+    if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
     app.activeDocument.activeLayer.name = "all";
     var PSpotKhung = app.activeDocument.activeLayer.bounds;
     app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
@@ -63,7 +63,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         doc.layerSets[Group_In].artLayers.getByName(arr[i].stt).remove();
-        if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+        if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
           app.open(File("//192.168.1.240/ps script data/mau coc a4.tif"));
     app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
      app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -92,7 +92,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
      #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], type);
-    if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+    if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
     app.activeDocument.activeLayer.name = "all";
     var PSpotKhung = app.activeDocument.activeLayer.bounds;
     app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
@@ -142,7 +142,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateTRUOC.jsx";
      #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
     if (i == arr.length - 1) {
-        if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+        if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
           app.open(File("//192.168.1.240/ps script data/mau coc a4.tif"));
     app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
      app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

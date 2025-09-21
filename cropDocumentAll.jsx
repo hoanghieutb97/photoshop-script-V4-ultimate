@@ -11,4 +11,4 @@ var newBounds = [
 ];
 app.activeDocument.crop(newBounds);
 app.activeDocument.activeLayer.remove();
-if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);

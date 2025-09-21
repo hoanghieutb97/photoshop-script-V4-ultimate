@@ -48,7 +48,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             ];
             app.activeDocument.crop(newBounds);
             app.activeDocument.activeLayer.remove();
-            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
             app.activeDocument.saveAs(Folder(folderTool + "/mica5mm " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -121,7 +121,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             ];
             app.activeDocument.crop(newBounds);
             app.activeDocument.activeLayer.remove();
-            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
             app.activeDocument.saveAs(Folder(folderTool + "/mica5mm " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -187,7 +187,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             ];
             app.activeDocument.crop(newBounds);
             app.activeDocument.activeLayer.remove();
-            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
             app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -260,7 +260,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 ];
                 app.activeDocument.crop(newBounds);
                 app.activeDocument.activeLayer.remove();
-                if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+                if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
                 app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -314,7 +314,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             ];
             app.activeDocument.crop(newBounds);
             app.activeDocument.activeLayer.remove();
-            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
             app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

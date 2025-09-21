@@ -25,7 +25,7 @@
             ];
             app.activeDocument.crop(newBounds);
             app.activeDocument.activeLayer.remove();
-            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
             app.activeDocument.saveAs(Folder(folderLuu + "/" + nameSave + "-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

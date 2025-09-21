@@ -27,7 +27,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             app.doAction("createSmarkOBJ", "tool");
             app.doAction("selectArea", "tool");
             app.doAction("createSPOTWithArea", "tool");
-            if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+            if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
             app.activeDocument.saveAs(Folder(folderTool + "/in 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES); // tat file gllm
         }

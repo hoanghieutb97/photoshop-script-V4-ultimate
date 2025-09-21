@@ -8,7 +8,7 @@ if (!folderBanInTool.exists) { folderBanInTool.create() }
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
     openFile(FileDesign, arr[i], type);
-    if (app.activeDocument.mode != "DocumentMode.CMYK") app.activeDocument.changeMode(ChangeMode.CMYK);
+    if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
     app.activeDocument.activeLayer.name = "all";
     var PSpotKhung = app.activeDocument.activeLayer.bounds;
     app.activeDocument.crop(PSpotKhung, 0, PSpotKhung[2] - PSpotKhung[0], PSpotKhung[3] - PSpotKhung[1]);
