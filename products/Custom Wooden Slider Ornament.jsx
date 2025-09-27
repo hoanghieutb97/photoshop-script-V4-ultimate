@@ -36,6 +36,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((bounds2[2] - bounds2[0]) != 0) {
             app.doAction("moveZero", "tool");
             app.activeDocument.activeLayer.translate(xPosition, (yPosition) * (-1));
+            app.activeDocument.activeLayer.resize(-100, 100, AnchorPosition.MIDDLECENTER);
+
             boundsLayer1 = app.activeDocument.activeLayer.bounds; // Lấy giới hạn của Layer 1 (tọa độ trái, trên, phải, dưới)
             layer1Width = boundsLayer1[2] - boundsLayer1[0];
             layer1Height = boundsLayer1[3] - boundsLayer1[1];
@@ -51,7 +53,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var centerX = boundsLayer1[0] + (layer1Width / 2);
             var centerY = boundsLayer1[1] + (layer1Height / 2);
             app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
-
+            app.activeDocument.activeLayer.resize(-100, 100, AnchorPosition.MIDDLECENTER);
             // app.doAction("moveZero", "tool");
             // app.activeDocument.activeLayer.translate((xPosition + bounds3[0] - bounds1[0]), (yPosition + bounds1[3] - bounds3[3]) * (-1));
         }
@@ -67,7 +69,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var centerX = boundsLayer1[0] + (layer1Width / 2);
             var centerY = boundsLayer1[1] + (layer1Height / 2);
             app.activeDocument.activeLayer.translate(centerX - (layer2Width / 2) - bounds2[0], centerY - (layer2Height / 2) - bounds2[1]);
-
+            app.activeDocument.activeLayer.resize(-100, 100, AnchorPosition.MIDDLECENTER);
             // app.doAction("moveZero", "tool");
             // app.activeDocument.activeLayer.translate((xPosition + bounds2[0] - bounds1[0]), (yPosition + bounds1[3] - bounds2[3]) * (-1));
         }
@@ -284,7 +286,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var layer1Width = 0;
         var layer1Height = 0;
         openFile(FileDesign, arr[i], type);
-        
+
         cropBoxIn(k + 1, 1, somanh, 1, app.activeDocument.width, app.activeDocument.height);
 
         #include "cropBlackCut-2Size.jsx";
@@ -298,7 +300,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             #include "createDocumentWooden.jsx";
             ban = ban + 1;
             openFile(FileDesign, arr[i], type);
-            
+
             cropBoxIn(k + 1, 1, somanh, 1, app.activeDocument.width, app.activeDocument.height);
 
             #include "cropBlackCut-2Size.jsx";
