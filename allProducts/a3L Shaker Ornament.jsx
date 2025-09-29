@@ -201,7 +201,7 @@
         ///////////////////////////////////////////////////// check so luogn cot
 
         var layerCutGoc = [1, 1, 4, 2]
-        var soLayerCut = [[[3, 1, 4, 2], [3, 2, 4, 2], [2, 2, 4, 2]]]
+        var soLayerCut = [[[3, 1, 4, 2], [2, 2, 4, 2], [3, 2, 4, 2]]]
         var widthden = 0;
         var heightden = 0;
         var xoay = false;
@@ -257,13 +257,13 @@
                 #include "caculatorPosition.jsx";
                 #include "translateKHUNG.jsx";
                 var sttCropBox = soLayerCut[g][1]
-                Group_In = "IN TRUOC" //group file in
+                Group_In = "IN SAU" //group file in
                 lat = true;
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
                 #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
                 var sttCropBox = soLayerCut[g][2]
-                Group_In = "IN SAU" //group file in
+                Group_In = "IN TRUOC" //group file in
                 lat = false
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
                 #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
