@@ -94,6 +94,24 @@ function cropBoxInXY(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
 
 
 }
+
+
+function cropBoxInXY_onlyDuplicate(boxX, boxY, boxSumX, boxSumY, widthF, heightF) {
+
+    app.activeDocument.selection.select([
+        [Math.round((boxX - 1) * (widthF / boxSumX)), Math.round((boxY - 1) * (heightF / boxSumY))],
+        [Math.round((boxX - 1) * (widthF / boxSumX)), Math.round((boxY) * (heightF / boxSumY))],
+        [Math.round((boxX) * (widthF / boxSumX)), Math.round((boxY) * (heightF / boxSumY))],
+        [Math.round((boxX) * (widthF / boxSumX)), Math.round((boxY - 1) * (heightF / boxSumY))],
+
+    ]);
+
+
+    app.doAction("duplicateSelection", "tool")
+
+
+}
+
 function selectWhitePixels() {
     var idClrR = charIDToTypeID("ClrR");
     var desc = new ActionDescriptor();

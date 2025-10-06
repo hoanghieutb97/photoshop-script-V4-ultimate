@@ -10,8 +10,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     for (var j = 1; j < 4; j++) {
 
         openFile(FileDesign, arr[i], "0front");
-        if (arr[i].nameId == "WP- FrameMagnet-to") app.activeDocument.crop([0, 0, app.activeDocument.width, 2083]);
-        else if (arr[i].nameId == "WP- FrameMagnet-nho") app.activeDocument.crop([0, 0, app.activeDocument.width, 1408]);
+        if (arr[i].nameId == "WP- FrameMagnet-5,25x6,75in") app.activeDocument.crop([0, 0, app.activeDocument.width, 2083]);
+        else if (arr[i].nameId == "WP- FrameMagnet-3,5x4,5in"|| arr[i].nameId == "WP- FrameMagnet-4,5in") app.activeDocument.crop([0, 0, app.activeDocument.width, 1408]);
         cropBoxIn(j, 1, 3, 1, app.activeDocument.width, app.activeDocument.height);
         #include "boxWFlexible.jsx";
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -24,8 +24,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
             stt = i;
 
             openFile(FileDesign, arr[i], "0front");
-            if (arr[i].nameId = "WP- FrameMagnet-to") app.activeDocument.crop([0, 0, app.activeDocument.width, 2083]);
-            else if (arr[i].nameId = "WP- FrameMagnet-nho") app.activeDocument.crop([0, 0, app.activeDocument.width, 1408]);
+            if (arr[i].nameId = "WP- FrameMagnet-5,25x6,75in") app.activeDocument.crop([0, 0, app.activeDocument.width, 2083]);
+            else if (arr[i].nameId = "WP- FrameMagnet-3,5x4,5in"|| arr[i].nameId == "WP- FrameMagnet-4,5in") app.activeDocument.crop([0, 0, app.activeDocument.width, 1408]);
             cropBoxIn(j, 1, 3, 1, app.activeDocument.width, app.activeDocument.height);
             #include "boxWFlexible.jsx";
         }
@@ -111,8 +111,8 @@ if (!folderKhac.exists) { folderKhac.create(); }
 for (var i = stt; i <= arr.length - 1; i++) {
 
     openFile(FileDesign, arr[i], "vbvsvs");
-    if (arr[i].nameId == "WP- FrameMagnet-to") app.activeDocument.crop([0, 2083, app.activeDocument.width, app.activeDocument.height]);
-    else if (arr[i].nameId == "WP- FrameMagnet-nho") app.activeDocument.crop([0, 1408, app.activeDocument.width, app.activeDocument.height]);
+    if (arr[i].nameId == "WP- FrameMagnet-5,25x6,75in") app.activeDocument.crop([0, 2083, app.activeDocument.width, app.activeDocument.height]);
+    else if (arr[i].nameId == "WP- FrameMagnet-3,5x4,5in"|| arr[i].nameId == "WP- FrameMagnet-4,5in") app.activeDocument.crop([0, 1408, app.activeDocument.width, app.activeDocument.height]);
     var PSpotKhung = app.activeDocument.activeLayer.bounds;
 
     if ((PSpotKhung[2] - PSpotKhung[0]) != 0) { // translate khung { // translate khung
