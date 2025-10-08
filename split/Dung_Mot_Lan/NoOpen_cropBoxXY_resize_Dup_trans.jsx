@@ -3,6 +3,7 @@ if (typeof xoay90_File !== 'undefined') app.activeDocument.rotateCanvas(90);
 
 cropBoxInXY(sttCropBox[0], sttCropBox[1], sttCropBox[2], sttCropBox[3], app.activeDocument.width, app.activeDocument.height);
 
+if (lat) app.doAction("canvasHoriz", "tool");
 
 if (xoay) app.activeDocument.activeLayer.rotate(90);
 app.doAction("xoa stroke layer", "tool");
@@ -42,7 +43,7 @@ if ((activebounds[2] - activebounds[0]) != 0) {
         app.activeDocument.activeLayer.translate(((xPosition + (hphone / heightden) * (activebounds[0] - G_boundDen[0]))), ((yPosition + (hphone / heightden) * (G_boundDen[3] - activebounds[3]))) * (-1))
     else app.activeDocument.activeLayer.translate(((xPosition + (activebounds[0] - G_boundDen[0]))), ((yPosition + (G_boundDen[3] - activebounds[3]))) * (-1));
 
-    if (lat) app.activeDocument.activeLayer.resize(-100, 100, AnchorPosition.MIDDLECENTER);
+
 
 }
 else {
