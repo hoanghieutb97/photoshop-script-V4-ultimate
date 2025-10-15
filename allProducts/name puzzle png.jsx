@@ -238,7 +238,7 @@
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
 
-        var soLayerCut = [[[3, 1, 3, 3], [3, 2, 3, 3]]];
+        var soLayerCut = [[[3, 1, 3, 3], [3, 2, 3, 3], [3, 3, 3, 3]]];
 
         var layerCutGoc = [1, 1, 3, 3];
         {// lấy file đen làm file gốc tính kích thước
@@ -298,9 +298,12 @@
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
 
 
+                var Group_In = "IN SAU" //group file in
+                var sttCropBox = soLayerCut[g][2]
+                lat = true; // lật mica
+                #include "../split/cropBoxXY_resize_Dup_trans.jsx";
 
-
-                #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+                #include "../split/canGiua13.jsx"; // căn giữa 1 file  Group_Khung và Group_In
             }
 
 

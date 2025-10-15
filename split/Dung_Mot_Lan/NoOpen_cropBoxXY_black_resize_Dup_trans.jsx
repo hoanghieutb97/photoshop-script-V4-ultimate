@@ -10,6 +10,7 @@ app.doAction("xoa stroke layer", "tool");
 var G_boundDen = app.activeDocument.activeLayer.bounds;
 
 if ((G_boundDen[2] - G_boundDen[0]) != 0) {
+    // if (arr[i].stt == 5) alert(hphone * 100 / heightden)
     if (arr[i].direction == "2")
         app.activeDocument.activeLayer.resize(wphone * 100 / widthden, hphone * 100 / heightden, AnchorPosition.MIDDLECENTER);
     else if (arr[i].direction == "1")
