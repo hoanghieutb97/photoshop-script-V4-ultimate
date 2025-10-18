@@ -227,6 +227,8 @@
 
 
 { ////////////////////////////////////////////////////////////// chay lop 3mm 2 M
+    ban = 0;
+    stt = 0;
     #include "createDocumentWooden2.jsx";
     var doc = app.activeDocument;
     var typeTem = "go 3mm 2M"; // khi createtem-group thì mới dùng
@@ -269,6 +271,7 @@
                 ban = ban + 1;
                 stt = i;
                 #include "createDocumentWooden2.jsx";
+
                 doc = app.activeDocument;
                 if (arr.length > Min_Number_auto) {
                     #include "../split/taoTenBan.jsx";
