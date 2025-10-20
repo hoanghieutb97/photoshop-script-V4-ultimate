@@ -117,7 +117,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var typeCrop = "den";
 
             var sttCropBox = soLayerCut[g][0];
-            lat = false; // lật mica
+            lat = true; // lật mica
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
             if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
