@@ -6,8 +6,8 @@ var Min_Number_auto = 1; // giới hạn 10 file để tạo bàn in
 
     #include "createDocumentWooden2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "go 3mm-1M"; // khi createtem-group thì mới dùng
-    var nameSave = "go 3mm-1M"; // tên khi lưu
+    var typeTem = "go 5mm-1M"; // khi createtem-group thì mới dùng
+    var nameSave = "go 5mm-1M"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in

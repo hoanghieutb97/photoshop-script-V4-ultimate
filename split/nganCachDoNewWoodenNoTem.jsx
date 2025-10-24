@@ -17,9 +17,9 @@
         app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName("stt" + arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName("stt" + arr[i].stt).remove();
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+   
 
-        #include "createDocumentMica2.jsx";
+        #include "createDocumentWooden2.jsx";
         ban = ban + 1;
         stt = i;
         var doc = app.activeDocument;
