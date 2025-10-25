@@ -8,11 +8,10 @@ if (i < arr.length - 1)
         moveTem(arr[j], type);
 
 
-        folderType = Folder(folderTem + "/" + typeTem);
+        folderType = Folder(folderTem + "/" + typeTem + "--b-" + (ban + 1));
         if (!folderType.exists) { folderType.create(); }
-        folderBan = Folder(folderType + "/b-" + (ban + 1));
-        if (!folderBan.exists) { folderBan.create(); }
-        app.activeDocument.saveAs(Folder(folderBan + "/" + arr[j].stt + "-" + arr[j].barcode + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
+   
+        app.activeDocument.saveAs(Folder(folderType + "/" + arr[j].stt + "-" + arr[j].barcode + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
     }
 else if (i == arr.length - 1)
     for (var j = stt; j <= i; j++) {
@@ -20,11 +19,10 @@ else if (i == arr.length - 1)
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/moveTem.jsx"));
 
         moveTem(arr[j], type);
-        folderType = Folder(folderTem + "/" + typeTem);
+         folderType = Folder(folderTem + "/" + typeTem + "--b-" + (ban + 1));
         if (!folderType.exists) { folderType.create(); }
-        folderBan = Folder(folderType + "/b-" + (ban + 1));
-        if (!folderBan.exists) { folderBan.create(); }
-        app.activeDocument.saveAs(Folder(folderBan + "/" + arr[j].stt + "-" + arr[j].barcode + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
+   
+        app.activeDocument.saveAs(Folder(folderType + "/" + arr[j].stt + "-" + arr[j].barcode + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
 
     }
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
