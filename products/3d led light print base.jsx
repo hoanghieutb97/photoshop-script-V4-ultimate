@@ -129,7 +129,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
         #include "cropDocument.jsx";
 
-        app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }

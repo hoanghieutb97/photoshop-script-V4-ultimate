@@ -20,7 +20,7 @@
     app.activeDocument.mergeVisibleLayers();
 
 
-    app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }
 
@@ -39,7 +39,7 @@
 
     app.doAction("tao ban in truoc 2M", "tool");
 
-    app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }
 
@@ -58,6 +58,6 @@
 
     app.doAction("tao ban in sau 2M", "tool");
 
-    app.activeDocument.saveAs(Folder(folderBanInTool + "/in sau" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderBanInTool + "/in sau" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 }

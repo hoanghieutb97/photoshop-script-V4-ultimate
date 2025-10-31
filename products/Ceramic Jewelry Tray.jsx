@@ -17,7 +17,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             if (!folderBanIn.exists) { folderBanIn.create(); }
             var WSave = Math.ceil(app.activeDocument.width.as("px") * 0.084667 / 10);
             var HSave = Math.ceil(app.activeDocument.height.as("px") * 0.084667 / 10);
-            app.activeDocument.saveAs(Folder(folderBanIn + "/b" + (ban + 1) + "-" + WSave + "x" + HSave + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanIn + "/b" + (ban + 1) + "-" + WSave + "x" + HSave + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
         }
@@ -72,7 +72,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var WSave = Math.ceil(app.activeDocument.width.as("px") * 0.084667 / 10);
         var HSave = Math.ceil(app.activeDocument.height.as("px") * 0.084667 / 10);
 
-        app.activeDocument.saveAs(Folder(folderBanIn + "/b" + (ban + 1) + "-" + WSave + "x" + HSave + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderBanIn + "/b" + (ban + 1) + "-" + WSave + "x" + HSave + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));

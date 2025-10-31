@@ -18,7 +18,7 @@
             app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("khung");
             app.doAction("tao ban khung", "tool");
             app.activeDocument.mergeVisibleLayers();
-            app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         }
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
@@ -35,7 +35,7 @@
 
             app.doAction("tao ban in truoc 2M", "tool");
 
-            app.activeDocument.saveAs(Folder(folderBanInTool + "/in" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/in" + "-b" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         }
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     }

@@ -100,7 +100,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 app.activeDocument.layerSets.getByName("KHUNG").visible = false;
                 app.activeDocument.layerSets.getByName("SPOT").visible = false;
                 app.activeDocument.layerSets.getByName("CMYK").visible = false;
-                app.activeDocument.saveAs(Folder(folderTool + "/khung 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.saveAs(Folder(folderTool + "/khung 1.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 
             }
             {// lưu file in 1\
@@ -119,7 +119,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
 
                 app.activeDocument.channels.getByName("1").visible = true;
                 if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-                app.activeDocument.saveAs(Folder(folderTool + "/in truoc 100 trang.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.saveAs(Folder(folderTool + "/in truoc 100 trang.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 
             }
             { // lưu file in 2
@@ -153,7 +153,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
                 app.doAction("selectArea", "tool");
                 app.activeDocument.activeChannels = [app.activeDocument.channels.getByName("1")];
                 app.doAction("fillChannelsLED20", "tool");
-                app.activeDocument.saveAs(Folder(folderTool + "/in sau 15 trang.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.saveAs(Folder(folderTool + "/in sau 15 trang.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 
 
 

@@ -21,7 +21,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         nameSave = "go5mm-";
-        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         #include "createDocument.jsx";
@@ -68,7 +68,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
 
         nameSave = "go5mm-";
-        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 
@@ -120,7 +120,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             nameSave = "go3mm-";
-            app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
             #include "createDocument.jsx";
@@ -170,7 +170,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
         nameSave = "go3mm-";
-        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 
@@ -215,7 +215,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             nameSave = "mica3mm-";
-            app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
             #include "createDocument.jsx";
@@ -266,7 +266,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
         nameSave = "mica3mm-";
-        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/" + nameSave + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 

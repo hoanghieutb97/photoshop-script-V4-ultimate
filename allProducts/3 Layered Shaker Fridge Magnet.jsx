@@ -107,23 +107,23 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         }
     }
-    if (chayTuDong) {
-        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-        if (!folderBanInTool.exists) { folderBanInTool.create() }
-        {
-            var typeFolderLuu = "in xuoi 1Mat-mica 2mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
-            #include "../split/createChildFolderByName.jsx";
-        }
+    // if (chayTuDong) {
+    //     var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+    //     if (!folderBanInTool.exists) { folderBanInTool.create() }
+    //     {
+    //         var typeFolderLuu = "in xuoi 1Mat-mica 2mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
+    //         #include "../split/createChildFolderByName.jsx";
+    //     }
 
-        if (arr.length > Min_Number_auto) {
-            #include "../split/taoBanGopMicaTo.jsx";
-            #include "../split/tif_mergeRed_group.jsx";
-        }
-        else {
-            #include "../split/taoBanCatXongIn.jsx";
-        }
-        #include "../split/taoFileCatDen.jsx";
-    }
+    //     if (arr.length > Min_Number_auto) {
+    //         #include "../split/taoBanGopMicaTo.jsx";
+    //         #include "../split/tif_mergeRed_group.jsx";
+    //     }
+    //     else {
+    //         #include "../split/taoBanCatXongIn.jsx";
+    //     }
+    //     #include "../split/taoFileCatDen.jsx";
+    // }
 
 }
 
@@ -248,16 +248,16 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
         }
     }
 
-    if (chayTuDong) {
-        var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-        if (!folderBanInTool.exists) { folderBanInTool.create() }
-        {
-            var typeFolderLuu = "in xuoi 2Mat-mica 2mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
-            #include "../split/createChildFolderByName.jsx";
-        }
-        #include "../split/tif_mergeRed_groupGo2M.jsx";
-        #include "../split/taoFileCatDen.jsx";
-    }
+    // if (chayTuDong) {
+    //     var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+    //     if (!folderBanInTool.exists) { folderBanInTool.create() }
+    //     {
+    //         var typeFolderLuu = "in xuoi 2Mat-mica 2mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
+    //         #include "../split/createChildFolderByName.jsx";
+    //     }
+    //     #include "../split/tif_mergeRed_groupGo2M.jsx";
+    //     #include "../split/taoFileCatDen.jsx";
+    // }
 }
 
 
@@ -367,9 +367,9 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
     }
 
-    if (chayTuDong) {
+    // if (chayTuDong) {
 
-        #include "../split/taoFileCatDen.jsx";
-    }
+    //     #include "../split/taoFileCatDen.jsx";
+    // }
 
 }

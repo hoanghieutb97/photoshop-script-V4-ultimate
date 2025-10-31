@@ -63,7 +63,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
                 {
 
                     cropin();
-                    app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                    app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
                 }
 
@@ -164,7 +164,7 @@ function sttkinlytoy(yPosition, xPosition, hLast, wLast, ban, khoangcach, arrcut
         {
 
             cropin();
-            app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 
@@ -209,7 +209,7 @@ function sttkinlytoy(yPosition, xPosition, hLast, wLast, ban, khoangcach, arrcut
                 var folder1 = Folder("//192.168.1.240/in/" + type + "-" + FileName + "/con vat");
                 cropin();
 
-                app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.saveAs(Folder(folder1 + "/cut " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             }
         }

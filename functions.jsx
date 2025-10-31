@@ -1,3 +1,6 @@
+
+
+
 function getSelectionActiveLayer(params) {
     var idsetd = charIDToTypeID("setd");
     var desc16 = new ActionDescriptor();
@@ -18,6 +21,7 @@ function getSelectionActiveLayer(params) {
 
 
 }
+
 
 
 function tinhKichThuocToNhatHaiLop_coToaDo(item, FileDesign, type) {

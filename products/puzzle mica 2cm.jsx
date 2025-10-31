@@ -47,7 +47,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
             var folder1 = Folder("//192.168.1.240/in/" + type + "-" + FileName);
             if (!folder1.exists) { folder1.create(); }
             #include "cropDocument.jsx";
-            app.activeDocument.saveAs(Folder(folder1 + "/in " + (i + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folder1 + "/in " + (i + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
         { // tạo nhãn

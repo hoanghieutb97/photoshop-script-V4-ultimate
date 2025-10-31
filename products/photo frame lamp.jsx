@@ -50,7 +50,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.activeLayer.remove();
             if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-            app.activeDocument.saveAs(Folder(folderTool + "/mica5mm " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/mica5mm " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
@@ -123,7 +123,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.activeLayer.remove();
             if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-            app.activeDocument.saveAs(Folder(folderTool + "/mica5mm " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/mica5mm " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -189,7 +189,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.activeLayer.remove();
             if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-            app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
         #include "createDocument.jsx";
@@ -262,7 +262,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.activeLayer.remove();
                 if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-                app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             }
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
@@ -316,7 +316,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.activeLayer.remove();
             if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-            app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/khung " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 

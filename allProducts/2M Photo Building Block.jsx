@@ -85,11 +85,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
 }
 
 
-if (chayTuDong) {
-    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-    if (!folderBanInTool.exists) { folderBanInTool.create() }
+// if (chayTuDong) {
+//     var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+//     if (!folderBanInTool.exists) { folderBanInTool.create() }
 
 
-    #include "../split/taoBanCatXongInXuoi2M.jsx";
+//     #include "../split/taoBanCatXongInXuoi2M.jsx";
 
-}
+// }

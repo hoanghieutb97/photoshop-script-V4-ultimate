@@ -74,7 +74,7 @@ for (var i = 0; i < arr.length; i++) {
 
     if (i == arr.length - 1) {
         #include "cropDocument.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/ban 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/ban 1.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         var stt = 0;

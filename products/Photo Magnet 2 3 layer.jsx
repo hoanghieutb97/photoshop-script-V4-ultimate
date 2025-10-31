@@ -372,7 +372,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             #include "cropDocument.jsx";
             app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
-            app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             #include "createDocumentA4.jsx";
             ban = ban + 1;
@@ -409,7 +409,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 {
                     #include "cropDocumentAll.jsx";
                     app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
-                    app.activeDocument.saveAs(Folder(folderKhac + "/giay-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                    app.activeDocument.saveAs(Folder(folderKhac + "/giay-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 
                     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
                 }
@@ -460,7 +460,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if (nogiay) {
             #include "cropDocumentAll.jsx";
             app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
-            app.activeDocument.saveAs(Folder(folderKhac + "/giay-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderKhac + "/giay-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 
         }
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

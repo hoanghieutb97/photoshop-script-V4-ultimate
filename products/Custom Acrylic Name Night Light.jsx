@@ -63,7 +63,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "cropDocument.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         
         hAll=14173; wAll=28346;
@@ -102,7 +102,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
         // #include "xoaExpand12px.jsx";
         #include "cropDocument.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
     }

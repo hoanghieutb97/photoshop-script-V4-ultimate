@@ -77,19 +77,19 @@ for (var i = stt; i <= arr.length - 1; i++) {
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
-if (chayTuDong) {
+// if (chayTuDong) {
 
-    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-    if (!folderBanInTool.exists) { folderBanInTool.create() }
-    if (arr.length > Min_Number_auto) {
+//     var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+//     if (!folderBanInTool.exists) { folderBanInTool.create() }
+//     if (arr.length > Min_Number_auto) {
 
 
-        #include "../split/taoBanGopMicaTo.jsx";
+//         #include "../split/taoBanGopMicaTo.jsx";
 
-        #include "../split/tif_mergeRed_groupMica2M.jsx";
-    }
-    else {
-        #include "../split/taoBanCatXongInMica2M.jsx";
-    }
-    // #include "../split/taoFileCatDen.jsx";
-}
+//         #include "../split/tif_mergeRed_groupMica2M.jsx";
+//     }
+//     else {
+//         #include "../split/taoBanCatXongInMica2M.jsx";
+//     }
+//     // #include "../split/taoFileCatDen.jsx";
+// }

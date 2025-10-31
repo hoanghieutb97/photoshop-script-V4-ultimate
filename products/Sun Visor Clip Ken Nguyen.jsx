@@ -25,7 +25,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocumentWooden.jsx";
@@ -102,7 +102,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocumentWooden.jsx";
@@ -176,7 +176,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocumentWooden.jsx";
@@ -264,7 +264,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.activeLayer.remove();
                 if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-                app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             }
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
@@ -305,7 +305,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     end = arr[i].stt;
     if ((end == arr.length)) {
         #include "cropDocumentAll.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/go3mm- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -356,7 +356,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             #include "cropDocument.jsx";
             app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
-            app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             #include "createDocumentA4.jsx";
             ban = ban + 1;
@@ -404,7 +404,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                     app.activeDocument.activeLayer.remove();
                     if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
 
-                    app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+                    app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
                 }
                 $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
@@ -452,7 +452,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         if (nogiay) {
             #include "cropDocument.jsx";
             app.activeDocument.resizeCanvas(2480, 3508, AnchorPosition.MIDDLECENTER);
-            app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderKhac + "/giay " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         }
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 

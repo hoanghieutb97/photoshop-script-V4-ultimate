@@ -13,7 +13,7 @@ for (var i = 0; i <= arr.length - 1; i++) {
     app.doAction("selectArea", "tool")
     app.doAction("contract1", "tool");
     app.doAction("createSPOTWithArea", "tool");
-    app.activeDocument.saveAs(Folder(folderTool + "/in " + (i + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(folderTool + "/in " + (i + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
     if (i == arr.length - 1) {

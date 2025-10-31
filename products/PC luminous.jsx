@@ -18,13 +18,13 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
         { // lưu file khung
             app.activeDocument.layerSets.getByName("SPOT").visible = false;
             app.activeDocument.layerSets.getByName("CMYK").visible = false;
-            app.activeDocument.saveAs(Folder(folderTool + "/khung 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/khung 1.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         }
         {// lưu file in
             app.activeDocument.channels.getByName("1").remove();
             app.activeDocument.layerSets.getByName("CMYK").visible = true;
             if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-            app.activeDocument.saveAs(Folder(folderTool + "/in 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/in 1.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             
         }
         {// file trang
@@ -34,7 +34,7 @@ for (var i = 0; i <= arr.length - 1; i++) { // loop làm file in
             app.doAction("createSPOTWithArea", "tool");
             app.activeDocument.artLayers.getByName("CMYK").visible = false;
             if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-            app.activeDocument.saveAs(Folder(folderTool + "/white 1.tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/white 1.tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
        var  stt = 0;

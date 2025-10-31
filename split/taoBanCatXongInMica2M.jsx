@@ -11,7 +11,7 @@ app.activeDocument.activeLayer = app.activeDocument.artLayers.getByName("khung")
 app.doAction("tao ban khung", "tool");
 app.activeDocument.mergeVisibleLayers();
 
-app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+app.activeDocument.saveAs(Folder(folderBanInTool + "/khung" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 ////////////////////////////////////////////////////////// in truoc
@@ -24,7 +24,7 @@ selectWhitePixels();
 app.doAction("tao ban in truoc 2M", "tool");
 
 
-app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+app.activeDocument.saveAs(Folder(folderBanInTool + "/in truoc" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 
@@ -36,5 +36,5 @@ app.doAction("merge active group", "tool");
 #include "../scontainer/deleteRedLineIn.jsx";
 selectWhitePixels();
 app.doAction("tao ban in sau 2M sua", "tool");
-app.activeDocument.saveAs(Folder(folderBanInTool + "/in sau" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+app.activeDocument.saveAs(Folder(folderBanInTool + "/in sau" + "-" + (ban + 1) + "-" + nameSave + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

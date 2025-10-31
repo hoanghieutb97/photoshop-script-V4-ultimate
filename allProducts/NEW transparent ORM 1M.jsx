@@ -1,5 +1,6 @@
-
+// alert("okexxxx")
 #include "createDocumentMica2.jsx";
+// alert("okex")
 var doc = app.activeDocument;
 var typeTem = "mica"; // khi createtem-group thì mới dùng
 var nameSave = "mica"; // tên khi lưu
@@ -18,6 +19,7 @@ var kenhSpot1 = true;
 if (arr.length > Min_Number_auto) {
     #include "../split/taoTenBan.jsx";
 }
+
 
 for (var i = stt; i <= arr.length - 1; i++) {
     #include "convertPixel.jsx";
@@ -86,16 +88,16 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     }
 }
-if (chayTuDong) {
-    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-    if (!folderBanInTool.exists) { folderBanInTool.create() }
-    if (arr.length > Min_Number_auto) {
-        #include "../split/taoBanGopMicaTo.jsx";
+// if (chayTuDong) {
+//     var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+//     if (!folderBanInTool.exists) { folderBanInTool.create() }
+//     if (arr.length > Min_Number_auto) {
+//         #include "../split/taoBanGopMicaTo.jsx";
 
-        #include "../split/tif_mergeRed_group.jsx";
-    }
-    else {
-        #include "../split/taoBanCatXongIn.jsx";
-    }
-    #include "../split/taoFileCatDen.jsx";
-}
+//         #include "../split/tif_mergeRed_group.jsx";
+//     }
+//     else {
+//         #include "../split/taoBanCatXongIn.jsx";
+//     }
+//     #include "../split/taoFileCatDen.jsx";
+// }

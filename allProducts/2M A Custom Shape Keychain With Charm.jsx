@@ -121,22 +121,22 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     }
 }
-if (chayTuDong) {
-    var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-    if (!folderBanInTool.exists) { folderBanInTool.create() }
-    {
-        var typeFolderLuu = "in nguoc 2Mat-mica 3mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
-        #include "../split/createChildFolderByName.jsx";
-    }
-    if (arr.length > Min_Number_auto) {
+// if (chayTuDong) {
+//     var folderBanInTool = Folder(folderContainer + "/ban in-tool");
+//     if (!folderBanInTool.exists) { folderBanInTool.create() }
+//     {
+//         var typeFolderLuu = "in nguoc 2Mat-mica 3mm" // thư mục con trong banin-tool- chia ra để lưu theo loại
+//         #include "../split/createChildFolderByName.jsx";
+//     }
+//     if (arr.length > Min_Number_auto) {
 
 
-        #include "../split/taoBanGopMicaTo.jsx";
-        #include "../split/tif_mergeRed_groupMica2M.jsx";
+//         #include "../split/taoBanGopMicaTo.jsx";
+//         #include "../split/tif_mergeRed_groupMica2M.jsx";
 
-    }
-    else {
-        #include "../split/taoBanCatXongInMica2M.jsx";
-    }
-    #include "../split/taoFileCatDen.jsx";
-}
+//     }
+//     else {
+//         #include "../split/taoBanCatXongInMica2M.jsx";
+//     }
+//     #include "../split/taoFileCatDen.jsx";
+// }

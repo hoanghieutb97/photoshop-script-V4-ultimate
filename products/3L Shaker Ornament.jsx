@@ -23,7 +23,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocument.jsx";
@@ -107,7 +107,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
             $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
@@ -174,7 +174,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((i == arr.length - 1) & (lop == 8)) {
         #include "cropDocumentAll.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/1mat- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
@@ -207,7 +207,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
             #include "createDocument.jsx";
@@ -313,7 +313,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName("stt" + arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
             #include "createDocumentMica.jsx";
@@ -360,7 +360,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((i == arr.length - 1) & (lop == 7)) {
         #include "cropDocumentAll.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/2mat- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
     }
@@ -395,7 +395,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
 
             #include "cropDocumentAll.jsx";
-            app.activeDocument.saveAs(Folder(folderTool + "/CUT-mica3mm-- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderTool + "/CUT-mica3mm-- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
             #include "createDocument.jsx";
@@ -431,7 +431,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((i == arr.length - 1)) {
         #include "cropDocumentAll.jsx";
-        app.activeDocument.saveAs(Folder(folderTool + "/CUT-mica3mm-- " + (ban + 1) + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+        app.activeDocument.saveAs(Folder(folderTool + "/CUT-mica3mm-- " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     }
 }

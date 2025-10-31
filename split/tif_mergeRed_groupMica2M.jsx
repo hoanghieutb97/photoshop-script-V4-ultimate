@@ -37,7 +37,7 @@ for (var k = 0; k <= ban; k++) {
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
-            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 
@@ -86,7 +86,7 @@ for (var k = 0; k <= ban; k++) {
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
-            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Truoc-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 
@@ -130,7 +130,7 @@ for (var k = 0; k <= ban; k++) {
             app.doAction("tao spot 1", "tool")
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
-            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 
@@ -181,7 +181,7 @@ for (var k = 0; k <= ban; k++) {
             app.doAction("tao spot 1", "tool");
             if (!kenhSpot1) app.doAction("delete Spot 1", "tool");
             if (app.activeDocument.width < app.activeDocument.height) app.activeDocument.rotateCanvas(-90);
-            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptions, false, Extension.LOWERCASE);
+            app.activeDocument.saveAs(Folder(folderBanInTool + "/in Sau-b" + "-" + ten_Ban + "-" + nameSave + "-" + Math.ceil(actice_DOC.width.as("px") * 0.084667 / 10) + "x" + Math.ceil(actice_DOC.height.as("px") * 0.084667 / 10) + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
 
