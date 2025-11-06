@@ -1,7 +1,7 @@
 
 
 //////////////////////////////////////////////////////////////
-#include "createDocument.jsx";
+#include "createDocumentWooden.jsx";
 for (var i = stt; i <= arr.length - 1; i++) {
     var marginItem = 30;
     var lop = 0;
@@ -88,7 +88,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.layerSets["SPOT"].artLayers.getByName(arr[i].stt).remove();
         #include "saveallcrop.jsx";
         $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-        #include "createDocument.jsx";
+        #include "createDocumentWooden.jsx";
         ban = ban + 1;
 
         openFile(FileDesign, arr[i], "0front");
