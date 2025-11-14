@@ -29,7 +29,30 @@ var selectFileJson;
     group1.margins = 0;
 
 
-    $.evalFile(linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx"));
+    // Random chọn file jsx trong thư mục image
+    var imageFolder = Folder("//192.168.1.240/photoshop-script-V4-ultimate/image");
+    var jsxFiles = [];
+    
+    if (imageFolder.exists) {
+        var files = imageFolder.getFiles("*.jsx");
+        for (var i = 0; i < files.length; i++) {
+            jsxFiles.push(files[i]);
+        }
+        
+        if (jsxFiles.length > 0) {
+            // Random chọn một file
+            var randomIndex = Math.floor(Math.random() * jsxFiles.length);
+            linkFIle = jsxFiles[randomIndex];
+        } else {
+            // Nếu không có file, dùng file mặc định
+            linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx");
+        }
+    } else {
+        // Nếu thư mục không tồn tại, dùng file mặc định
+        linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx");
+    }
+    
+    $.evalFile(linkFIle);
     var image3 = group1.add("image", undefined, File.decode(image2_imgString), { name: "image3" });
 
     var radiobutton1 = group1.add("radiobutton", undefined, undefined, { name: "radiobutton1" });

@@ -17,7 +17,7 @@ if (arrMica3mm.length > 0) {
         #include "createDocumentMica2.jsx";
         var doc = app.activeDocument;
         var typeTem = "mica 3mm"; // khi createtem-group thì mới dùng
-        var nameSave = "mica 3mm  "; // tên khi lưu
+        var nameSave = "mica 3mm"; // tên khi lưu
 
 
         var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -81,13 +81,22 @@ if (arrMica3mm.length > 0) {
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
                 if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
-                    doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
+                    if (g == 0)
+                        doc.layerSets["KHUNG"].layers[0].remove();
+                    else {
+                        doc.layerSets["KHUNG"].layers[1].remove();
+                        doc.layerSets["KHUNG"].layers[0].remove();
+                        doc.layerSets["IN TRUOC"].layers[1].remove();
+                        doc.layerSets["IN TRUOC"].layers[0].remove();
 
+
+                    }
                     #include "saveallcropByNameNew.jsx";
                     $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
                     ban = ban + 1;
                     stt = i;
+                    g = 0;
                     #include "createDocumentMica2.jsx";
                     doc = app.activeDocument;
                     if (arr.length > Min_Number_auto) {
@@ -122,7 +131,7 @@ if (arrMica3mm.length > 0) {
 
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-            #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+            #include "../split/nganCachDoNewGroup.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
             if (i == arr.length - 1) {
                 #include "saveallcropByNameNew.jsx";
@@ -208,11 +217,20 @@ if (arrGo3mm.length > 0) {
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
                 if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
-                    doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
+                    if (g == 0)
+                        doc.layerSets["KHUNG"].layers[0].remove();
+                    else {
+                        doc.layerSets["KHUNG"].layers[1].remove();
+                        doc.layerSets["KHUNG"].layers[0].remove();
+                        doc.layerSets["IN TRUOC"].layers[1].remove();
+                        doc.layerSets["IN TRUOC"].layers[0].remove();
+
+
+                    }
 
                     #include "saveallcropByNameNew.jsx";
                     $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
-
+                    g = 0;
                     ban = ban + 1;
                     stt = i;
                     #include "createDocumentWooden2.jsx";
@@ -249,7 +267,7 @@ if (arrGo3mm.length > 0) {
 
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-            #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+            #include "../split/nganCachDoNewGroup.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
             if (i == arr.length - 1) {
                 #include "saveallcropByNameNew.jsx";
