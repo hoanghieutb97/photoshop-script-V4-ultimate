@@ -109,6 +109,8 @@
 }
 
 { ////////////////////////////////////////////////////////////// chay lop go
+    stt=0;
+    ban=0;
     #include "createDocumentWooden2.jsx";
     var doc = app.activeDocument;
     var typeTem = "go"; // khi createtem-group thì mới dùng
