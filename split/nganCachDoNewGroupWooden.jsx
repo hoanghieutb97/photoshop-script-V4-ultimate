@@ -10,6 +10,8 @@
     boxH = app.activeDocument.height;
     app.activeDocument.activeLayer.name = "stt" + arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["IN TRUOC"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+
+    app.activeDocument.selection.selectAll();
     var blackkkkk = new SolidColor();
     blackkkkk.rgb.red = 0;
     blackkkkk.rgb.green = 0;
@@ -24,9 +26,9 @@
         app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName("stt" + arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName("stt" + arr[i].stt).remove();
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
 
-        #include "createDocumentMica2.jsx";
+        #include "createDocumentWooden2.jsx";
         ban = ban + 1;
         stt = i;
         var doc = app.activeDocument;
@@ -37,6 +39,7 @@
         boxH = app.activeDocument.height;
         app.activeDocument.activeLayer.name = "stt" + arr[i].stt
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["IN TRUOC"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+        app.activeDocument.selection.selectAll();
         var blackkkkk = new SolidColor();
         blackkkkk.rgb.red = 0;
         blackkkkk.rgb.green = 0;

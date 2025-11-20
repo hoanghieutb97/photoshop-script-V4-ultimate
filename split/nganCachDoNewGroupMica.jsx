@@ -10,6 +10,15 @@
     boxH = app.activeDocument.height;
     app.activeDocument.activeLayer.name = "stt" + arr[i].stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["IN TRUOC"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+   
+    app.activeDocument.selection.selectAll();
+    var blackkkkk = new SolidColor();
+    blackkkkk.rgb.red = 0;
+    blackkkkk.rgb.green = 0;
+    blackkkkk.rgb.blue = 0;
+    app.activeDocument.selection.fill(blackkkkk);
+    app.activeDocument.selection.deselect();
+
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     if ((yPosition + boxH + 30 + hLast > hAll) && (xPosition + boxW + 30 + wLast) > wAll) {
@@ -30,6 +39,13 @@
         boxH = app.activeDocument.height;
         app.activeDocument.activeLayer.name = "stt" + arr[i].stt
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["IN TRUOC"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
+        app.activeDocument.selection.selectAll();
+        var blackkkkk = new SolidColor();
+        blackkkkk.rgb.red = 0;
+        blackkkkk.rgb.green = 0;
+        blackkkkk.rgb.blue = 0;
+        app.activeDocument.selection.fill(blackkkkk);
+        app.activeDocument.selection.deselect();
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     }

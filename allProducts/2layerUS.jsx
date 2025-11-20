@@ -131,7 +131,7 @@ if (arrMica3mm.length > 0) {
 
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-            #include "../split/nganCachDoNewGroup.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+            #include "../split/nganCachDoNewGroupMica.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
             if (i == arr.length - 1) {
                 #include "saveallcropByNameNew.jsx";
@@ -267,7 +267,7 @@ if (arrGo3mm.length > 0) {
 
 
             /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-            #include "../split/nganCachDoNewGroup.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+            #include "../split/nganCachDoNewGroupWooden.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
             if (i == arr.length - 1) {
                 #include "saveallcropByNameNew.jsx";
