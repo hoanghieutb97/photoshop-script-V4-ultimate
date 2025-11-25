@@ -379,7 +379,7 @@ if (arrA3mm.length > 0) { //////////////////////////////////////////////////////
     #include "createDocumentMica2.jsx";
     ban = 0;
     stt = 0;
-    arr = arrB3mm;
+    arr = arrA3mm;
     var doc = app.activeDocument;
     var typeTem = "mica 3mm in Nguoc"; // khi createtem-group thì mới dùng
     var nameSave = "mica 3mm in Nguoc"; // tên khi lưu

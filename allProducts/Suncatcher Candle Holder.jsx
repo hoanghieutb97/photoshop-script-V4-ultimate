@@ -115,11 +115,11 @@ var Min_Number_auto = 1; // giới hạn 10 file để tạo bàn in
 
 
 
-var arrT = [];
-var arrS = [];
-var arrB = [];
+var arrT = [] ;
+var arrS = [] ;
+var arrB = [] ;
 
-for (var i = stt; i <= arr.length - 1; i++) {
+for (var i = 0; i <= arr.length - 1; i++) {
     if (arr[i].nameId.split("-").shift() == "WA") arrT.push(arr[i])
     else if (arr[i].nameId.split("-").shift() == "WB") arrB.push(arr[i])
     else if (arr[i].nameId.split("-").shift() == "WS") arrS.push(arr[i])
