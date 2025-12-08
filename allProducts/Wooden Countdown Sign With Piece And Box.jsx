@@ -1,5 +1,5 @@
 { ////////////////////////////////////////////////////////////// 1m- mica 2mm
-    #include "createDocumentWooden2.jsx";
+    #include "createDocumentWooden2M.jsx";
     var doc = app.activeDocument;
     var typeTem = "go 3mm 2M"; // khi createtem-group thì mới dùng
     var nameSave = "go 3mm 2M"; // tên khi lưu

@@ -1,8 +1,10 @@
-{ ////////////////////////////////////////////////////////////// chay lop mica
+
+{ // mica 3mm 2m
+
     #include "createDocumentMica2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "mica"; // khi createtem-group thì mới dùng
-    var nameSave = "mica"; // tên khi lưu
+    var typeTem = "mica 3mm 2M"; // khi createtem-group thì mới dùng
+    var nameSave = "mica 3mm 2M"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -11,7 +13,7 @@
 
     var Group_Khung = "KHUNG" // group file cắt đen, file khung
     var Group_In = "IN TRUOC" //group file in
-    var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
+    var Min_Number_auto = 3; // giới hạn 10 file để tạo bàn in
     var lat = true; // lật mica
     var kenhSpot1 = true;
 
@@ -22,13 +24,15 @@
     for (var i = stt; i <= arr.length - 1; i++) {
         #include "convertPixel.jsx";
         ///////////////////////////////////////////////////// check so luogn cot
-        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
+
         var soLayerCut = [];
         var layerCutGoc = []
-        if ((arr[i].nameId.split("-").shift() == "A")) { soLayerCut = [[[1, 1, 1, 2], [1, 2, 1, 2]]]; layerCutGoc = [1, 1, 1, 2] }
-        else if ((arr[i].nameId.split("-").shift() == "AA")) { soLayerCut = [[[1, 1, 2, 2], [1, 2, 2, 2]], [[2, 1, 2, 2], [2, 2, 2, 2]]]; layerCutGoc = [1, 1, 2, 2] }
-        else if ((arr[i].nameId.split("-").shift() == "WA")) { soLayerCut = [[[2, 1, 2, 2], [2, 2, 2, 2]]]; layerCutGoc = [1, 1, 2, 2] }
-        else if ((arr[i].nameId.split("-").shift() == "AW")) { soLayerCut = [[[1, 1, 2, 2], [1, 2, 2, 2]]]; layerCutGoc = [1, 1, 2, 2] }
+
+        soLayerCut = [[[1, 1, 3, 3], [1, 2, 3, 3], [1, 3, 3, 3]]];
+        layerCutGoc = [1, 1, 3, 3]
+
+
+
 
         var widthden = 0;
         var heightden = 0;
@@ -54,11 +58,10 @@
         }
 
         for (var g = 0; g < soLayerCut.length; g++) {
-
+            var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
             var typeCrop = "den";
-
             var sttCropBox = soLayerCut[g][0];
-
+            lat = true;
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
             if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -75,8 +78,8 @@
                     #include "../split/taoTenBan.jsx";
                 }
 
-                var typeCrop = "den";
-                var sttCropBox = soLayerCut[g][0]
+                var sttCropBox = soLayerCut[g][0];
+                lat = true;
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
 
@@ -84,10 +87,21 @@
                 #include "caculatorPosition.jsx";
                 #include "translateKHUNG.jsx";
                 var sttCropBox = soLayerCut[g][1]
+                Group_In = "IN TRUOC" //group file in
+                lat = true;
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
-                #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+
+
+                var sttCropBox = soLayerCut[g][2]
+                Group_In = "IN SAU" //group file in
+                lat = false
+                #include "../split/cropBoxXY_resize_Dup_trans.jsx";
+
+                #include "../split/canGiua13.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
             }
+
+
 
 
 
@@ -96,7 +110,7 @@
         }
 
 
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
         // #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         if (i == arr.length - 1) {
@@ -106,15 +120,17 @@
 
         }
     }
+
 }
 
-{ ////////////////////////////////////////////////////////////// chay lop go
-    stt=0;
-    ban=0;  
+
+{ // go 3mm 2m
+    ban = 0;
+    stt = 0;
     #include "createDocumentWooden2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "go"; // khi createtem-group thì mới dùng
-    var nameSave = "go"; // tên khi lưu
+    var typeTem = "go 3mm 2M"; // khi createtem-group thì mới dùng
+    var nameSave = "go 3mm 2M"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -123,8 +139,8 @@
 
     var Group_Khung = "KHUNG" // group file cắt đen, file khung
     var Group_In = "IN TRUOC" //group file in
-    var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
-    var lat = false; // lật mica
+    var Min_Number_auto = 3; // giới hạn 10 file để tạo bàn in
+   
     var kenhSpot1 = true;
 
     if (arr.length > Min_Number_auto) {
@@ -132,15 +148,18 @@
     }
 
     for (var i = stt; i <= arr.length - 1; i++) {
+         var lat = false; // lật mica
         #include "convertPixel.jsx";
         ///////////////////////////////////////////////////// check so luogn cot
-        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
+
         var soLayerCut = [];
         var layerCutGoc = []
-        if ((arr[i].nameId.split("-").shift() == "W")) { soLayerCut = [[[1, 1, 1, 2], [1, 2, 1, 2]]]; layerCutGoc = [1, 1, 1, 2] }
-        else if ((arr[i].nameId.split("-").shift() == "WW")) { soLayerCut = [[[1, 1, 2, 2], [1, 2, 2, 2]], [[2, 1, 2, 2], [2, 2, 2, 2]]]; layerCutGoc = [1, 1, 2, 2] }
-        else if ((arr[i].nameId.split("-").shift() == "AW")) { soLayerCut = [[[2, 1, 2, 2], [2, 2, 2, 2]]]; layerCutGoc = [1, 1, 2, 2] }
-        else if ((arr[i].nameId.split("-").shift() == "WA")) { soLayerCut = [[[1, 1, 2, 2], [1, 2, 2, 2]]]; layerCutGoc = [1, 1, 2, 2] }
+
+        soLayerCut = [[[2, 1, 3, 3], [2, 2, 3, 3], [2, 3, 3, 3]], [[3, 1, 3, 3], [3, 2, 3, 3], [3, 3, 3, 3]]];
+        layerCutGoc = [1, 1, 3, 3]
+
+
+
 
         var widthden = 0;
         var heightden = 0;
@@ -166,11 +185,10 @@
         }
 
         for (var g = 0; g < soLayerCut.length; g++) {
-
+            var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
             var typeCrop = "den";
-
             var sttCropBox = soLayerCut[g][0];
-
+            lat = false;
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
             if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
@@ -187,8 +205,8 @@
                     #include "../split/taoTenBan.jsx";
                 }
 
-                var typeCrop = "den";
-                var sttCropBox = soLayerCut[g][0]
+                var sttCropBox = soLayerCut[g][0];
+                lat = true;
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
 
@@ -196,10 +214,21 @@
                 #include "caculatorPosition.jsx";
                 #include "translateKHUNG.jsx";
                 var sttCropBox = soLayerCut[g][1]
+                Group_In = "IN TRUOC" //group file in
+          
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
-                #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+
+
+                var sttCropBox = soLayerCut[g][2]
+                Group_In = "IN SAU" //group file in
+                lat = true;
+                #include "../split/cropBoxXY_resize_Dup_trans.jsx";
+
+                #include "../split/canGiua13.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
             }
+
+
 
 
 
@@ -209,7 +238,7 @@
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-        // #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+        #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
@@ -218,25 +247,5 @@
 
         }
     }
+
 }
-
-
-
-
-// if (chayTuDong) {
-//     if (arr.length > 10) {
-//         var active_H = 14291;
-//         var active_W = 28701;
-//         var k_position = 0;
-//         var ten_Ban = "";
-//         app.documents.add(active_W, active_H, 300, "GLLM", NewDocumentMode.CMYK);
-//         var actice_DOC = app.activeDocument;
-//         var folderBanInTool = Folder(folderContainer + "/ban in-tool");
-//         if (!folderBanInTool.exists) { folderBanInTool.create() }
-//         #include "../split/tif_mergeRed_group.jsx";
-//     }
-//     else {
-//         #include "../split/taoBanCatXongIn.jsx";
-//     }
-//     #include "../split/taoFileCatDen.jsx";
-// }

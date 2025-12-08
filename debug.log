@@ -365,3 +365,4 @@ C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use
 [1017/233203.109:ERROR:local_storage_context_mojo.cc(706)] Lost connection to database
 [1029/091216.446:WARNING:dns_config_service_win.cc(668)] Failed to read DnsConfig.
 [1029/091901.384:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
+[1129/233411.137:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.

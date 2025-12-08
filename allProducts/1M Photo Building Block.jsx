@@ -22,6 +22,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     openFile(FileDesign, arr[i], type);
     app.doAction("strokeRed1px", "tool");
     if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
+    if ((arr[i].nameId) == "lego-tim-6,89in") cropBoxInXY(1, 1, 2, 1, app.activeDocument.width, app.activeDocument.height);
+
     #include "../split/cropAndResize-autoFillNew.jsx";
 
 
@@ -49,18 +51,28 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "../split/DuplicateLayerGroup.jsx";
     #include "translateTRUOC.jsx";
 
-    openFile(FileDesign, arr[i], type);
-    app.doAction("strokeRed1px", "tool");
-    if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
-    #include "../split/cropAndResize-autoFillNew.jsx";
-    app.doAction("LayerToBackgroundWhite", "tool");
-    Group_Duplicate_layer = "KHUNG"
-    #include "../split/DuplicateLayerGroup.jsx";
-    #include "translateKHUNG.jsx";
-    app.doAction("overlayblack", "tool");
 
+    if ((arr[i].nameId) == "lego-tim-6,89in") {
 
+        app.open(File("//192.168.1.240/ps script data/building block/tim.png"));
+        app.activeDocument.activeLayer.name = arr[i].stt;
+        app.activeDocument.activeLayer.duplicate(doc.layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in\
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+        app.activeDocument.activeLayer = app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt);
+        #include "translateKHUNG.jsx";
+    } else {
+        openFile(FileDesign, arr[i], type);
+        app.doAction("strokeRed1px", "tool");
+        if ((arr[i].nameId).substr(0, 1) == "x") app.activeDocument.rotateCanvas(-90);
+        #include "../split/cropAndResize-autoFillNew.jsx";
+        app.doAction("LayerToBackgroundWhite", "tool");
+        Group_Duplicate_layer = "KHUNG"
+        #include "../split/DuplicateLayerGroup.jsx";
+        #include "translateKHUNG.jsx";
+        app.doAction("overlayblack", "tool");
+    }
 
+    
 
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
@@ -76,4 +88,4 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 //     #include "../split/taoBanCatXongIn.jsx";
 
-// }
+// } 

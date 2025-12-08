@@ -3,7 +3,7 @@
 
 
 { ////////////////////////////////////////////////////////////// chay lop 5mm 2M
-    #include "createDocumentWooden2.jsx";
+    #include "createDocumentWooden2M.jsx";
     var doc = app.activeDocument;
     var typeTem = "go 5mm 2M"; // khi createtem-group thì mới dùng
     var nameSave = "go 5mm 2M"; // tên khi lưu
@@ -229,7 +229,7 @@
 { ////////////////////////////////////////////////////////////// chay lop 3mm 2 M
     ban = 0;
     stt = 0;
-    #include "createDocumentWooden2.jsx";
+    #include "createDocumentWooden2M.jsx";
     var doc = app.activeDocument;
     var typeTem = "go 3mm 2M"; // khi createtem-group thì mới dùng
     var nameSave = "go 3mm 2M"; // tên khi lưu
@@ -270,7 +270,7 @@
                 #include "saveallcropByNameNew.jsx";
                 ban = ban + 1;
                 stt = i;
-                #include "createDocumentWooden2.jsx";
+                #include "createDocumentWooden2M.jsx";
 
                 doc = app.activeDocument;
                 if (arr.length > Min_Number_auto) {
