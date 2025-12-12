@@ -99,9 +99,9 @@
 
         }
 
-
+ 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-        #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+        #include "../split/nganCachDoNewAutoFillWooden.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";

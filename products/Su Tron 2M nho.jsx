@@ -14,8 +14,8 @@ yPosition = 30;
 xPosition = 30;
 hLast = 0;
 wLast = 0;
-var HFix = Math.round(72/ 0.084667);
-var WFix = Math.round(72 / 0.084667);
+var HFix = Math.round(71/ 0.084667);
+var WFix = Math.round(70.8 / 0.084667);
 var keothem = 18;
 for (var i = stt; i <= arr.length - 1; i++) {
 

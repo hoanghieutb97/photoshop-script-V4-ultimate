@@ -6,6 +6,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (arr[i].nameId.split("-").shift() == "2M") arr2mat.push(arr[i])
     else arr1mat.push(arr[i])
 }
+// alert("arr1mat", arr1mat.length)
+// alert("arr2mat", arr2mat.length)
 if (arr1mat.length > 0) {
     arr = arr1mat;
     typeTem = "1 mat";
