@@ -187,7 +187,7 @@ function getShortCodeLabel(str, ban) {
     // Nếu ký tự đầu là số thì tách riêng
 
     if (!isNaN(mainParts[0])) {
-        return mainParts[0] + " " + result.slice(mainParts[0].length) + (hasDate ? " " + dayMonth : "");
+        return ("B " + (ban + 1) + "-" + mainParts[0] + " " + result.slice(mainParts[0].length) + (hasDate ? " " + dayMonth : ""));
     }
     else {
         return "Ban " + (ban + 1) + " - " + result + (hasDate ? " " + dayMonth : "");
