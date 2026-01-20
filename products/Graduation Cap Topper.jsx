@@ -20,7 +20,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "saveallcropByName.jsx";
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         #include "createDocument.jsx";
         openFileX(arr[i], FileDesign, typeTem)
         ban = ban + 1;
@@ -36,7 +36,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var tenkhung2 = "";
         if (arr[i].nameId.split("-").pop() == "9,5in") tenkhung2 = "khung 9,5in"
         else if (arr[i].nameId.split("-").pop() == "7,5in") tenkhung2 = "khung 7,5in"
-        app.open(File("//192.168.1.240/ps script data/Graduation Cap Topper/" + tenkhung2 + ".png"));
+        app.open(File("//192.168.2.240/ps script data/Graduation Cap Topper/" + tenkhung2 + ".png"));
 
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -48,7 +48,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByName.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
     }
 }
 if (arr.length == 0) app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -69,7 +69,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "saveallcropByName.jsx";
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         #include "createDocument.jsx";
         openFileX(arr[i], FileDesign, typeTem)
         ban = ban + 1;
@@ -85,7 +85,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var tenkhung2 = "";
         if (arr[i].nameId.split("-").pop() == "9,5in") tenkhung2 = "khung 9,5in"
         else if (arr[i].nameId.split("-").pop() == "7,5in") tenkhung2 = "khung 7,5in"
-        app.open(File("//192.168.1.240/ps script data/Graduation Cap Topper/" + tenkhung2 + ".png"));
+        app.open(File("//192.168.2.240/ps script data/Graduation Cap Topper/" + tenkhung2 + ".png"));
 
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -97,7 +97,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByName.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
     }
 }
 if (arr.length == 0) app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -118,7 +118,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "saveallcropByName.jsx";
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         #include "createDocument.jsx";
         openFileX(arr[i], FileDesign, typeTem)
         ban = ban + 1;
@@ -134,7 +134,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var tenkhung2 = "";
         if (arr[i].nameId.split("-").pop() == "9,5in") tenkhung2 = "khung 9,5in"
         else if (arr[i].nameId.split("-").pop() == "7,5in") tenkhung2 = "khung 7,5in"
-        app.open(File("//192.168.1.240/ps script data/Graduation Cap Topper/" + tenkhung2 + ".png"));
+        app.open(File("//192.168.2.240/ps script data/Graduation Cap Topper/" + tenkhung2 + ".png"));
 
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -146,7 +146,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByName.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
     }
 }
 
@@ -176,7 +176,7 @@ function openFileX(item, FileDesign, type) {
     else if (item.nameId.split("-").pop() == "7,5in") tenKhung = "in 7,5in"
 
 
-    app.open(File("//192.168.1.240/ps script data/Graduation Cap Topper/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/Graduation Cap Topper/" + tenKhung + ".png"));
     openFile(FileDesign, item, type)
     if (type == "mica") app.doAction("canvasHoriz", "tool");
     app.doAction("strokeWhite1px", "tool");

@@ -19,7 +19,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var HSave = Math.ceil(app.activeDocument.height.as("px") * 0.084667 / 10);
             app.activeDocument.saveAs(Folder(folderBanIn + "/b" + (ban + 1) + "-" + WSave + "x" + HSave + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
         }
         
         #include "createDocument DTF.jsx";
@@ -43,7 +43,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
 
-    app.open(File("//192.168.1.240/ps script data/sttkinlytoyNGang.tif"));
+    app.open(File("//192.168.2.240/ps script data/sttkinlytoyNGang.tif"));
     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
     app.doAction("sttkinlytoy", "tool");
     app.activeDocument.activeLayer.name = "stt" + i
@@ -75,7 +75,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.saveAs(Folder(folderBanIn + "/b" + (ban + 1) + "-" + WSave + "x" + HSave + "cm" + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

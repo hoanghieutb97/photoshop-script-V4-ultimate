@@ -6,7 +6,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, "front");
@@ -36,13 +36,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = LaytenKhung(item);
-    app.open(File("//192.168.1.240/ps script data/mica dzt/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/mica dzt/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     app.doAction("canvasHoriz", "tool");
     app.doAction("strokeRed1px", "tool");
@@ -55,7 +55,7 @@ function openCropFile(item, FileDesign, type) {
 }
 function layKhung(item) {
     var tenKhung = LaytenKhung(item);
-    app.open(File("//192.168.1.240/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/mica dzt/file cat/" + tenKhung + ".png"));
 
 }
 function LaytenKhung(item) {

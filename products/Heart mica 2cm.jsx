@@ -10,7 +10,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
@@ -27,7 +27,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "translateCMYK.jsx";
     {// tao khung su
-        app.open(File("//192.168.1.240/ps script data/khung mica tim 2cm.png"));
+        app.open(File("//192.168.2.240/ps script data/khung mica tim 2cm.png"));
         app.doAction("canvasHoriz", "tool");
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -38,7 +38,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

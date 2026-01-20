@@ -28,7 +28,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "saveallcropByName.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         app.documents.add(wAll, hAll, 300, "GLLM");
         app.activeDocument.layerSets.add();
         app.activeDocument.activeLayer.name = "CMYK";
@@ -94,13 +94,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByName.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
     }
 }
 
 function openKhung(item) {
     var tenKhung = "tron"
-    app.open(File("//192.168.1.240/ps script data/oal su/khung " + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/oal su/khung " + tenKhung + ".png"));
     app.activeDocument.activeLayer.name = item.stt;
 
     var bounds1 = app.activeDocument.activeLayer.bounds;
@@ -114,7 +114,7 @@ function openKhung(item) {
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = "tron"
-    app.open(File("//192.168.1.240/ps script data/oal su/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     app.doAction("strokeWhite1px", "tool");
 

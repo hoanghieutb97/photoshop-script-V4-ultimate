@@ -22,7 +22,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
@@ -54,7 +54,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     // #include "xoaExpand12px.jsx";
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -96,7 +96,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openFile(FileDesign, arr[i], type);
@@ -131,7 +131,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.saveAs(Folder(folderTool + "/chan " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

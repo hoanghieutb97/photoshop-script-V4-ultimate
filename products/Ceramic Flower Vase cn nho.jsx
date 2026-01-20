@@ -29,7 +29,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         doc.layerSets[Group_In].artLayers.getByName(arr[i].stt).remove();
         if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-          app.open(File("//192.168.1.240/ps script data/mau coc a4.tif"));
+          app.open(File("//192.168.2.240/ps script data/mau coc a4.tif"));
     app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
      app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
              doc.activeLayer = doc.layerSets.getByName(Group_In);
@@ -47,7 +47,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         
         app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
 
 
         #include "createDocumentGiayCN.jsx";
@@ -74,7 +74,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
      #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
     if (i == arr.length - 1) {
         if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
-          app.open(File("//192.168.1.240/ps script data/mau coc a4.tif"));
+          app.open(File("//192.168.2.240/ps script data/mau coc a4.tif"));
     app.activeDocument.activeLayer.duplicate(doc.layerSets[Group_In], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
      app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
@@ -93,7 +93,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.saveAs(Folder(folderBanInTool + "/ban - " + (ban + 1) + ".jpg"), jpegOptions, true, Extension.LOWERCASE);
        
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

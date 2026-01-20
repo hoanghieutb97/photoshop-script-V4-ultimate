@@ -1,4 +1,4 @@
-app.open(File("//192.168.1.240/ps script data/tenban.tif"));
+app.open(File("//192.168.2.240/ps script data/tenban.tif"));
 
 app.activeDocument.artLayers[0].textItem.contents = getShortCodeLabel(FileName, ban); // thong tin stt;
 // app.activeDocument.mergeVisibleLayers();

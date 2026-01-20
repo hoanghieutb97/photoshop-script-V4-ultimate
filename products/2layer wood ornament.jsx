@@ -18,7 +18,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocumentWooden2.jsx";
             ban = ban + 1;
             stt = i;
@@ -56,6 +56,6 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
     }
 }

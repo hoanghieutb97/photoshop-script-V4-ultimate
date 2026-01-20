@@ -29,7 +29,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocumentAll2.jsx";
 
         ban = ban + 1;
@@ -77,14 +77,14 @@ for (var i = stt; i <= arr.length - 1; i++) {
         }
 
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
     }
 }
 
 function openKhung(item) {
 
-    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/khung " + getTenKhung(item) + ".png"));
+    app.open(File("//192.168.2.240/ps script data/Stained Glass Suncatcher/khung " + getTenKhung(item) + ".png"));
     hphone = Math.round((item.hight) / 0.084667);
     wphone = Math.round((item.width) / 0.084667);
 
@@ -96,7 +96,7 @@ function openKhung(item) {
 
 function openCropFile(item, FileDesign, type) {
 
-    app.open(File("//192.168.1.240/ps script data/Stained Glass Suncatcher/" + getTenKhung(item) + ".png"));
+    app.open(File("//192.168.2.240/ps script data/Stained Glass Suncatcher/" + getTenKhung(item) + ".png"));
     openFile(FileDesign, item, "");
     var thongsotype = 1;
     if (type == "front") thongsotype = 2;

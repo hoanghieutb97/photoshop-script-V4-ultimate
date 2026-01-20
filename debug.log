@@ -368,3 +368,4 @@ C:\fakepath(77,9-43): warning X3571: pow(f, e) will not work for negative f, use
 [1129/233411.137:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
 [1210/120847.441:ERROR:browser_gpu_channel_host_factory.cc(139)] Failed to launch GPU process.
 [1214/080721.878:WARNING:backend_impl.cc(1843)] Destroying invalid entry.
+[1222/115014.618:ERROR:backend_impl.cc(1062)] Critical error found -8

@@ -30,7 +30,7 @@ var selectFileJson;
 
 
     // Random chọn file jsx trong thư mục image
-    var imageFolder = Folder("//192.168.1.240/photoshop-script-V4-ultimate/image");
+    var imageFolder = Folder("//192.168.2.240/photoshop-script-V4-ultimate/image");
     var jsxFiles = [];
     
     if (imageFolder.exists) {
@@ -45,11 +45,11 @@ var selectFileJson;
             linkFIle = jsxFiles[randomIndex];
         } else {
             // Nếu không có file, dùng file mặc định
-            linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx");
+            linkFIle = File("//192.168.2.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx");
         }
     } else {
         // Nếu thư mục không tồn tại, dùng file mặc định
-        linkFIle = File("//192.168.1.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx");
+        linkFIle = File("//192.168.2.240/photoshop-script-V4-ultimate/image/nunuCBR.jsx");
     }
     
     $.evalFile(linkFIle);
@@ -249,18 +249,18 @@ button2.onClick = function () {
                 #include "before.jsx";
                 #include "functions.jsx";
                 // alert("1vvv11")
-                var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+                var geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
                 if (geo_dynamic.exists) {
                     $.evalFile(geo_dynamic);
                 } else {
-                    geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+                    geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
                     $.evalFile(geo_dynamic);
                 }
                 // try {
-                //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+                //     var geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
                 //     $.evalFile(geo_dynamic);
                 // } catch (error) {
-                //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+                //     var geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
                 //     $.evalFile(geo_dynamic);
 
 
@@ -282,9 +282,9 @@ button2.onClick = function () {
 button3.onClick = function () {
     dialog.hide();
     if (inputBarcode.text != "") {
-        app.open(File("//192.168.1.240/ps script data/tem.tif"));
+        app.open(File("//192.168.2.240/ps script data/tem.tif"));
 
-        var pathObj = File("//192.168.1.240/photoshop-script-V4-ultimate/label/objBarcode.jsx");
+        var pathObj = File("//192.168.2.240/photoshop-script-V4-ultimate/label/objBarcode.jsx");
         $.evalFile(pathObj);
         var nameItem = inputBarcode.text.split("");
         // alert(nameItem)`

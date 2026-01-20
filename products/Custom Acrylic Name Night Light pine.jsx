@@ -63,7 +63,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         // #include "xoaExpand12px.jsx";
 
         #include "saveallcrop.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -128,7 +128,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if (i == arr.length - 1) {
         #include "saveallcrop.jsx";
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 
 
@@ -294,9 +294,9 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
     {// tao khung su
         if (arr[i].nameId.split("-").pop() == "7,87")
-            app.open(File("//192.168.1.240/ps script data/chan custom acrylic name night light pine.png"));
+            app.open(File("//192.168.2.240/ps script data/chan custom acrylic name night light pine.png"));
         else if (arr[i].nameId.split("-").pop() == "5,9")
-            app.open(File("//192.168.1.240/ps script data/chan custom acrylic name night light pine nho.png"));
+            app.open(File("//192.168.2.240/ps script data/chan custom acrylic name night light pine nho.png"));
 
 
 

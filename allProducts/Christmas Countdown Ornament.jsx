@@ -46,7 +46,7 @@
                 doc.layerSets["KHUNG"].artLayers.getByName("cattttttt" + arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -107,7 +107,7 @@
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
         }
@@ -263,7 +263,7 @@ stt = 0;
                 doc.layerSets["KHUNG"].artLayers.getByName("cattttttt" + arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
                 ban = ban + 1;
@@ -323,7 +323,7 @@ stt = 0;
         if (i == arr.length - 1) {
             if (app.activeDocument.layerSets["IN TRUOC"].layers.length > 0) {
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
             }
 
             

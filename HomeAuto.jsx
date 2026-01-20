@@ -54,7 +54,7 @@ try {
         var TiffSaveOptionsLZW = new TiffSaveOptions();
         TiffSaveOptionsLZW.imageCompression = TIFFEncoding.TIFFLZW;
         
-        var folderContainer = Folder("//192.168.1.240/in/" + type + "-" + FileName);
+        var folderContainer = Folder("//192.168.2.240/in/" + type + "-" + FileName);
         if (!folderContainer.exists) { folderContainer.create(); }
 
         var folderTool = Folder(folderContainer + "/file tool");
@@ -69,18 +69,18 @@ try {
         #include "functions.jsx";
     }
     // try {
-    //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+    //     var geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
     //     $.evalFile(geo_dynamic);
     // } catch (error) {
-    //     var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+    //     var geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
     //     $.evalFile(geo_dynamic);
     // }
 
-    var geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
+    var geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/allProducts/" + type + ".jsx");
     if (geo_dynamic.exists) {
         $.evalFile(geo_dynamic);
     } else {
-        geo_dynamic = File("//192.168.1.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
+        geo_dynamic = File("//192.168.2.240/photoshop-script-V4-ultimate/products/" + type + ".jsx");
         $.evalFile(geo_dynamic);
     }
 

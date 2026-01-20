@@ -9,7 +9,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, "front")
@@ -52,21 +52,21 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openKhung(item, loai) {
     var tenKhung = checkTenKhung(item);
     if (loai != "sauao") {
-        app.open(File("//192.168.1.240/ps script data/oal su/khung " + tenKhung + ".png"));
+        app.open(File("//192.168.2.240/ps script data/oal su/khung " + tenKhung + ".png"));
 
         app.activeDocument.activeLayer.name = item.stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     }
     else {
-        app.open(File("//192.168.1.240/ps script data/oal su/khung ao sau.png"));
+        app.open(File("//192.168.2.240/ps script data/oal su/khung ao sau.png"));
 
         app.activeDocument.activeLayer.name = item.stt;
         app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG2"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -87,10 +87,10 @@ function checkTenKhung(item) {
 function openCropFile(item, FileDesign, type) {
     var tenKhung = checkTenKhung(item);
     if (type == "back" && item.nameId == "O.Ceramic-ao-2M")
-        app.open(File("//192.168.1.240/ps script data/oal su/ao sau.png"));
+        app.open(File("//192.168.2.240/ps script data/oal su/ao sau.png"));
 
     else
-        app.open(File("//192.168.1.240/ps script data/oal su/" + tenKhung + ".png"));
+        app.open(File("//192.168.2.240/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     app.activeDocument.activeLayer.name = "1 copy";
     app.doAction("strokeWhite1px", "tool");

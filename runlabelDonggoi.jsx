@@ -7,7 +7,7 @@ app.preferences.rulerUnits = Units.PIXELS; // hệ đo pixel
 
 
 try {
-  const JSONFILE = ("//192.168.1.240/backup in/labelDG/data.json");
+  const JSONFILE = ("//192.168.2.240/backup in/labelDG/data.json");
 
   var file = new File(JSONFILE); file.open("r"); var strFile; strFile = file.read(); file.close();
   // read data from json
@@ -15,10 +15,10 @@ try {
   var data = JSON.parse(strFile);
 
 
-  var pathObj = File("//192.168.1.240/photoshop-script-V4-ultimate/label/objBarcode.jsx");
+  var pathObj = File("//192.168.2.240/photoshop-script-V4-ultimate/label/objBarcode.jsx");
   $.evalFile(pathObj);
 
-  app.open(File("//192.168.1.240/ps script data/temDG.tif"));
+  app.open(File("//192.168.2.240/ps script data/temDG.tif"));
 
 
   for (var i = 0; i < data.length; i++) {
@@ -57,7 +57,7 @@ try {
 
 
 
-    app.activeDocument.saveAs(Folder(Folder("//192.168.1.240/backup in/labelDG/tem") + "/" + (i + 1) + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
+    app.activeDocument.saveAs(Folder(Folder("//192.168.2.240/backup in/labelDG/tem") + "/" + (i + 1) + ".jpg"), JPEGSaveOptions, true, Extension.LOWERCASE);
   }
 
 

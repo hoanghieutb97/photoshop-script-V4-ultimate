@@ -38,8 +38,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var tenKhung = "round2M";
             if (arr[i].nameId == "2M-round-Glass-O") tenKhung = "round2M";
             else if (arr[i].nameId == "2M-heart-Glass-O") tenKhung = "heart2M";
-            // alert("//192.168.1.240/ps script data/glass ornament/" + tenKhung + ".png")
-            app.open(File("//192.168.1.240/ps script data/glass ornament/" + tenKhung + ".png"));
+            // alert("//192.168.2.240/ps script data/glass ornament/" + tenKhung + ".png")
+            app.open(File("//192.168.2.240/ps script data/glass ornament/" + tenKhung + ".png"));
 
             G_boundDen = app.activeDocument.activeLayer.bounds;
             var boxW = G_boundDen[2] - G_boundDen[0] + 30;
@@ -53,7 +53,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
             ban = ban + 1;
             stt = i;
@@ -65,8 +65,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 var tenKhung = "round2M";
                 if (arr[i].nameId == "2M-round-Glass-O") tenKhung = "round2M";
                 else if (arr[i].nameId == "2M-heart-Glass-O") tenKhung = "heart2M";
-                // alert("//192.168.1.240/ps script data/glass ornament/" + tenKhung + ".png")
-                app.open(File("//192.168.1.240/ps script data/glass ornament/" + tenKhung + ".png"));
+                // alert("//192.168.2.240/ps script data/glass ornament/" + tenKhung + ".png")
+                app.open(File("//192.168.2.240/ps script data/glass ornament/" + tenKhung + ".png"));
     
                 G_boundDen = app.activeDocument.activeLayer.bounds;
                 var boxW = G_boundDen[2] - G_boundDen[0] + 30;
@@ -99,7 +99,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
 
     }

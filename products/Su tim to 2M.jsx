@@ -11,7 +11,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocumentAll.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, "front")
@@ -44,14 +44,14 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.saveAs(Folder(folderTool + "/tool " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openKhung(item, loai) {
     var tenKhung = "Su tim to 2M";
 
-    app.open(File("//192.168.1.240/ps script data/oal su/khung " + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/oal su/khung " + tenKhung + ".png"));
     app.activeDocument.activeLayer.name = item.stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -62,7 +62,7 @@ function openKhung(item, loai) {
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = "Su tim to 2M";
-    app.open(File("//192.168.1.240/ps script data/oal su/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/oal su/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     app.doAction("LayerToBackgroundWhite", "tool");
 

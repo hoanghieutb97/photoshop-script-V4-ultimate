@@ -48,7 +48,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "saveallcropByName.jsx";
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         #include "createDocumentMica.jsx";
         ban = ban + 1;
 
@@ -77,7 +77,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "saveallcropByName.jsx";
 
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
     }
 }
 
@@ -137,7 +137,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         #include "saveallcropByName.jsx";
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         #include "createDocumentWooden.jsx";
         ban = ban + 1;
 
@@ -167,7 +167,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "saveallcropByName.jsx";
 
 
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
     }
 }
 

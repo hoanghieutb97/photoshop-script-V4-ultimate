@@ -8,7 +8,7 @@ var stt = 0;
 var TiffSaveOptionsLZW = new TiffSaveOptions();
 TiffSaveOptionsLZW.imageCompression = TIFFEncoding.TIFFLZW;
 
-var folderContainer = Folder("//192.168.1.240/in/" + type + "-" + FileName);
+var folderContainer = Folder("//192.168.2.240/in/" + type + "-" + FileName);
 if (!folderContainer.exists) { folderContainer.create(); }
 
 var folderTool = Folder(folderContainer + "/file tool");

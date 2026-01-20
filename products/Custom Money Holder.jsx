@@ -32,7 +32,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.saveAs(Folder(folderTool + "/go3mm " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             }
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocumentWooden.jsx";
             ban = ban + 1;
             openFile(FileDesign, arr[i], type);
@@ -66,7 +66,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
     {
-        app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+        app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
         app.activeDocument.artLayers[0].textItem.contents = i + 1;
         app.doAction("sttkinlytoy", "tool");
         var boxW = app.activeDocument.width;
@@ -94,11 +94,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.saveAs(Folder(folderTool + "/go3mm " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
                 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
             }
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
             #include "createDocumentWooden.jsx";
             ban = ban + 1;
             stt = i;
-            app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+            app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
             app.activeDocument.artLayers[0].textItem.contents = i + 1;
             app.doAction("sttkinlytoy", "tool");
             var boxW = app.activeDocument.width;
@@ -148,7 +148,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.saveAs(Folder(folderTool + "/go3mm " + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
     }
 
 }

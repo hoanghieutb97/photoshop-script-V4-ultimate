@@ -8,7 +8,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocumentWooden.jsx";
         ban = ban + 1;
         openCropFile(arr[i], FileDesign, type)
@@ -39,13 +39,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
 function openKhung(item) {
     var tenKhung = checkTenKhung(item);
-    app.open(File("//192.168.1.240/ps script data/glass ornament/khung " + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/glass ornament/khung " + tenKhung + ".png"));
     app.activeDocument.activeLayer.name = item.stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -59,7 +59,7 @@ function checkTenKhung(item) {
 
 function openCropFile(item, FileDesign, type) {
     var tenKhung = checkTenKhung(item);
-    app.open(File("//192.168.1.240/ps script data/glass ornament/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/glass ornament/" + tenKhung + ".png"));
     openFile(FileDesign, item, type);
     app.doAction("canvasHoriz", "tool");
 

@@ -48,7 +48,7 @@
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -107,7 +107,7 @@
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
 
         }

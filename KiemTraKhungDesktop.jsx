@@ -8,7 +8,7 @@ if (!folderDesktop.exists) { folderDesktop.create(); }
     for (var g = 0; g < DSKhungSu.length; g++) {
         var saveFilex = File(folderKhungSu + "/" + DSKhungSu[g] + ".png")
         if (!saveFilex.exists) {
-            app.open(File("//192.168.1.240/ps script data/oal su/" + DSKhungSu[g] + ".png"));
+            app.open(File("//192.168.2.240/ps script data/oal su/" + DSKhungSu[g] + ".png"));
             app.activeDocument.saveAs(Folder(folderKhungSu + "/" + DSKhungSu[g] + ".png"), PNGSaveOptions);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }
@@ -25,7 +25,7 @@ if (!folderDesktop.exists) { folderDesktop.create(); }
     for (var g = 0; g < DSKhungNom.length; g++) {
         var saveFilex = File(folderKhungSu + "/" + DSKhungNom[g] + ".png")
         if (!saveFilex.exists) {
-            app.open(File("//192.168.1.240/ps script data/phoi dls/" + DSKhungNom[g] + ".png"));
+            app.open(File("//192.168.2.240/ps script data/phoi dls/" + DSKhungNom[g] + ".png"));
             app.activeDocument.saveAs(Folder(folderKhungSu + "/" + DSKhungNom[g] + ".png"), PNGSaveOptions);
             app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         }

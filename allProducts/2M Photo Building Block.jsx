@@ -31,7 +31,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
         #include "createDocumentAll2.jsx";
         ban = ban + 1;
@@ -65,7 +65,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if ((arr[i].nameId) == "lego-tim-6,89in-2M") {
 
-        app.open(File("//192.168.1.240/ps script data/building block/tim.png"));
+        app.open(File("//192.168.2.240/ps script data/building block/tim.png"));
         app.activeDocument.activeLayer.name = arr[i].stt;
         app.activeDocument.activeLayer.duplicate(doc.layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in\
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
@@ -90,7 +90,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 

@@ -66,7 +66,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -102,7 +102,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
 
         }
@@ -196,7 +196,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                // $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                // $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -242,7 +242,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            // $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            // $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
         }
@@ -327,7 +327,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                // $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                // $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -360,7 +360,7 @@ var Min_Number_auto = 10; // giới hạn 10 file để tạo bàn in
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            // $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            // $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
         }

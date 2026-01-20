@@ -53,7 +53,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["IN SAU"].artLayers.getByName(arr[i].stt).remove();
 
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
             #include "createDocumentWooden2.jsx";
 
@@ -107,7 +107,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["IN SAU"].artLayers.getByName(arr[i].stt).remove();
 
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
             #include "createDocumentWooden2.jsx";
 
@@ -151,7 +151,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
 
     { // ngan cach do
-        app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+        app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
         app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
         app.doAction("sttkinlytoy", "tool");
         var boxW = app.activeDocument.width;
@@ -167,13 +167,13 @@ for (var i = stt; i <= arr.length - 1; i++) {
             app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName("stt" + arr[i].stt).remove();
             app.activeDocument.layerSets["IN SAU"].artLayers.getByName("stt" + arr[i].stt).remove();
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
             #include "createDocumentMica.jsx";
 
             ban = ban + 1;
             stt = i;
-            app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+            app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
             app.activeDocument.artLayers[0].textItem.contents = i + 1;
             app.doAction("sttkinlytoy", "tool");
             var boxW = app.activeDocument.width;
@@ -216,7 +216,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((i == arr.length - 1)) {
 
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
     }
 }
@@ -267,7 +267,7 @@ if (arrWA.length > 0) {
             app.activeDocument.layerSets["IN SAU"].artLayers.getByName(arr[i].stt).remove();
 
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
             #include "createDocumentMica2.jsx";
 
@@ -315,7 +315,7 @@ if (arrWA.length > 0) {
         if ((i == arr.length - 1)) {
 
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
         }
     }

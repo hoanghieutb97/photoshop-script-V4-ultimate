@@ -1,12 +1,14 @@
-var Min_Number_auto = 2; // giới hạn 10 file để tạo bàn in
 
-{ ////////////////////////////////////////////////////////////// mica 2mm-2
-    var stt = 0;
-    var ban = 0;
+
+
+ban = 0;
+stt = 0;
+{ ////////////////////////////////////////////////////////////// chay lop go
+
     #include "createDocumentWooden2.jsx";
     var doc = app.activeDocument;
-    var typeTem = "go 3mm 2M"; // khi createtem-group thì mới dùng
-    var nameSave = "go 3mm 2M"; // tên khi lưu
+    var typeTem = "go 3mm 1-2M"; // khi createtem-group thì mới dùng
+    var nameSave = "go 3mm 1-2M"; // tên khi lưu
 
 
     var grop_Merge = "IN TRUOC"; // merge 1 mặt- bàn in
@@ -15,8 +17,8 @@ var Min_Number_auto = 2; // giới hạn 10 file để tạo bàn in
 
     var Group_Khung = "KHUNG" // group file cắt đen, file khung
     var Group_In = "IN TRUOC" //group file in
-
-
+    var Min_Number_auto = 5; // giới hạn 10 file để tạo bàn in
+    var lat = false; // lật mica
     var kenhSpot1 = true;
 
     if (arr.length > Min_Number_auto) {
@@ -24,16 +26,23 @@ var Min_Number_auto = 2; // giới hạn 10 file để tạo bàn in
     }
 
     for (var i = stt; i <= arr.length - 1; i++) {
-        var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
         #include "convertPixel.jsx";
         var StatusCanGiua = false; // trạng thái sau khi duplicate có căn giữa với nhau không
-
+        var sttCropBox = [];
         var lay1 = [];
         var lay2 = [];
+        if (arr[i].nameId.split("-").shift() == "2M") {
+            soLayerCut = [[[1, 1, 2, 3], [1, 2, 2, 3], [1, 3, 2, 3]], [[2, 1, 2, 3], [2, 2, 2, 3], [2, 3, 2, 3]]];
+            lay1 = [1, 1, 2, 3]
+            lay2 = [2, 1, 2, 3]
+        }
+        else {
+            soLayerCut = [[[1, 1, 2, 3], [1, 2, 2, 3]], [[2, 1, 2, 3], [2, 2, 2, 3]]];
+            lay1 = [1, 1, 2, 3]
+            lay2 = [2, 1, 2, 3]
+        }
 
-        soLayerCut = [[[1, 1, 3, 3], [1, 2, 3, 3], [1, 3, 3, 3]], [[2, 1, 3, 3], [2, 2, 3, 3], [2, 3, 3, 3]], [[3, 1, 3, 3], [3, 2, 3, 3], [3, 3, 3, 3]]];
-        lay1 = [1, 1, 3, 3]
-        lay2 = [2, 1, 3, 3]
+
 
         var widthden = 0;
         var heightden = 0;
@@ -53,20 +62,30 @@ var Min_Number_auto = 2; // giới hạn 10 file để tạo bàn in
             }
 
         }
+
         for (var g = 0; g < soLayerCut.length; g++) {
 
             var typeCrop = "den";
 
             var sttCropBox = soLayerCut[g][0];
-            lat = false; // lật mica
+            lat = false;
             #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
 
             if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
-                doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
+                if (g == 0)
+                    doc.layerSets["KHUNG"].layers[0].remove();
+                else {
+                    doc.layerSets["KHUNG"].layers[1].remove();
+                    doc.layerSets["KHUNG"].layers[0].remove();
+                    doc.layerSets["IN TRUOC"].layers[1].remove();
+                    doc.layerSets["IN TRUOC"].layers[0].remove();
+
+
+                }
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
-
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                g = 0;
                 ban = ban + 1;
                 stt = i;
                 #include "createDocumentWooden2.jsx";
@@ -77,27 +96,27 @@ var Min_Number_auto = 2; // giới hạn 10 file để tạo bàn in
 
                 var typeCrop = "den";
                 var sttCropBox = soLayerCut[g][0]
-
                 #include "../split/cropBoxXY_black_resize_Dup_trans.jsx";
             }
+
 
             if ((G_boundDen[2] - G_boundDen[0]) != 0) {
                 #include "caculatorPosition.jsx";
                 #include "translateKHUNG.jsx";
-                var sttCropBox = soLayerCut[g][1]
 
-                var Group_In = "IN TRUOC" //group file in
+                var sttCropBox = soLayerCut[g][1]
+                Group_In = "IN TRUOC" //group file in
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
 
-
-
-                var Group_In = "IN SAU" //group file in
                 var sttCropBox = soLayerCut[g][2]
+                Group_In = "IN SAU" //group file in
                 lat = true; // lật mica
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
 
                 #include "../split/canGiua13.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+
             }
+
 
 
 
@@ -107,19 +126,18 @@ var Min_Number_auto = 2; // giới hạn 10 file để tạo bàn in
 
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////////////ngan cach do
-        #include "../split/nganCachDoNew.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+        #include "../split/nganCachDoNewGroupWooden.jsx"; // căn giữa 1 file  Group_Khung và Group_In
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
         }
+
     }
 
-
 }
-
 
 function tinhkichthuoc(item, FileDesign, type, lay1, lay2) {
     openFile(FileDesign, item, type);

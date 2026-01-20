@@ -3,7 +3,7 @@
 ///////////////////////////////ngan cach do
 
 {
-    app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+    app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
     app.doAction("sttkinlytoy", "tool");
     boxW = app.activeDocument.width;
@@ -26,7 +26,7 @@
         if (arr.length > Min_Number_auto) {
             #include "../split/taoTenBan.jsx";
         }
-        app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+        app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
         app.activeDocument.artLayers[0].textItem.contents = i + 1;
         app.doAction("sttkinlytoy", "tool");
         boxW = app.activeDocument.width;

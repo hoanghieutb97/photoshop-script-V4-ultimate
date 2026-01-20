@@ -45,7 +45,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
                 nameSave = "go3mm";
                 #include "saveallcropByName.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocumentWooden.jsx";
                 ban = ban + 1;
 
@@ -132,7 +132,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
                 nameSave = "go3mm";
                 #include "saveallcropByName.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocumentWooden.jsx";
                 ban = ban + 1;
 
@@ -202,7 +202,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         nameSave = "go3mm";
         #include "saveallcropByName.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -265,7 +265,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 app.activeDocument.layerSets["CMYK"].artLayers.getByName(arr[i].stt).remove();
                 nameSave = "go3mm";
                 #include "saveallcropByName.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocumentWooden.jsx";
                 ban = ban + 1;
 
@@ -395,7 +395,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
 
         { // ma vach
-            app.open(File("//192.168.1.240/ps script data/bcsttkinlytoy.tif"));
+            app.open(File("//192.168.2.240/ps script data/bcsttkinlytoy.tif"));
             app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
             app.activeDocument.artLayers[1].textItem.contents = arr[i].orderId;
             app.doAction("sttkinlytoy", "tool");
@@ -413,11 +413,11 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
                     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
                 }
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
                 #include "createDocumentWooden.jsx";
                 ban = ban + 1;
                 stt = i;
-                app.open(File("//192.168.1.240/ps script data/bcsttkinlytoy.tif"));
+                app.open(File("//192.168.2.240/ps script data/bcsttkinlytoy.tif"));
                 app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                 app.activeDocument.artLayers[1].textItem.contents = arr[i].orderId;
 

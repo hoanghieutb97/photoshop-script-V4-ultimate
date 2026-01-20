@@ -33,7 +33,7 @@ if (arr1mat.length > 0) {
             nameSave = "1M-mica3mm";
             #include "saveallcropByName.jsx";
 
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
             #include "createDocumentMica.jsx";
             ban = ban + 1;
             openFile(FileDesign, arr[i], type);
@@ -59,7 +59,7 @@ if (arr1mat.length > 0) {
         #include "translateCMYK.jsx";
 
         if (arr[i].nameId.split("-").pop() == "9x125in") {
-            app.open(File("//192.168.1.240/ps script data/clipboard/clipboard9x125.tif"));
+            app.open(File("//192.168.2.240/ps script data/clipboard/clipboard9x125.tif"));
 
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -74,7 +74,7 @@ if (arr1mat.length > 0) {
         if (i == arr.length - 1) {
             nameSave = "1M-mica3mm";
             #include "saveallcropByName.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         }
     }
 
@@ -114,7 +114,7 @@ if (arr2mat.length > 0) {
 
             #include "saveallcropByName.jsx";
 
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
             #include "createDocumentMica.jsx";
             ban = ban + 1;
             openFile(FileDesign, arr[i], type);
@@ -164,7 +164,7 @@ if (arr2mat.length > 0) {
         #include "translateSPOT.jsx";
 
         if (arr[i].nameId.split("-").pop() == "9x125in") {
-            app.open(File("//192.168.1.240/ps script data/clipboard/clipboard9x125.tif"));
+            app.open(File("//192.168.2.240/ps script data/clipboard/clipboard9x125.tif"));
 
             app.activeDocument.activeLayer.name = arr[i].stt;
             app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -181,7 +181,7 @@ if (arr2mat.length > 0) {
             #include "saveallcropByName.jsx";
 
 
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
         }
     }
 

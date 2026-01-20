@@ -42,7 +42,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
         app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName(arr[i].stt).remove();
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
         #include "createDocumentWooden2.jsx";
 
@@ -72,7 +72,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     }
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
 
     }
 }

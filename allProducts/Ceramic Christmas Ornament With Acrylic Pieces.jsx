@@ -23,7 +23,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
         #include "createDocumentALL2.jsx";
         ban = ban + 1;
         stt = i;
@@ -75,7 +75,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
     if (i == arr.length - 1) {
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
     }
 }
 
@@ -124,7 +124,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
                 doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
                 ban = ban + 1;
                 stt = i;
@@ -163,7 +163,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
         }
@@ -176,7 +176,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 function openKhung(item) {
     var tenKhung = item.nameId.split("-")[0];
 
-    app.open(File("//192.168.1.240/ps script data/oal su piece/" + tenKhung + ".png"));
+    app.open(File("//192.168.2.240/ps script data/oal su piece/" + tenKhung + ".png"));
     app.activeDocument.activeLayer.name = item.stt;
     app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);

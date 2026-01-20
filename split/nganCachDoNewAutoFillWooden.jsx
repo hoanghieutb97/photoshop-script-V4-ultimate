@@ -3,7 +3,7 @@
 ///////////////////////////////ngan cach do
 
 {
-    app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+    app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
     app.doAction("sttkinlytoy", "tool");
     boxW = app.activeDocument.width;
@@ -26,13 +26,13 @@
         app.activeDocument.layerSets["IN TRUOC"].artLayers.getByName("stt" + arr[i].stt).remove();
         app.activeDocument.layerSets["KHUNG"].artLayers.getByName("stt" + arr[i].stt).remove();
         #include "saveallcropByNameNew.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx"));
 
         #include "createDocumentWooden2.jsx";
         ban = ban + 1;
         stt = i;
         var doc = app.activeDocument;
-        app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+        app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
         app.activeDocument.artLayers[0].textItem.contents = i + 1;
         app.doAction("sttkinlytoy", "tool");
         boxW = app.activeDocument.width;

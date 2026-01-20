@@ -32,7 +32,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
             {// tao khung su
 
 
-                app.open(File("//192.168.1.240/ps script data/khung mica 2cm/" + arr[i][j].case + ".png"));
+                app.open(File("//192.168.2.240/ps script data/khung mica 2cm/" + arr[i][j].case + ".png"));
                 app.doAction("canvasHoriz", "tool");
                 app.activeDocument.activeLayer.name = arr[i][j].stt;
                 app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["KHUNG"], ElementPlacement.PLACEATBEGINNING);// đưa file in sang bên bàn in
@@ -44,7 +44,7 @@ function xuLy(arr, wAll, hAll, FileDesign, FileName, type) {
             }
         }
         {
-            var folder1 = Folder("//192.168.1.240/in/" + type + "-" + FileName);
+            var folder1 = Folder("//192.168.2.240/in/" + type + "-" + FileName);
             if (!folder1.exists) { folder1.create(); }
             #include "cropDocument.jsx";
             app.activeDocument.saveAs(Folder(folder1 + "/in " + (i + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);

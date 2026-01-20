@@ -37,7 +37,7 @@ for (var xnxx = 0; xnxx < danhSach.length; xnxx++) {
 
         { ////////////////////////////////////////////////////////////// chay lop mica
             arr = danhSach[xnxx][1];
-            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/" + danhSach[xnxx][2] + ".jsx"));
+            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/" + danhSach[xnxx][2] + ".jsx"));
 
             var doc = app.activeDocument;
             var typeTem = danhSach[xnxx][0]; // khi createtem-group thì mới dùng
@@ -114,12 +114,12 @@ for (var xnxx = 0; xnxx < danhSach.length; xnxx++) {
                         doc.layerSets["KHUNG"].artLayers.getByName(arr[i].stt).remove();
 
                         #include "saveallcropByNameNew.jsx";
-                        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
                         ban = ban + 1;
                         stt = i;
 
-                        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/" + danhSach[xnxx][2] + ".jsx"));
+                        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/" + danhSach[xnxx][2] + ".jsx"));
 
                         doc = app.activeDocument;
                         if (arr.length > Min_Number_auto) {
@@ -190,7 +190,7 @@ for (var xnxx = 0; xnxx < danhSach.length; xnxx++) {
 
                 if (i == arr.length - 1) {
                     #include "saveallcropByNameNew.jsx";
-                    $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                    $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
                 }

@@ -68,7 +68,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             var bounds2 = app.activeDocument.activeLayer.bounds;
 
             {
-                app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+                app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
                 app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                 app.doAction("sttkinlytoy", "tool");
                 var boxW = app.activeDocument.width;
@@ -101,7 +101,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
             var bounds2 = app.activeDocument.activeLayer.bounds;
             {
-                app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+                app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
                 app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                 app.doAction("sttkinlytoy", "tool");
                 var boxW = app.activeDocument.width;
@@ -133,7 +133,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     if ((yPosition + boxH + hLast) > hAll && (xPosition + boxW + wLast) > wAll) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         wAll = 28346; hAll = 3307;
         app.documents.add(wAll, hAll, 300, "GLLM");
         app.activeDocument.layerSets.add();
@@ -194,7 +194,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
                 var bounds2 = app.activeDocument.activeLayer.bounds;
                 {
-                    app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+                    app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
                     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                     app.doAction("sttkinlytoy", "tool");
                     var boxW = app.activeDocument.width;
@@ -225,7 +225,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
                 var bounds2 = app.activeDocument.activeLayer.bounds;
                 {
-                    app.open(File("//192.168.1.240/ps script data/sttkinlytoy.tif"));
+                    app.open(File("//192.168.2.240/ps script data/sttkinlytoy.tif"));
                     app.activeDocument.artLayers[0].textItem.contents = arr[i].stt;
                     app.doAction("sttkinlytoy", "tool");
                     var boxW = app.activeDocument.width;
@@ -264,7 +264,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     #include "translateCMYK.jsx";
     if (i == arr.length - 1) {
         #include "save1Mat.jsx";
-        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
