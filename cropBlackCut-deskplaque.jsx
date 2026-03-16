@@ -41,7 +41,6 @@ bounds1 = app.activeDocument.activeLayer.bounds;
 
 app.activeDocument.activeLayer.resize(wphone * 100 / widthden, wphone * 100 / widthden, AnchorPosition.MIDDLECENTER);
 
-
 boundsxxx = app.activeDocument.activeLayer.bounds;
 boxW = boundsxxx[2] - boundsxxx[0] + 30;
 boxH = boundsxxx[3] - boundsxxx[1] + 30;
@@ -53,4 +52,5 @@ app.doAction("xoa stroke layer", "tool");
 
 app.activeDocument.activeLayer.name = arr[i].stt;
 bounds2 = app.activeDocument.activeLayer.bounds;
+
 app.activeDocument.activeLayer.resize(wphone * 100 / widthden, wphone * 100 / widthden, AnchorPosition.MIDDLECENTER);

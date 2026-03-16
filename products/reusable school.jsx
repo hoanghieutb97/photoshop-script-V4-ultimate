@@ -69,7 +69,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
 
-        //$.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -109,7 +109,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        //$.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -171,7 +171,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.saveAs(Folder(folderTool + "/go3mm-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        //$.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        //$.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -212,7 +212,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
 
-        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx")); // in tem
         #include "createDocument.jsx";
         ban = ban + 1;
 
@@ -276,7 +276,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
 
         app.activeDocument.saveAs(Folder(folderTool + "/mica3mm-" + (ban + 1) + ".tif"), TiffSaveOptionsLZW, false, Extension.LOWERCASE);
         app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
-        $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
+        $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-autoFill.jsx"));
     }
 }
 
@@ -296,7 +296,7 @@ function openAndResizeFile(item, FileDesign, wphone, hphone, type) {
     app.activeDocument.mergeVisibleLayers();
     var xoay = false;
     var PSpotKhung = app.activeDocument.activeLayer.bounds;
-    if ((PSpotKhung[2] - PSpotKhung[0]) < (PSpotKhung[3] - PSpotKhung[1])) {
+    if ((PSpotKhung[2] - PSpotKhung[0]) > (PSpotKhung[3] - PSpotKhung[1])) {
         app.activeDocument.rotateCanvas(90);
         xoay = true
     }
@@ -313,6 +313,7 @@ function openAndResizeFile(item, FileDesign, wphone, hphone, type) {
 
     if (xoay) app.activeDocument.rotateCanvas(90);
     if (app.activeDocument.mode != "DocumentMode.RGB") app.activeDocument.changeMode(ChangeMode.RGB);
+    
     app.activeDocument.resizeImage(UnitValue(wphone * app.activeDocument.width / (PSpotKhung[2] - PSpotKhung[0]), "px"), UnitValue(hphone * app.activeDocument.height / (PSpotKhung[3] - PSpotKhung[1]), "px"), 300, ResampleMethod.BICUBIC);
 
 

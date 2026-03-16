@@ -84,7 +84,7 @@ stt = 0;
                 }
 
                 #include "saveallcropByNameNew.jsx";
-                $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+                $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
                 g = 0;
                 ban = ban + 1;
                 stt = i;
@@ -108,12 +108,19 @@ stt = 0;
                 Group_In = "IN TRUOC" //group file in
                 #include "../split/cropBoxXY_resize_Dup_trans.jsx";
 
-                var sttCropBox = soLayerCut[g][2]
-                Group_In = "IN SAU" //group file in
-                lat = true; // lật mica
-                #include "../split/cropBoxXY_resize_Dup_trans.jsx";
 
-                #include "../split/canGiua13.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+
+                var sttCropBox = soLayerCut[g][2]
+                if (sttCropBox != undefined) {
+                    Group_In = "IN SAU" //group file in
+                    lat = true; // lật mica
+                    #include "../split/cropBoxXY_resize_Dup_trans.jsx";
+                    #include "../split/canGiua13.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+                }
+
+                else {
+                    #include "../split/canGiua11.jsx"; // căn giữa 1 file  Group_Khung và Group_In
+                }
 
             }
 
@@ -130,7 +137,7 @@ stt = 0;
 
         if (i == arr.length - 1) {
             #include "saveallcropByNameNew.jsx";
-            $.evalFile(File("//192.168.2.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
+            $.evalFile(File("//192.168.1.240/photoshop-script-V4-ultimate/label/createm-group.jsx")); // in tem
 
 
         }
