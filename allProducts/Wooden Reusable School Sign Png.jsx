@@ -1,4 +1,5 @@
 /// go 5mm
+var slLay = 5;
 #include "createDocument.jsx";
 var typeTem = "go5mm";
 for (var i = stt; i <= arr.length - 1; i++) {
@@ -8,7 +9,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
     var layerWidth = app.activeDocument.width;
     var layerHeight = app.activeDocument.height;
 
-    app.activeDocument.selection.select([[0, 0], [0, layerHeight], [layerWidth / 4, layerHeight], [layerWidth / 4, 0]]);
+    app.activeDocument.selection.select([[0, 0], [0, layerHeight / 2], [layerWidth / slLay, layerHeight / 2], [layerWidth / slLay, 0]]);
     app.doAction("duplicateSelection", "tool");
     app.activeDocument.layers[1].remove();
     app.activeDocument.activeLayer.name = arr[i].stt;
@@ -28,7 +29,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         ban = ban + 1;
 
         openFile(FileDesign, arr[i], type);
-        app.activeDocument.selection.select([[0, 0], [0, layerHeight], [layerWidth / 4, layerHeight], [layerWidth / 4, 0]]);
+        app.activeDocument.selection.select([[0, 0], [0, layerHeight], [layerWidth / slLay, layerHeight], [layerWidth / slLay, 0]]);
         app.doAction("duplicateSelection", "tool");
         app.activeDocument.layers[1].remove();
         app.activeDocument.activeLayer.name = arr[i].stt;
@@ -48,7 +49,26 @@ for (var i = stt; i <= arr.length - 1; i++) {
     app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
     #include "caculatorPosition.jsx";
     #include "translateCMYK.jsx";
+    {
+        openFile(FileDesign, arr[i], type);
+        var layerWidth = app.activeDocument.width;
+        var layerHeight = app.activeDocument.height;
 
+        app.activeDocument.selection.select([[0, layerHeight / 2], [0, layerHeight], [layerWidth / slLay, layerHeight], [layerWidth / slLay, layerHeight / 2]]);
+        app.doAction("duplicateSelection", "tool");
+        app.activeDocument.layers[1].remove();
+        app.activeDocument.activeLayer.name = arr[i].stt;
+
+        var boundb5D = app.activeDocument.activeLayer.bounds;
+        app.activeDocument.crop(boundb5D, 0, boundb5D[2] - boundb5D[0], boundb5D[3] - boundb5D[1]);
+        if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+        app.activeDocument.activeLayer.name = arr[i].stt;
+        app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);
+        app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+        #include "translateSPOT.jsx";
+
+    }
 
     {// text stt
         var textLayer = app.activeDocument.artLayers.add();
@@ -107,7 +127,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var layerWidth = app.activeDocument.width;
         var layerHeight = app.activeDocument.height;
 
-        app.activeDocument.selection.select([[k * layerWidth / 4, 0], [k * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, 0]]);
+        app.activeDocument.selection.select([[k * layerWidth / slLay, 0], [k * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, 0]]);
         app.doAction("duplicateSelection", "tool");
         app.activeDocument.layers[1].remove();
         app.activeDocument.activeLayer.name = arr[i].stt;
@@ -127,7 +147,8 @@ for (var i = stt; i <= arr.length - 1; i++) {
             ban = ban + 1;
 
             openFile(FileDesign, arr[i], type);
-            app.activeDocument.selection.select([[k * layerWidth / 4, 0], [k * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, 0]]);
+
+            app.activeDocument.selection.select([[k * layerWidth / slLay, 0], [k * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, 0]]);
             app.doAction("duplicateSelection", "tool");
             app.activeDocument.layers[1].remove();
             app.activeDocument.activeLayer.name = arr[i].stt;
@@ -148,6 +169,26 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "caculatorPosition.jsx";
         #include "translateCMYK.jsx";
 
+
+        {
+            openFile(FileDesign, arr[i], type);
+            var layerWidth = app.activeDocument.width;
+            var layerHeight = app.activeDocument.height;
+            app.activeDocument.selection.select([[k * layerWidth / slLay, layerHeight / 2], [k * layerWidth / slLay, layerHeight], [(k + 1) * layerWidth / slLay, layerHeight], [(k + 1) * layerWidth / slLay, layerHeight / 2]]);
+            app.doAction("duplicateSelection", "tool");
+            app.activeDocument.layers[1].remove();
+            app.activeDocument.activeLayer.name = arr[i].stt;
+
+            var boundb5D = app.activeDocument.activeLayer.bounds;
+            app.activeDocument.crop(boundb5D, 0, boundb5D[2] - boundb5D[0], boundb5D[3] - boundb5D[1]);
+            if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+            #include "translateSPOT.jsx";
+
+        }
 
 
 
@@ -201,7 +242,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
         var layerWidth = app.activeDocument.width;
         var layerHeight = app.activeDocument.height;
 
-        app.activeDocument.selection.select([[k * layerWidth / 4, 0], [k * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, 0]]);
+        app.activeDocument.selection.select([[k * layerWidth / slLay, 0], [k * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, 0]]);
         app.doAction("duplicateSelection", "tool");
         app.activeDocument.layers[1].remove();
         app.activeDocument.activeLayer.name = arr[i].stt;
@@ -222,7 +263,7 @@ for (var i = stt; i <= arr.length - 1; i++) {
             ban = ban + 1;
 
             openFile(FileDesign, arr[i], type);
-            app.activeDocument.selection.select([[k * layerWidth / 4, 0], [k * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, layerHeight], [(k + 1) * layerWidth / 4, 0]]);
+            app.activeDocument.selection.select([[k * layerWidth / slLay, 0], [k * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, layerHeight / 2], [(k + 1) * layerWidth / slLay, 0]]);
             app.doAction("duplicateSelection", "tool");
             app.activeDocument.layers[1].remove();
             app.activeDocument.activeLayer.name = arr[i].stt;
@@ -245,6 +286,27 @@ for (var i = stt; i <= arr.length - 1; i++) {
         #include "translateCMYK.jsx";
 
 
+        {
+            openFile(FileDesign, arr[i], type);
+            var layerWidth = app.activeDocument.width;
+            var layerHeight = app.activeDocument.height;
+
+            app.activeDocument.selection.select([[k * layerWidth / slLay, layerHeight / 2], [k * layerWidth / slLay, layerHeight], [(k + 1) * layerWidth / slLay, layerHeight], [(k + 1) * layerWidth / slLay, layerHeight / 2]]);
+            app.doAction("duplicateSelection", "tool");
+            app.activeDocument.layers[1].remove();
+            app.activeDocument.activeLayer.name = arr[i].stt;
+
+            var boundb5D = app.activeDocument.activeLayer.bounds;
+            app.activeDocument.crop(boundb5D, 0, boundb5D[2] - boundb5D[0], boundb5D[3] - boundb5D[1]);
+            if (app.activeDocument.width > app.activeDocument.height) app.activeDocument.rotateCanvas(90);
+            app.doAction("canvasHoriz", "tool");
+            app.activeDocument.activeLayer.name = arr[i].stt;
+            app.activeDocument.activeLayer.duplicate(app.documents["GLLM"].layerSets["SPOT"], ElementPlacement.PLACEATBEGINNING);
+            app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+            #include "translateSPOT.jsx";
+
+        }
 
 
     }
